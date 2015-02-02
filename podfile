@@ -1,0 +1,7 @@
+platform :ios, '6.0'
+pod 'JSONKIT'
+pod 'AFNetworking'
+pod 'MBProgressHUD'
+pod 'Reachability'
+pod 'FMDB'
+pod 'SDWebImage'
