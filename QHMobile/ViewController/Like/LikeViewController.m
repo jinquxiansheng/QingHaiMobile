@@ -8,7 +8,7 @@
 
 #import "LikeViewController.h"
 #import "Test2ViewController.h"
-#import "MainViewController.h"
+#import "QHMainViewController.h"
 @interface LikeViewController ()
 
 @end

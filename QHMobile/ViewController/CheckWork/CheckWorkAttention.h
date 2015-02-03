@@ -1,5 +1,5 @@
 //
-//  ShopViewController.h
+//  SortViewController.h
 //  QHMobile
 //
 //  Created by yao on 14-9-9.
@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface ShopViewController : BaseViewController
+@interface CheckWorkAttention : BaseViewController
 
 @end

@@ -15,4 +15,5 @@
 #import <Foundation/Foundation.h>
 #import "HttpCallBack.h"
 #import "CommonData.h"
+#import "QHMGlobal.h"
 #endif

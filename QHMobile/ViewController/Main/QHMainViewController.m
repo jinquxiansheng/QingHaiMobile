@@ -6,26 +6,26 @@
 //  Copyright (c) 2014年 yao. All rights reserved.
 //
 
-#import "MainViewController.h"
-#import "ShopViewController.h"
-#import "SortViewController.h"
+#import "QHMainViewController.h"
+#import "FirstPageViewController.h"
+#import "CheckWorkAttention.h"
 #import "LikeViewController.h"
 #import "NavBaseViewController.h"
 #import "UITabBarController+HideTabBar.h"
 #import "CommonUI.h"
 static  const  CGFloat   tabHeight = 48;
 static  const  int       viewControllerCount = 5;
-@interface MainViewController ()
+@interface QHMainViewController ()
 {
     
-    ShopViewController                      *shopCtrl;
-    SortViewController                      *sortCtrl;
+    FirstPageViewController                  *_firstCtrl;
+    CheckWorkAttention                      *_checkCtrl;
     LikeViewController                      *likeCtrl;
 }
 
 @end
 
-@implementation MainViewController
+@implementation QHMainViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,7 +39,6 @@ static  const  int       viewControllerCount = 5;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.tabbarView = [[UIView alloc] initWithFrame:CGRectMake(0, SCREENHEIGHT-tabHeight,SCREENWIDTH,tabHeight)];
     self.tabbarView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:self.tabbarView];
@@ -47,12 +46,10 @@ static  const  int       viewControllerCount = 5;
 }
 - (void)initViewController
 {
-    //self.view.backgroundColor = [UIColor redColor];
-    //self.tabView.backgroundColor = [UIColor clearColor];
-    shopCtrl = [[ShopViewController alloc] initWithNibName:@"ShopViewController" bundle:nil];
-    sortCtrl = [[SortViewController alloc] initWithNibName:@"SortViewController" bundle:nil];
+    _firstCtrl = [[FirstPageViewController alloc] initWithNibName:@"FirstPageViewController" bundle:nil];
+    _checkCtrl = [[CheckWorkAttention alloc] initWithNibName:@"CheckWorkAttention" bundle:nil];
     likeCtrl  = [[LikeViewController alloc] initWithNibName:@"LikeViewController" bundle:nil];
-    NSArray *views = @[shopCtrl,sortCtrl,likeCtrl];
+    NSArray *views = @[_firstCtrl,_checkCtrl,likeCtrl];
     NSMutableArray *viewControllers = [NSMutableArray arrayWithCapacity:3];
     for (UIViewController  *viewController in views) {
         NavBaseViewController   *nav = [[NavBaseViewController alloc] initWithRootViewController:viewController];
@@ -61,7 +58,7 @@ static  const  int       viewControllerCount = 5;
     self.viewControllers = viewControllers;
     
     self.tabBarHidden = YES;
-    NSArray *buttonTextArray = @[@"开始购物",@"分类",@"大家喜欢",@"限时特惠",@"更多"];
+    NSArray *buttonTextArray = @[@"首页",@"考勤",@"台帐",@"我的",@"ceshi"];
     NSArray *buttonXPosArray = @[@0,@59,@120,@196,@257];
     for (int i = 0; i < viewControllerCount; i++) {
         CGFloat x = [[buttonXPosArray objectAtIndex:i] floatValue];

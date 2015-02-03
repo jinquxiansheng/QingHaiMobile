@@ -3,3 +3,4 @@
 #import "UIViewAdditions.h"
 #import "UIImage+Additions.h"
 #import "NSError+ErrorState.h"
+#import "UIColor+Addition.h"

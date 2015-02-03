@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 yao. All rights reserved.
 //
 
-#import "SortViewController.h"
+#import "CheckWorkAttention.h"
 
-@interface SortViewController ()
+@interface CheckWorkAttention ()
 
 @end
 
-@implementation SortViewController
+@implementation CheckWorkAttention
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self customNavigationHeadTitle:@"sort....."];
+    [self customNavigationHeadTitle:@"考勤管理"];
     [self customNavigationBack:@"dading" normalImage:@"sort" highlightImage:@""];
 
 }

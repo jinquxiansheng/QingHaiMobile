@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "QHMGlobal.h"
 
 
 @interface BaseView : UIView<UITableViewDataSource,UITableViewDelegate>

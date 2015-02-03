@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 yao. All rights reserved.
 //
 
-#import "ShopViewController.h"
+#import "FirstPageViewController.h"
 
-@interface ShopViewController ()
+@interface FirstPageViewController ()
 
 @end
 
-@implementation ShopViewController
+@implementation FirstPageViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,7 +27,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-     [self customNavigationBackground];
      [self customNavigationHeadTitle:@"shop....."];
      [self customNavigationBack:@"dading" normalImage:@"购物车" highlightImage:@""];
 }

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainViewController : UITabBarController
+@interface QHMainViewController : UITabBarController
 @property (strong, nonatomic)  UIView        *tabbarView;
 @end

@@ -14,6 +14,7 @@
 #import "NSError+ErrorState.h"
 #import "UIImage+Additions.h"
 #import "CommonUI.h"
+
 #define TAG_NAVIGATIONBACKGROUND                                1306
 #define         MANAGER                                     [UserManager shareManager]
 

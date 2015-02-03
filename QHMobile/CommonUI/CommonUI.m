@@ -7,7 +7,7 @@
 //
 
 #import "CommonUI.h"
-#import "MainViewController.h"
+#import "QHMainViewController.h"
 #import "NoNetView.h"
 static    CommonUI   *manager = nil;
 @implementation CommonUI
@@ -23,7 +23,7 @@ static    CommonUI   *manager = nil;
 - (void)showBottomTab:(BOOL)visible
 {
     
-    MainViewController  *tabCtrl = (MainViewController *)self.mainViewController;
+    QHMainViewController  *tabCtrl = (QHMainViewController *)self.mainViewController;
     tabCtrl.tabbarView.hidden = !visible ;
     
 }

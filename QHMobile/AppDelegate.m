@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "InteralCache.h"
 #import "BaseCore.h"
-#import "MainViewController.h"
+#import "QHMLoginViewController.h"
 #import "UncaughtExceptionHandler.h"
 @interface AppDelegate()
 {
@@ -27,8 +27,13 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    MainViewController  *mainCtrl = [[MainViewController alloc] init];
-    self.window.rootViewController = mainCtrl ;
+   // [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];、、
+    //[[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"nav_Background.png"]];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_Background.png"] forBarMetrics:UIBarMetricsCompact];
+    
+    QHMLoginViewController *loginCtrl = [[QHMLoginViewController alloc] initWithNibName:@"QHMLoginViewController" bundle:nil];
+    self.window.rootViewController = loginCtrl;
+    
     [[BaseCore shareBaseCore] configBaseCoreInfo];
     if (![[InteralCache shareInteralCache] firstStart]) {
         NSLog(@"引导页");

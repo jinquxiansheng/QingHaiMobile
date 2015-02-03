@@ -11,7 +11,7 @@
 #import "BrandModel.h"
 #import "TestView2.h"
 //#import "MJRefresh.h"
-#import "MainViewController.h"
+#import "QHMainViewController.h"
 @interface Test2ViewController ()
 {
     HttpCallBack *selfCallBack ;
@@ -41,6 +41,7 @@
     [self initView];
    // [self refreshView];
   //  [self setupRefresh];
+
    
 }
 - (void)viewWillAppear:(BOOL)animated
