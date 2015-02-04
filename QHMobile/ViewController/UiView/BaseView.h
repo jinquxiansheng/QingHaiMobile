@@ -10,5 +10,5 @@
 
 
 @interface BaseView : UIView<UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic,strong) UITableView *baseTableView;
+@property (nonatomic,strong)  UITableView *baseTableView;
 @end

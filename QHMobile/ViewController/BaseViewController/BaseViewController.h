@@ -26,6 +26,7 @@
 @property (nonatomic,strong) IBOutlet UIView                    *naviView;
 @property (nonatomic,strong) IBOutlet UIButton                  *btnBack;
 @property (nonatomic,strong) IBOutlet UIButton                  *btnRight;
+@property (nonatomic,strong)  IBOutlet UITableView              *baseTableView;
 
 
 - (void)navigationBack:(id)sender;                              // 导航栏左按钮行为（返回）

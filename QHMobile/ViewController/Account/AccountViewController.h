@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface LikeViewController : BaseViewController
+@interface AccountViewController : BaseViewController
 
 @end

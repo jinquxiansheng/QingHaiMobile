@@ -6,14 +6,14 @@
 //  Copyright (c) 2014年 yao. All rights reserved.
 //
 
-#import "LikeViewController.h"
+#import "AccountViewController.h"
 #import "Test2ViewController.h"
 #import "QHMainViewController.h"
-@interface LikeViewController ()
+@interface AccountViewController ()
 
 @end
 
-@implementation LikeViewController
+@implementation AccountViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self customNavigationHeadTitle:@"like....."];
+    [self customNavigationHeadTitle:@"账户信息"];
     [self customNavigationBack:@"dading" normalImage:@"like" highlightImage:@""];
     [self customNavigationDone:@"完成" normalImage:@"" highlightImage:@""];
 }

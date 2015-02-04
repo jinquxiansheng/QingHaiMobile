@@ -55,8 +55,6 @@
 		20B0D87F1A7F4A6A00462D6F /* Test2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20B0D8461A7F4A6A00462D6F /* Test2ViewController.xib */; };
 		20B0D8801A7F4A6A00462D6F /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B0D8481A7F4A6A00462D6F /* TestViewController.m */; };
 		20B0D8811A7F4A6A00462D6F /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20B0D8491A7F4A6A00462D6F /* TestViewController.xib */; };
-		20B0D8821A7F4A6A00462D6F /* LikeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B0D84C1A7F4A6A00462D6F /* LikeViewController.m */; };
-		20B0D8831A7F4A6A00462D6F /* LikeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20B0D84D1A7F4A6A00462D6F /* LikeViewController.xib */; };
 		20B0D8841A7F4A6A00462D6F /* QHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B0D8501A7F4A6A00462D6F /* QHMainViewController.m */; };
 		20B0D88D1A7F4A6A00462D6F /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B0D8611A7F4A6A00462D6F /* BaseView.m */; };
 		20B0D88E1A7F4A6A00462D6F /* TestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B0D8631A7F4A6A00462D6F /* TestTableViewCell.m */; };
@@ -71,6 +69,18 @@
 		20CCF7441A81CC3200139EB3 /* CollectionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CCF7431A81CC3200139EB3 /* CollectionDemoTests.m */; };
 		20CCF7801A81D5A500139EB3 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CCF77E1A81D5A500139EB3 /* CollectionCell.m */; };
 		20CCF7811A81D5A500139EB3 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CCF77F1A81D5A500139EB3 /* CollectionCell.xib */; };
+		20E95D621A825F530048CBDC /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E95D601A825F530048CBDC /* AccountViewController.m */; };
+		20E95D631A825F530048CBDC /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E95D611A825F530048CBDC /* AccountViewController.xib */; };
+		20E95D681A825F650048CBDC /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E95D661A825F650048CBDC /* PersonalViewController.m */; };
+		20E95D691A825F650048CBDC /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E95D671A825F650048CBDC /* PersonalViewController.xib */; };
+		20E95D6D1A826B900048CBDC /* PersonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E95D6B1A826B900048CBDC /* PersonDetailViewController.m */; };
+		20E95D6E1A826B900048CBDC /* PersonDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E95D6C1A826B900048CBDC /* PersonDetailViewController.xib */; };
+		20E95D721A826E3A0048CBDC /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E95D701A826E3A0048CBDC /* MoreViewController.m */; };
+		20E95D731A826E3A0048CBDC /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E95D711A826E3A0048CBDC /* MoreViewController.xib */; };
+		20E95D771A8272D50048CBDC /* RestRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E95D751A8272D50048CBDC /* RestRecordViewController.m */; };
+		20E95D781A8272D50048CBDC /* RestRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E95D761A8272D50048CBDC /* RestRecordViewController.xib */; };
+		20E95D7D1A8273160048CBDC /* RestRecordViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E95D7B1A8273160048CBDC /* RestRecordViewCell.m */; };
+		20E95D7E1A8273160048CBDC /* RestRecordViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E95D7C1A8273160048CBDC /* RestRecordViewCell.xib */; };
 		20EC140A1A810E8300E17D57 /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 20EC14091A810E8300E17D57 /* UIColor+Addition.m */; };
 		20EC14131A810FD700E17D57 /* QHMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20EC14111A810FD700E17D57 /* QHMLoginViewController.m */; };
 		20EC14141A810FD700E17D57 /* QHMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EC14121A810FD700E17D57 /* QHMLoginViewController.xib */; };
@@ -187,9 +197,6 @@
 		20B0D8471A7F4A6A00462D6F /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		20B0D8481A7F4A6A00462D6F /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		20B0D8491A7F4A6A00462D6F /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
-		20B0D84B1A7F4A6A00462D6F /* LikeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LikeViewController.h; sourceTree = "<group>"; };
-		20B0D84C1A7F4A6A00462D6F /* LikeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LikeViewController.m; sourceTree = "<group>"; };
-		20B0D84D1A7F4A6A00462D6F /* LikeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LikeViewController.xib; sourceTree = "<group>"; };
 		20B0D84F1A7F4A6A00462D6F /* QHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHMainViewController.h; sourceTree = "<group>"; };
 		20B0D8501A7F4A6A00462D6F /* QHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHMainViewController.m; sourceTree = "<group>"; };
 		20B0D8601A7F4A6A00462D6F /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
@@ -215,6 +222,24 @@
 		20CCF77D1A81D5A500139EB3 /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
 		20CCF77E1A81D5A500139EB3 /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
 		20CCF77F1A81D5A500139EB3 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
+		20E95D5F1A825F530048CBDC /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		20E95D601A825F530048CBDC /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		20E95D611A825F530048CBDC /* AccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
+		20E95D651A825F650048CBDC /* PersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
+		20E95D661A825F650048CBDC /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
+		20E95D671A825F650048CBDC /* PersonalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalViewController.xib; sourceTree = "<group>"; };
+		20E95D6A1A826B900048CBDC /* PersonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonDetailViewController.h; sourceTree = "<group>"; };
+		20E95D6B1A826B900048CBDC /* PersonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonDetailViewController.m; sourceTree = "<group>"; };
+		20E95D6C1A826B900048CBDC /* PersonDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonDetailViewController.xib; sourceTree = "<group>"; };
+		20E95D6F1A826E3A0048CBDC /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
+		20E95D701A826E3A0048CBDC /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
+		20E95D711A826E3A0048CBDC /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
+		20E95D741A8272D50048CBDC /* RestRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestRecordViewController.h; sourceTree = "<group>"; };
+		20E95D751A8272D50048CBDC /* RestRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestRecordViewController.m; sourceTree = "<group>"; };
+		20E95D761A8272D50048CBDC /* RestRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestRecordViewController.xib; sourceTree = "<group>"; };
+		20E95D7A1A8273160048CBDC /* RestRecordViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestRecordViewCell.h; sourceTree = "<group>"; };
+		20E95D7B1A8273160048CBDC /* RestRecordViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestRecordViewCell.m; sourceTree = "<group>"; };
+		20E95D7C1A8273160048CBDC /* RestRecordViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestRecordViewCell.xib; sourceTree = "<group>"; };
 		20EC14081A810E8300E17D57 /* UIColor+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
 		20EC14091A810E8300E17D57 /* UIColor+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
 		20EC14101A810FD700E17D57 /* QHMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHMLoginViewController.h; sourceTree = "<group>"; };
@@ -517,11 +542,12 @@
 			isa = PBXGroup;
 			children = (
 				20B0D83F1A7F4A6A00462D6F /* BaseViewController */,
+				20B0D84E1A7F4A6A00462D6F /* Main */,
+				20EC140F1A810FAD00E17D57 /* Login */,
 				20EC14271A812FF800E17D57 /* FirstPage */,
 				20EC14211A812E6900E17D57 /* CheckWork */,
-				20EC140F1A810FAD00E17D57 /* Login */,
-				20B0D84A1A7F4A6A00462D6F /* Like */,
-				20B0D84E1A7F4A6A00462D6F /* Main */,
+				20E95D5E1A825F530048CBDC /* Account */,
+				20E95D641A825F650048CBDC /* Personal */,
 				20B0D85F1A7F4A6A00462D6F /* UiView */,
 			);
 			path = ViewController;
@@ -542,16 +568,6 @@
 				20B0D8491A7F4A6A00462D6F /* TestViewController.xib */,
 			);
 			path = BaseViewController;
-			sourceTree = "<group>";
-		};
-		20B0D84A1A7F4A6A00462D6F /* Like */ = {
-			isa = PBXGroup;
-			children = (
-				20B0D84B1A7F4A6A00462D6F /* LikeViewController.h */,
-				20B0D84C1A7F4A6A00462D6F /* LikeViewController.m */,
-				20B0D84D1A7F4A6A00462D6F /* LikeViewController.xib */,
-			);
-			path = Like;
 			sourceTree = "<group>";
 		};
 		20B0D84E1A7F4A6A00462D6F /* Main */ = {
@@ -618,6 +634,45 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		20E95D5E1A825F530048CBDC /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				20E95D5F1A825F530048CBDC /* AccountViewController.h */,
+				20E95D601A825F530048CBDC /* AccountViewController.m */,
+				20E95D611A825F530048CBDC /* AccountViewController.xib */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		20E95D641A825F650048CBDC /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				20E95D651A825F650048CBDC /* PersonalViewController.h */,
+				20E95D661A825F650048CBDC /* PersonalViewController.m */,
+				20E95D671A825F650048CBDC /* PersonalViewController.xib */,
+				20E95D6A1A826B900048CBDC /* PersonDetailViewController.h */,
+				20E95D6B1A826B900048CBDC /* PersonDetailViewController.m */,
+				20E95D6C1A826B900048CBDC /* PersonDetailViewController.xib */,
+				20E95D6F1A826E3A0048CBDC /* MoreViewController.h */,
+				20E95D701A826E3A0048CBDC /* MoreViewController.m */,
+				20E95D711A826E3A0048CBDC /* MoreViewController.xib */,
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
+		20E95D791A8272DC0048CBDC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				20CCF77D1A81D5A500139EB3 /* CollectionCell.h */,
+				20CCF77E1A81D5A500139EB3 /* CollectionCell.m */,
+				20CCF77F1A81D5A500139EB3 /* CollectionCell.xib */,
+				20E95D7A1A8273160048CBDC /* RestRecordViewCell.h */,
+				20E95D7B1A8273160048CBDC /* RestRecordViewCell.m */,
+				20E95D7C1A8273160048CBDC /* RestRecordViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		20EC140F1A810FAD00E17D57 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -631,12 +686,13 @@
 		20EC14211A812E6900E17D57 /* CheckWork */ = {
 			isa = PBXGroup;
 			children = (
+				20E95D791A8272DC0048CBDC /* Cell */,
 				20EC14221A812E6900E17D57 /* CheckWorkAttention.h */,
 				20EC14231A812E6900E17D57 /* CheckWorkAttention.m */,
 				20EC14241A812E6900E17D57 /* CheckWorkAttention.xib */,
-				20CCF77D1A81D5A500139EB3 /* CollectionCell.h */,
-				20CCF77E1A81D5A500139EB3 /* CollectionCell.m */,
-				20CCF77F1A81D5A500139EB3 /* CollectionCell.xib */,
+				20E95D741A8272D50048CBDC /* RestRecordViewController.h */,
+				20E95D751A8272D50048CBDC /* RestRecordViewController.m */,
+				20E95D761A8272D50048CBDC /* RestRecordViewController.xib */,
 			);
 			path = CheckWork;
 			sourceTree = "<group>";
@@ -790,9 +846,14 @@
 				20EC14261A812E6900E17D57 /* CheckWorkAttention.xib in Resources */,
 				206FDCEC1A7F519E00D09416 /* MJRefresh.bundle in Resources */,
 				20B0D8811A7F4A6A00462D6F /* TestViewController.xib in Resources */,
-				20B0D8831A7F4A6A00462D6F /* LikeViewController.xib in Resources */,
 				20B0D7E91A7F4A3F00462D6F /* Images.xcassets in Resources */,
+				20E95D781A8272D50048CBDC /* RestRecordViewController.xib in Resources */,
 				20EC142C1A812FF800E17D57 /* FirstPageViewController.xib in Resources */,
+				20E95D7E1A8273160048CBDC /* RestRecordViewCell.xib in Resources */,
+				20E95D731A826E3A0048CBDC /* MoreViewController.xib in Resources */,
+				20E95D6E1A826B900048CBDC /* PersonDetailViewController.xib in Resources */,
+				20E95D691A825F650048CBDC /* PersonalViewController.xib in Resources */,
+				20E95D631A825F530048CBDC /* AccountViewController.xib in Resources */,
 				206FDCF91A7F547A00D09416 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -867,7 +928,6 @@
 				20B0D87C1A7F4A6A00462D6F /* BaseViewController.m in Sources */,
 				206FDCEF1A7F519E00D09416 /* MJRefreshFooterView.m in Sources */,
 				20B0D86F1A7F4A6A00462D6F /* UIView+Helpers.m in Sources */,
-				20B0D8821A7F4A6A00462D6F /* LikeViewController.m in Sources */,
 				20B0D87D1A7F4A6A00462D6F /* NavBaseViewController.m in Sources */,
 				20CCF7801A81D5A500139EB3 /* CollectionCell.m in Sources */,
 				20B0D8731A7F4A6A00462D6F /* BaseCore.m in Sources */,
@@ -875,12 +935,15 @@
 				20B0D8761A7F4A6A00462D6F /* TestManager.m in Sources */,
 				20B0D8721A7F4A6A00462D6F /* HttpCallBack.m in Sources */,
 				20B0D8751A7F4A6A00462D6F /* DataManager.m in Sources */,
+				20E95D721A826E3A0048CBDC /* MoreViewController.m in Sources */,
 				20B0D86C1A7F4A6A00462D6F /* UIImage+Additions.m in Sources */,
 				20B0D87A1A7F4A6A00462D6F /* EasyAccessTokenRequest.m in Sources */,
 				206FDCF11A7F519E00D09416 /* UIScrollView+Extension.m in Sources */,
 				20B0D86A1A7F4A6A00462D6F /* NSError+ErrorState.m in Sources */,
+				20E95D771A8272D50048CBDC /* RestRecordViewController.m in Sources */,
 				20B0D8681A7F4A6A00462D6F /* CommonUI.m in Sources */,
 				20B0D8841A7F4A6A00462D6F /* QHMainViewController.m in Sources */,
+				20E95D681A825F650048CBDC /* PersonalViewController.m in Sources */,
 				20B0D8711A7F4A6A00462D6F /* UncaughtExceptionHandler.m in Sources */,
 				20B0D88D1A7F4A6A00462D6F /* BaseView.m in Sources */,
 				20B0D7E71A7F4A3F00462D6F /* AppDelegate.m in Sources */,
@@ -894,13 +957,16 @@
 				20EC140A1A810E8300E17D57 /* UIColor+Addition.m in Sources */,
 				20B0D8701A7F4A6A00462D6F /* UIViewAdditions.m in Sources */,
 				20EC142B1A812FF800E17D57 /* FirstPageViewController.m in Sources */,
+				20E95D7D1A8273160048CBDC /* RestRecordViewCell.m in Sources */,
 				20B0D8741A7F4A6A00462D6F /* InteralCache.m in Sources */,
 				20B0D86E1A7F4A6A00462D6F /* UIView+Autolayout.m in Sources */,
 				20EC14131A810FD700E17D57 /* QHMLoginViewController.m in Sources */,
 				206FDCF21A7F519E00D09416 /* UIScrollView+MJRefresh.m in Sources */,
 				20B0D8771A7F4A6A00462D6F /* UserManager.m in Sources */,
 				20B0D7E31A7F4A3F00462D6F /* main.m in Sources */,
+				20E95D6D1A826B900048CBDC /* PersonDetailViewController.m in Sources */,
 				20B0D8791A7F4A6A00462D6F /* BrandModel.m in Sources */,
+				20E95D621A825F530048CBDC /* AccountViewController.m in Sources */,
 				20B0D87B1A7F4A6A00462D6F /* QHMBaseRequest.m in Sources */,
 				20B0D8801A7F4A6A00462D6F /* TestViewController.m in Sources */,
 				20B0D8781A7F4A6A00462D6F /* BaseModel.m in Sources */,
@@ -1239,6 +1305,7 @@
 				20CCF7461A81CC3200139EB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		20CCF74A1A81CC3200139EB3 /* Build configuration list for PBXNativeTarget "CollectionDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -1247,6 +1314,7 @@
 				20CCF7481A81CC3200139EB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

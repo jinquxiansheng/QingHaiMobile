@@ -8,6 +8,7 @@
 
 #import "CheckWorkAttention.h"
 #import "CollectionCell.h"
+#import "RestRecordViewController.h"
 @interface CheckWorkAttention ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
     NSArray  *_checkArray;
@@ -87,7 +88,10 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%s",__FUNCTION__);
+    if (indexPath.row == 0) {
+        RestRecordViewController *restCtrl = [[RestRecordViewController alloc] initWithNibName:@"RestRecordViewController" bundle:nil];
+        [self.navigationController pushViewController:restCtrl animated:YES];
+    }
     
 }
 
