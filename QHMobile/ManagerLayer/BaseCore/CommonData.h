@@ -38,12 +38,12 @@
 /*
  * ios7系统判断：
  */
-#define IOS7_OR_LATER	([[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
+#define IOS7	([[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
 /*
  * ios8系统判断：
  */
 
-#define IOS_VERSION_8_ABOVE (([[[UIDevice currentDevice] systemVersion] floatValue] >=8.0)? (YES):(NO))
+#define IOS8 (([[[UIDevice currentDevice] systemVersion] floatValue] >=8.0)? (YES):(NO))
 /*
  * rgb颜色转换（16进制->10进制）
  */
