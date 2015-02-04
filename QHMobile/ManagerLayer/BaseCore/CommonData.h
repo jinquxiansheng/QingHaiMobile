@@ -31,5 +31,23 @@
 #define         CACHEOVERTIME                               10         //缓存过期时间
 
 #define         WINDOW                                      [UIApplication sharedApplication].keyWindow
+/*
+ * ios6系统判断：
+ */
+#define IOS6 (([[[UIDevice currentDevice] systemVersion] floatValue] >=6.0)&&([[[UIDevice currentDevice] systemVersion] floatValue] <=7.0)? (YES):(NO))
+/*
+ * ios7系统判断：
+ */
+#define IOS7_OR_LATER	([[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
+/*
+ * ios8系统判断：
+ */
+
+#define IOS_VERSION_8_ABOVE (([[[UIDevice currentDevice] systemVersion] floatValue] >=8.0)? (YES):(NO))
+/*
+ * rgb颜色转换（16进制->10进制）
+ */
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 
 static  const  float  tabBarHeight = 44;
