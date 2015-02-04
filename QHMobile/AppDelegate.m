@@ -27,10 +27,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-   // [[UINavigationBar appearance] setBarTintColor:[UIColor yellowColor]];、、
-    //[[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"nav_Background.png"]];
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_Background.png"] forBarMetrics:UIBarMetricsCompact];
-    
+    //ios 7 导航栏和状态栏
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_bg.png"] forBarMetrics:UIBarMetricsDefault];
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];//黑体白字
     QHMLoginViewController *loginCtrl = [[QHMLoginViewController alloc] initWithNibName:@"QHMLoginViewController" bundle:nil];
     self.window.rootViewController = loginCtrl;
     

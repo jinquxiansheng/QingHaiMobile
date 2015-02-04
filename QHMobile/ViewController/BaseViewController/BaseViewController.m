@@ -84,14 +84,14 @@
     // 如果下面的代码不能正确显示或者是显示效果不理想，就动态生成一个 UIImageView 加到 navigationBar 里。
     // 注意不要重复增加！添加前判断是否已经添加过了！
     // 系统会自动增加一个高光的效果，就是上半部分颜色浅，下半部分颜色深。
-    UIImageView *image = (UIImageView *)[self.navigationController.navigationBar viewWithTag:TAG_NAVIGATIONBACKGROUND];
-    if( !image )
-    {
-        image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_Background.png"]];
-        image.tag = TAG_NAVIGATIONBACKGROUND;
-        image.frame = CGRectMake(0, 0, SCREENWIDTH, tabBarHeight);
-        [self.navigationController.navigationBar addSubview:image];
-    }
+//    UIImageView *image = (UIImageView *)[self.navigationController.navigationBar viewWithTag:TAG_NAVIGATIONBACKGROUND];
+//    if( !image )
+//    {
+//        image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_Background.png"]];
+//        image.tag = TAG_NAVIGATIONBACKGROUND;
+//        image.frame = CGRectMake(0, 0, SCREENWIDTH, tabBarHeight);
+//        [self.navigationController.navigationBar addSubview:image];
+//    }
     
   //  self.navigationController.navigationBar.backgroundColor = [UIColor colorWithHex:0xFF0076C2];
   //  self.navigationController.navigationBar.alpha = 0;

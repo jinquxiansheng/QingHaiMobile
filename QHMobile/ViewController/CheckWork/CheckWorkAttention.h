@@ -9,5 +9,7 @@
 #import "BaseViewController.h"
 
 @interface CheckWorkAttention : BaseViewController
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectLayout;
 
 @end

@@ -6,8 +6,13 @@
 //  Copyright (c) 2014年 yao. All rights reserved.
 //
 
-#define         SCREENWIDTH                                  [UIScreen mainScreen ].bounds.size.width
-#define         SCREENHEIGHT                                 [UIScreen mainScreen ].bounds.size.height
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define iPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242,2208), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750,1334), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define         SCREENWIDTH                                 (NSInteger)[UIScreen mainScreen ].bounds.size.width
+#define         SCREENHEIGHT                                 (NSInteger) [UIScreen mainScreen ].bounds.size.height
 
 #define         REQUESTTIMEINTERVALOUT                       20         //网络请求超时时间
 #define         ERRORCODEWITHOFFLINE                        -1009       //无网络状态
