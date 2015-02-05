@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200732F31A83111900E9D0C0 /* AccountCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 200732F11A83111900E9D0C0 /* AccountCollectionViewCell.m */; };
+		200732F41A83111900E9D0C0 /* AccountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 200732F21A83111900E9D0C0 /* AccountCollectionViewCell.xib */; };
 		206FDCEC1A7F519E00D09416 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 206FDCDC1A7F519E00D09416 /* MJRefresh.bundle */; };
 		206FDCED1A7F519E00D09416 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 206FDCDF1A7F519E00D09416 /* MJRefreshBaseView.m */; };
 		206FDCEE1A7F519E00D09416 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 206FDCE11A7F519E00D09416 /* MJRefreshConst.m */; };
@@ -110,6 +112,9 @@
 
 /* Begin PBXFileReference section */
 		0C36577A092436D1BD5F6EC2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		200732F01A83111900E9D0C0 /* AccountCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountCollectionViewCell.h; sourceTree = "<group>"; };
+		200732F11A83111900E9D0C0 /* AccountCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountCollectionViewCell.m; sourceTree = "<group>"; };
+		200732F21A83111900E9D0C0 /* AccountCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountCollectionViewCell.xib; sourceTree = "<group>"; };
 		206FDCDC1A7F519E00D09416 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		206FDCDD1A7F519E00D09416 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		206FDCDE1A7F519E00D09416 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
@@ -294,6 +299,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		200732EA1A83109700E9D0C0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				200732F01A83111900E9D0C0 /* AccountCollectionViewCell.h */,
+				200732F11A83111900E9D0C0 /* AccountCollectionViewCell.m */,
+				200732F21A83111900E9D0C0 /* AccountCollectionViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		206FDCDA1A7F519E00D09416 /* Thrid */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +652,7 @@
 		20E95D5E1A825F530048CBDC /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				200732EA1A83109700E9D0C0 /* Cell */,
 				20E95D5F1A825F530048CBDC /* AccountViewController.h */,
 				20E95D601A825F530048CBDC /* AccountViewController.m */,
 				20E95D611A825F530048CBDC /* AccountViewController.xib */,
@@ -850,6 +866,7 @@
 				20E95D781A8272D50048CBDC /* RestRecordViewController.xib in Resources */,
 				20EC142C1A812FF800E17D57 /* FirstPageViewController.xib in Resources */,
 				20E95D7E1A8273160048CBDC /* RestRecordViewCell.xib in Resources */,
+				200732F41A83111900E9D0C0 /* AccountCollectionViewCell.xib in Resources */,
 				20E95D731A826E3A0048CBDC /* MoreViewController.xib in Resources */,
 				20E95D6E1A826B900048CBDC /* PersonDetailViewController.xib in Resources */,
 				20E95D691A825F650048CBDC /* PersonalViewController.xib in Resources */,
@@ -927,6 +944,7 @@
 				20EC14251A812E6900E17D57 /* CheckWorkAttention.m in Sources */,
 				20B0D87C1A7F4A6A00462D6F /* BaseViewController.m in Sources */,
 				206FDCEF1A7F519E00D09416 /* MJRefreshFooterView.m in Sources */,
+				200732F31A83111900E9D0C0 /* AccountCollectionViewCell.m in Sources */,
 				20B0D86F1A7F4A6A00462D6F /* UIView+Helpers.m in Sources */,
 				20B0D87D1A7F4A6A00462D6F /* NavBaseViewController.m in Sources */,
 				20CCF7801A81D5A500139EB3 /* CollectionCell.m in Sources */,

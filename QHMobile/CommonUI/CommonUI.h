@@ -11,6 +11,7 @@
 
 @interface CommonUI : NSObject
 @property (nonatomic,weak) id                   mainViewController;
+@property (nonatomic,weak) UIView                   *tabBarView;
 @property (nonatomic,weak) UIViewController     *viewController;
 - (void)showBottomTab:(BOOL)visible;
 

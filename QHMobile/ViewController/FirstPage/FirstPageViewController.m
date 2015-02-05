@@ -9,6 +9,11 @@
 #import "FirstPageViewController.h"
 
 @interface FirstPageViewController ()
+@property (weak, nonatomic) IBOutlet UIView *managerView;
+@property (weak, nonatomic) IBOutlet UIView *onWorkView;
+@property (weak, nonatomic) IBOutlet UIView *offWorkView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *v1;
 
 @end
 
@@ -27,8 +32,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-     [self customNavigationHeadTitle:@"shop....."];
+     [self customNavigationHeadTitle:@"考勤管理系统"];
      [self customNavigationBack:@"dading" normalImage:@"购物车" highlightImage:@""];
+    
+    //签到 签退视图
+    self.managerView.width = SCREENWIDTH;
+    self.onWorkView.width = self.managerView.width / 2;
+    self.offWorkView.width = self.managerView.width / 2;
+    self.offWorkView.left = self.managerView.width / 2;
+
+   
 }
 - (void)viewWillAppear:(BOOL)animated
 {

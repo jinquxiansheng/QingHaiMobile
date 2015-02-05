@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface AccountViewController : BaseViewController
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end

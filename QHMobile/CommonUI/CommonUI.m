@@ -27,6 +27,11 @@ static    CommonUI   *manager = nil;
     tabCtrl.tabbarView.hidden = !visible ;
     
 }
+- (UIView *)tabBarView
+{
+     QHMainViewController  *tabCtrl = (QHMainViewController *)self.mainViewController;
+    return tabCtrl.tabbarView;
+}
 //- (void)showNoNetPageWithTag:(NSInteger)tag
 //{
 //    NoNetView *noView = [[NoNetView alloc] initWithSelect:@selector(refreshView) withTarget:self.viewController targetView:self.viewController.view];

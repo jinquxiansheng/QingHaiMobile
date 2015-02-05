@@ -32,6 +32,7 @@
 //    self.tableView.separatorColor  = [UIColor clearColor];
 //    self.tableView.separatorStyle  = UITableViewCellSeparatorStyleNone;
     self.view.backgroundColor = [UIColor colorWithHex:0xFFECECEC];
+    self.baseTableView.backgroundColor = [UIColor colorWithHex:0xFFECECEC];
     self.headView.backgroundColor = [UIColor colorWithRed:0.99 green:0.80 blue:0.00 alpha:1.0];
     self.headTitle.frame = CGRectMake(55, 0, 160, 44);
     self.headTitle.textColor = [UIColor blackColor];

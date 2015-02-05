@@ -28,7 +28,11 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     //ios 7 导航栏和状态栏
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav_bg.png"] forBarMetrics:UIBarMetricsDefault];
+    NSString *imageName = @"nav_bg.png";
+    if (IOS6) {
+        imageName = @"nav_bg_ios6.png";
+    }
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:imageName] forBarMetrics:UIBarMetricsDefault];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];//黑体白字
     QHMLoginViewController *loginCtrl = [[QHMLoginViewController alloc] initWithNibName:@"QHMLoginViewController" bundle:nil];
     self.window.rootViewController = loginCtrl;

@@ -38,7 +38,7 @@
 /*
  * ios7系统判断：
  */
-#define IOS7	([[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
+#define IOS7	( [[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
 /*
  * ios8系统判断：
  */
