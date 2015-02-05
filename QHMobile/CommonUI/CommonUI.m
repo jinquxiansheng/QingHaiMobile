@@ -27,6 +27,11 @@ static    CommonUI   *manager = nil;
     tabCtrl.tabbarView.hidden = !visible ;
     
 }
+- (void)hiddenLoginNav:(BOOL)hideNav
+{
+    UINavigationController *nav = self.loginNav;
+    nav.navigationBarHidden = hideNav;
+}
 - (UIView *)tabBarView
 {
      QHMainViewController  *tabCtrl = (QHMainViewController *)self.mainViewController;

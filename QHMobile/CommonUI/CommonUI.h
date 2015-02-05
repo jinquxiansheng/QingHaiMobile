@@ -13,8 +13,9 @@
 @property (nonatomic,weak) id                   mainViewController;
 @property (nonatomic,weak) UIView                   *tabBarView;
 @property (nonatomic,weak) UIViewController     *viewController;
+@property (nonatomic,weak) UINavigationController   *loginNav;
 - (void)showBottomTab:(BOOL)visible;
-
+- (void)hiddenLoginNav:(BOOL)hideNav;
 +(CommonUI *)shareManager;
 
 @end

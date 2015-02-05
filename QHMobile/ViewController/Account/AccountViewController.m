@@ -12,6 +12,7 @@
 #import "AccountCollectionViewCell.h"
 #import "CollectionCell.h"
 #import "RestRecordViewController.h"
+#import "SimCardInsertViewController.h"
 @interface AccountViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
     NSArray  *_accountArray;
@@ -104,7 +105,10 @@
         RestRecordViewController *restCtrl = [[RestRecordViewController alloc] initWithNibName:@"RestRecordViewController" bundle:nil];
         [self.navigationController pushViewController:restCtrl animated:YES];
     }
-    
+    if (indexPath.row == 1) {
+        SimCardInsertViewController *cardCtrl = [[SimCardInsertViewController alloc] initWithNibName:@"SimCardInsertViewController" bundle:nil];
+        [self.navigationController pushViewController:cardCtrl animated:YES];
+    }
 }
 
 

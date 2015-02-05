@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QHMLoginViewController">
@@ -15,29 +16,36 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="请输入你的ID" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-eR-RqV">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_background" translatesAutoresizingMaskIntoConstraints="NO" id="68T-BF-sv6">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="请输入你的ID" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-eR-RqV">
                     <rect key="frame" x="59" y="192" width="191" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="请输入密码" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dgy-eZ-ic6">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="请输入密码" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dgy-eZ-ic6">
                     <rect key="frame" x="59" y="247" width="191" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="记住密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQ0-BH-owW">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="记住密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQ0-BH-owW">
                     <rect key="frame" x="80" y="301" width="62" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="LQ5-Wh-m2d"/>
+                        <constraint firstAttribute="width" constant="62" id="agD-lT-nYo"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="忘记密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47o-nA-pzl">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="忘记密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47o-nA-pzl">
                     <rect key="frame" x="179" y="301" width="62" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jW8-bA-zvr">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jW8-bA-zvr">
                     <rect key="frame" x="75" y="380" width="166" height="30"/>
                     <color key="backgroundColor" red="1" green="0.8911129834" blue="0.086181563850000004" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="登录">
@@ -47,9 +55,43 @@
                         <action selector="LoginAction:" destination="-1" eventType="touchUpInside" id="hom-oY-fzm"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOa-AM-bOe">
+                    <rect key="frame" x="8" y="456" width="297" height="30"/>
+                    <state key="normal" title="没有帐号？立即注册">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="register:" destination="-1" eventType="touchUpInside" id="xEP-wv-6l6"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="jW8-bA-zvr" firstAttribute="trailing" secondItem="47o-nA-pzl" secondAttribute="trailing" id="1tP-y3-csz"/>
+                <constraint firstItem="0Mf-eR-RqV" firstAttribute="trailing" secondItem="dgy-eZ-ic6" secondAttribute="trailing" id="4ox-mN-nlU"/>
+                <constraint firstItem="0Mf-eR-RqV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="59" id="8kI-Ls-trV"/>
+                <constraint firstItem="dgy-eZ-ic6" firstAttribute="top" secondItem="0Mf-eR-RqV" secondAttribute="bottom" constant="25" id="9NT-uO-dN1"/>
+                <constraint firstAttribute="trailing" secondItem="47o-nA-pzl" secondAttribute="trailing" constant="79" id="FWi-am-kU2"/>
+                <constraint firstItem="OQ0-BH-owW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="Gqs-AJ-0lK"/>
+                <constraint firstItem="OQ0-BH-owW" firstAttribute="top" secondItem="dgy-eZ-ic6" secondAttribute="bottom" constant="24" id="Jhy-jJ-3vt"/>
+                <constraint firstItem="47o-nA-pzl" firstAttribute="leading" secondItem="OQ0-BH-owW" secondAttribute="trailing" constant="37" id="MQQ-7f-SyX"/>
+                <constraint firstItem="68T-BF-sv6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="S0V-cd-CQU"/>
+                <constraint firstItem="jW8-bA-zvr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="75" id="WpF-Ef-f5p"/>
+                <constraint firstItem="0Mf-eR-RqV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="192" id="adK-zm-LnM"/>
+                <constraint firstItem="jW8-bA-zvr" firstAttribute="top" secondItem="OQ0-BH-owW" secondAttribute="bottom" constant="58" id="g4N-vk-Ioe"/>
+                <constraint firstItem="OQ0-BH-owW" firstAttribute="baseline" secondItem="47o-nA-pzl" secondAttribute="baseline" id="iKu-Ea-B26"/>
+                <constraint firstAttribute="trailing" secondItem="0Mf-eR-RqV" secondAttribute="trailing" constant="70" id="jts-dt-S1Q"/>
+                <constraint firstItem="OQ0-BH-owW" firstAttribute="firstBaseline" secondItem="47o-nA-pzl" secondAttribute="firstBaseline" id="jzu-Uq-6gQ"/>
+                <constraint firstAttribute="bottom" secondItem="68T-BF-sv6" secondAttribute="bottom" id="keS-qi-KzZ"/>
+                <constraint firstItem="68T-BF-sv6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mwe-0Z-XjD"/>
+                <constraint firstItem="0Mf-eR-RqV" firstAttribute="leading" secondItem="dgy-eZ-ic6" secondAttribute="leading" id="u6U-tc-K0B"/>
+                <constraint firstAttribute="trailing" secondItem="68T-BF-sv6" secondAttribute="trailing" id="w6s-OC-ufB"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="login_background" width="414" height="736"/>
+    </resources>
 </document>

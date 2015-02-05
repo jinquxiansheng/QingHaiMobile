@@ -16,8 +16,8 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9C7-Hj-MtP">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9C7-Hj-MtP">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -25,14 +25,14 @@
                         <outlet property="delegate" destination="-1" id="JAO-2x-pe3"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiI-Gc-hGy">
+                    <rect key="frame" x="55" y="412" width="226" height="63"/>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="9C7-Hj-MtP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OV2-hC-Anb"/>
-                <constraint firstItem="9C7-Hj-MtP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PYV-AC-8cy"/>
-                <constraint firstAttribute="bottom" secondItem="9C7-Hj-MtP" secondAttribute="bottom" id="TnH-pJ-DLu"/>
-                <constraint firstAttribute="trailing" secondItem="9C7-Hj-MtP" secondAttribute="trailing" id="mSe-L8-9fB"/>
-            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

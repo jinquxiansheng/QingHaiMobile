@@ -71,6 +71,10 @@
 		20CCF7441A81CC3200139EB3 /* CollectionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CCF7431A81CC3200139EB3 /* CollectionDemoTests.m */; };
 		20CCF7801A81D5A500139EB3 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CCF77E1A81D5A500139EB3 /* CollectionCell.m */; };
 		20CCF7811A81D5A500139EB3 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CCF77F1A81D5A500139EB3 /* CollectionCell.xib */; };
+		20DB09A01A83A68900A7999C /* QHRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DB099E1A83A68900A7999C /* QHRegisterViewController.m */; };
+		20DB09A11A83A68900A7999C /* QHRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DB099F1A83A68900A7999C /* QHRegisterViewController.xib */; };
+		20DB09A51A83B63700A7999C /* SimCardInsertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DB09A31A83B63700A7999C /* SimCardInsertViewController.m */; };
+		20DB09A61A83B63700A7999C /* SimCardInsertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DB09A41A83B63700A7999C /* SimCardInsertViewController.xib */; };
 		20E95D621A825F530048CBDC /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E95D601A825F530048CBDC /* AccountViewController.m */; };
 		20E95D631A825F530048CBDC /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E95D611A825F530048CBDC /* AccountViewController.xib */; };
 		20E95D681A825F650048CBDC /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E95D661A825F650048CBDC /* PersonalViewController.m */; };
@@ -227,6 +231,12 @@
 		20CCF77D1A81D5A500139EB3 /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
 		20CCF77E1A81D5A500139EB3 /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
 		20CCF77F1A81D5A500139EB3 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
+		20DB099D1A83A68900A7999C /* QHRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHRegisterViewController.h; sourceTree = "<group>"; };
+		20DB099E1A83A68900A7999C /* QHRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHRegisterViewController.m; sourceTree = "<group>"; };
+		20DB099F1A83A68900A7999C /* QHRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QHRegisterViewController.xib; sourceTree = "<group>"; };
+		20DB09A21A83B63700A7999C /* SimCardInsertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimCardInsertViewController.h; sourceTree = "<group>"; };
+		20DB09A31A83B63700A7999C /* SimCardInsertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimCardInsertViewController.m; sourceTree = "<group>"; };
+		20DB09A41A83B63700A7999C /* SimCardInsertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimCardInsertViewController.xib; sourceTree = "<group>"; };
 		20E95D5F1A825F530048CBDC /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		20E95D601A825F530048CBDC /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		20E95D611A825F530048CBDC /* AccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
@@ -656,6 +666,9 @@
 				20E95D5F1A825F530048CBDC /* AccountViewController.h */,
 				20E95D601A825F530048CBDC /* AccountViewController.m */,
 				20E95D611A825F530048CBDC /* AccountViewController.xib */,
+				20DB09A21A83B63700A7999C /* SimCardInsertViewController.h */,
+				20DB09A31A83B63700A7999C /* SimCardInsertViewController.m */,
+				20DB09A41A83B63700A7999C /* SimCardInsertViewController.xib */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -695,6 +708,9 @@
 				20EC14101A810FD700E17D57 /* QHMLoginViewController.h */,
 				20EC14111A810FD700E17D57 /* QHMLoginViewController.m */,
 				20EC14121A810FD700E17D57 /* QHMLoginViewController.xib */,
+				20DB099D1A83A68900A7999C /* QHRegisterViewController.h */,
+				20DB099E1A83A68900A7999C /* QHRegisterViewController.m */,
+				20DB099F1A83A68900A7999C /* QHRegisterViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -855,11 +871,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				20EC14141A810FD700E17D57 /* QHMLoginViewController.xib in Resources */,
+				20DB09A11A83A68900A7999C /* QHRegisterViewController.xib in Resources */,
 				20B0D7E11A7F4A3F00462D6F /* InfoPlist.strings in Resources */,
 				20B0D88F1A7F4A6A00462D6F /* TestTableViewCell.xib in Resources */,
 				20CCF7811A81D5A500139EB3 /* CollectionCell.xib in Resources */,
 				20B0D87F1A7F4A6A00462D6F /* Test2ViewController.xib in Resources */,
 				20EC14261A812E6900E17D57 /* CheckWorkAttention.xib in Resources */,
+				20DB09A61A83B63700A7999C /* SimCardInsertViewController.xib in Resources */,
 				206FDCEC1A7F519E00D09416 /* MJRefresh.bundle in Resources */,
 				20B0D8811A7F4A6A00462D6F /* TestViewController.xib in Resources */,
 				20B0D7E91A7F4A3F00462D6F /* Images.xcassets in Resources */,
@@ -947,6 +965,7 @@
 				200732F31A83111900E9D0C0 /* AccountCollectionViewCell.m in Sources */,
 				20B0D86F1A7F4A6A00462D6F /* UIView+Helpers.m in Sources */,
 				20B0D87D1A7F4A6A00462D6F /* NavBaseViewController.m in Sources */,
+				20DB09A01A83A68900A7999C /* QHRegisterViewController.m in Sources */,
 				20CCF7801A81D5A500139EB3 /* CollectionCell.m in Sources */,
 				20B0D8731A7F4A6A00462D6F /* BaseCore.m in Sources */,
 				20B0D87E1A7F4A6A00462D6F /* Test2ViewController.m in Sources */,
@@ -990,6 +1009,7 @@
 				20B0D8781A7F4A6A00462D6F /* BaseModel.m in Sources */,
 				20B0D8671A7F4A6A00462D6F /* AdImageView.m in Sources */,
 				20B0D8901A7F4A6A00462D6F /* TestView2.m in Sources */,
+				20DB09A51A83B63700A7999C /* SimCardInsertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

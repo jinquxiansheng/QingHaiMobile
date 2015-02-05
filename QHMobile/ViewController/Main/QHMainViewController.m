@@ -62,16 +62,19 @@ static  const  CGFloat   tabHeight = 48;
     
     self.tabBarHidden = YES;
     NSArray *buttonTextArray = @[@"首页",@"考勤",@"台帐",@"我的"];
+    NSArray *buttonImgArray = @[@"nav_home",@"nav_kaoqin",@"nav_taizhang",@"nav_my"];
+    NSArray *buttonImgOnArray = @[@"nav_home_on",@"nav_kaoqin_on",@"nav_taizhang_on",@"nav_my_on"];
     CGFloat btnWidth = SCREENWIDTH / buttonTextArray.count;
     CGFloat x  = 0;
     for (int i = 0; i < buttonTextArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(x, 0, btnWidth, 48);
-       // [button setImageEdgeInsets:UIEdgeInsetsMake(-20, 0, 0, 0)];
+        [button setImageEdgeInsets:UIEdgeInsetsMake(0, 25, 0, 0)];
         button.tag = i;
         button.backgroundColor = [UIColor clearColor];
         [button setTitle:[buttonTextArray objectAtIndex:i] forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:@"home_normal"]  forState:UIControlStateNormal] ;
+        [button setImage:[UIImage imageNamed:buttonImgArray[i]]  forState:UIControlStateNormal] ;
+         [button setImage:[UIImage imageNamed:buttonImgOnArray[i]]  forState:UIControlStateHighlighted] ;
         button.titleLabel.textColor = [UIColor blackColor];
         button.titleLabel.font = [UIFont systemFontOfSize:15];
         [button addTarget:self action:@selector(selectedTab:) forControlEvents:UIControlEventTouchUpInside];

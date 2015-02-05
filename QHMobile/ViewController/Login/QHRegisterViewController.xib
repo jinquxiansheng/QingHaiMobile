@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QHRegisterViewController">
+            <connections>
+                <outlet property="baseTableView" destination="Afo-jz-gaE" id="wpe-9a-2rS"/>
+                <outlet property="registerBtn" destination="DHu-eh-baz" id="gfh-Yb-yHc"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Afo-jz-gaE">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="354"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="354" id="mUT-jF-qWe"/>
+                        <constraint firstAttribute="width" constant="320" id="pj5-Ky-yqF"/>
+                    </constraints>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="mKo-cE-NHL"/>
+                        <outlet property="delegate" destination="-1" id="722-oD-5Uw"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHu-eh-baz">
+                    <rect key="frame" x="63" y="417" width="191" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="191" id="4w7-8q-fk3"/>
+                        <constraint firstAttribute="height" constant="48" id="gTd-qc-9Y0"/>
+                    </constraints>
+                    <state key="normal" title="注册并登录">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="goRegister:" destination="-1" eventType="touchUpInside" id="smY-GW-vfJ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="DHu-eh-baz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="63" id="PGb-ce-bSJ"/>
+                <constraint firstItem="Afo-jz-gaE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="W0i-VD-bYX"/>
+                <constraint firstAttribute="trailing" secondItem="DHu-eh-baz" secondAttribute="trailing" constant="66" id="eJE-Cf-SNZ"/>
+                <constraint firstItem="DHu-eh-baz" firstAttribute="top" secondItem="Afo-jz-gaE" secondAttribute="bottom" constant="63" id="nwN-U9-kL7"/>
+                <constraint firstAttribute="trailing" secondItem="Afo-jz-gaE" secondAttribute="trailing" id="sWG-6N-kUs"/>
+                <constraint firstItem="Afo-jz-gaE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tcR-3a-UaJ"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

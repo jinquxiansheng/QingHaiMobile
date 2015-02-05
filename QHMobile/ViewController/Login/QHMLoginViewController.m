@@ -8,8 +8,11 @@
 
 #import "QHMLoginViewController.h"
 #import "QHMainViewController.h"
+#import "QHRegisterViewController.h"
+#import "NavBaseViewController.h"
 @interface QHMLoginViewController ()
 - (IBAction)LoginAction:(id)sender;
+- (IBAction)register:(id)sender;
 
 @end
 
@@ -19,13 +22,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor colorWithHex:0xFF004da3];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [theUICore hiddenLoginNav:YES];
 
+}
 /*
 #pragma mark - Navigation
 
@@ -39,6 +48,13 @@
 - (IBAction)LoginAction:(id)sender {
     QHMainViewController *qhCtrl = [[QHMainViewController alloc] initWithNibName:@"QHMLoginViewController" bundle:nil];
     [self presentViewController:qhCtrl animated:YES completion:nil];
+    
+}
+
+- (IBAction)register:(id)sender {
+    QHRegisterViewController *registerCtrl = [[QHRegisterViewController alloc] initWithNibName:@"QHRegisterViewController" bundle:nil];
+    
+    [theUICore.loginNav pushViewController:registerCtrl animated:YES];
     
 }
 @end

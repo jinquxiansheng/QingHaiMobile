@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view from its nib.
     [self customNavigationHeadTitle:@"请假记录"];
     [self customNavigationBack:@"dading" normalImage:@"sort" highlightImage:@""];
+    self.navigationController.navigationBarHidden = NO;
 }
 - (void)viewWillAppear:(BOOL)animated
 {

@@ -32,10 +32,13 @@
     if (IOS6) {
         imageName = @"nav_bg_ios6.png";
     }
+    //状态栏和导航栏一体
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:imageName] forBarMetrics:UIBarMetricsDefault];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];//黑体白字
     QHMLoginViewController *loginCtrl = [[QHMLoginViewController alloc] initWithNibName:@"QHMLoginViewController" bundle:nil];
-    self.window.rootViewController = loginCtrl;
+    UINavigationController *loginNav = [[UINavigationController alloc] initWithRootViewController:loginCtrl];
+    self.window.rootViewController = loginNav;
+    theUICore.loginNav = loginNav;
     
     [[BaseCore shareBaseCore] configBaseCoreInfo];
     if (![[InteralCache shareInteralCache] firstStart]) {
