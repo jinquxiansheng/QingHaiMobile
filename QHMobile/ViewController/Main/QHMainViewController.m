@@ -67,7 +67,7 @@ static  const  CGFloat   tabHeight = 48;
     for (int i = 0; i < buttonTextArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = CGRectMake(x, 0, btnWidth, 48);
-        [button setImageEdgeInsets:UIEdgeInsetsMake(-20, 0, 0, 0)];
+       // [button setImageEdgeInsets:UIEdgeInsetsMake(-20, 0, 0, 0)];
         button.tag = i;
         button.backgroundColor = [UIColor clearColor];
         [button setTitle:[buttonTextArray objectAtIndex:i] forState:UIControlStateNormal];
