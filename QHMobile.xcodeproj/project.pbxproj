@@ -75,6 +75,10 @@
 		20D776B91A861D390039ADA8 /* GlobalCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D776B81A861D390039ADA8 /* GlobalCellTableViewCell.m */; };
 		20D776BD1A8621300039ADA8 /* RegisterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D776BC1A8621300039ADA8 /* RegisterCell.m */; };
 		20D776C01A862A7B0039ADA8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D776BF1A862A7B0039ADA8 /* SecondViewController.m */; };
+		20D7B3EF1A8756AF00561F5A /* PersonalViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D7B3EE1A8756AF00561F5A /* PersonalViewCell.m */; };
+		20D7B3F31A8785AA00561F5A /* LeaveApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D7B3F11A8785AA00561F5A /* LeaveApplicationViewController.m */; };
+		20D7B3F41A8785AA00561F5A /* LeaveApplicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20D7B3F21A8785AA00561F5A /* LeaveApplicationViewController.xib */; };
+		20D7B3F71A87861000561F5A /* LeaveApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D7B3F61A87861000561F5A /* LeaveApplicationCell.m */; };
 		20DB09A01A83A68900A7999C /* QHRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DB099E1A83A68900A7999C /* QHRegisterViewController.m */; };
 		20DB09A11A83A68900A7999C /* QHRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DB099F1A83A68900A7999C /* QHRegisterViewController.xib */; };
 		20DB09A51A83B63700A7999C /* SimCardInsertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DB09A31A83B63700A7999C /* SimCardInsertViewController.m */; };
@@ -243,6 +247,13 @@
 		20D776BC1A8621300039ADA8 /* RegisterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterCell.m; sourceTree = "<group>"; };
 		20D776BE1A862A7B0039ADA8 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		20D776BF1A862A7B0039ADA8 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		20D7B3ED1A8756AF00561F5A /* PersonalViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalViewCell.h; sourceTree = "<group>"; };
+		20D7B3EE1A8756AF00561F5A /* PersonalViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewCell.m; sourceTree = "<group>"; };
+		20D7B3F01A8785AA00561F5A /* LeaveApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaveApplicationViewController.h; sourceTree = "<group>"; };
+		20D7B3F11A8785AA00561F5A /* LeaveApplicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaveApplicationViewController.m; sourceTree = "<group>"; };
+		20D7B3F21A8785AA00561F5A /* LeaveApplicationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaveApplicationViewController.xib; sourceTree = "<group>"; };
+		20D7B3F51A87861000561F5A /* LeaveApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaveApplicationCell.h; sourceTree = "<group>"; };
+		20D7B3F61A87861000561F5A /* LeaveApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaveApplicationCell.m; sourceTree = "<group>"; };
 		20DB099D1A83A68900A7999C /* QHRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHRegisterViewController.h; sourceTree = "<group>"; };
 		20DB099E1A83A68900A7999C /* QHRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHRegisterViewController.m; sourceTree = "<group>"; };
 		20DB099F1A83A68900A7999C /* QHRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QHRegisterViewController.xib; sourceTree = "<group>"; };
@@ -686,6 +697,15 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		20D7B3EC1A87568900561F5A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				20D7B3ED1A8756AF00561F5A /* PersonalViewCell.h */,
+				20D7B3EE1A8756AF00561F5A /* PersonalViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		20E95D5E1A825F530048CBDC /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -703,6 +723,7 @@
 		20E95D641A825F650048CBDC /* Personal */ = {
 			isa = PBXGroup;
 			children = (
+				20D7B3EC1A87568900561F5A /* Cell */,
 				20E95D651A825F650048CBDC /* PersonalViewController.h */,
 				20E95D661A825F650048CBDC /* PersonalViewController.m */,
 				20E95D671A825F650048CBDC /* PersonalViewController.xib */,
@@ -725,6 +746,8 @@
 				20E95D7A1A8273160048CBDC /* RestRecordViewCell.h */,
 				20E95D7B1A8273160048CBDC /* RestRecordViewCell.m */,
 				20E95D7C1A8273160048CBDC /* RestRecordViewCell.xib */,
+				20D7B3F51A87861000561F5A /* LeaveApplicationCell.h */,
+				20D7B3F61A87861000561F5A /* LeaveApplicationCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -753,6 +776,9 @@
 				20E95D741A8272D50048CBDC /* RestRecordViewController.h */,
 				20E95D751A8272D50048CBDC /* RestRecordViewController.m */,
 				20E95D761A8272D50048CBDC /* RestRecordViewController.xib */,
+				20D7B3F01A8785AA00561F5A /* LeaveApplicationViewController.h */,
+				20D7B3F11A8785AA00561F5A /* LeaveApplicationViewController.m */,
+				20D7B3F21A8785AA00561F5A /* LeaveApplicationViewController.xib */,
 			);
 			path = CheckWork;
 			sourceTree = "<group>";
@@ -898,6 +924,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20D7B3F41A8785AA00561F5A /* LeaveApplicationViewController.xib in Resources */,
 				20EC14141A810FD700E17D57 /* QHMLoginViewController.xib in Resources */,
 				20DB09A11A83A68900A7999C /* QHRegisterViewController.xib in Resources */,
 				20B0D7E11A7F4A3F00462D6F /* InfoPlist.strings in Resources */,
@@ -990,6 +1017,7 @@
 				20EC14251A812E6900E17D57 /* CheckWorkAttention.m in Sources */,
 				20B0D87C1A7F4A6A00462D6F /* BaseViewController.m in Sources */,
 				206FDCEF1A7F519E00D09416 /* MJRefreshFooterView.m in Sources */,
+				20D7B3F71A87861000561F5A /* LeaveApplicationCell.m in Sources */,
 				200732F31A83111900E9D0C0 /* AccountCollectionViewCell.m in Sources */,
 				20B0D86F1A7F4A6A00462D6F /* UIView+Helpers.m in Sources */,
 				20B0D87D1A7F4A6A00462D6F /* NavBaseViewController.m in Sources */,
@@ -1002,6 +1030,7 @@
 				20B0D8721A7F4A6A00462D6F /* HttpCallBack.m in Sources */,
 				20B0D8751A7F4A6A00462D6F /* DataManager.m in Sources */,
 				20E95D721A826E3A0048CBDC /* MoreViewController.m in Sources */,
+				20D7B3EF1A8756AF00561F5A /* PersonalViewCell.m in Sources */,
 				20B0D86C1A7F4A6A00462D6F /* UIImage+Additions.m in Sources */,
 				20B0D87A1A7F4A6A00462D6F /* EasyAccessTokenRequest.m in Sources */,
 				206FDCF11A7F519E00D09416 /* UIScrollView+Extension.m in Sources */,
@@ -1031,6 +1060,7 @@
 				206FDCF21A7F519E00D09416 /* UIScrollView+MJRefresh.m in Sources */,
 				20B0D8771A7F4A6A00462D6F /* UserManager.m in Sources */,
 				20B0D7E31A7F4A3F00462D6F /* main.m in Sources */,
+				20D7B3F31A8785AA00561F5A /* LeaveApplicationViewController.m in Sources */,
 				20E95D6D1A826B900048CBDC /* PersonDetailViewController.m in Sources */,
 				20B0D8791A7F4A6A00462D6F /* BrandModel.m in Sources */,
 				20E95D621A825F530048CBDC /* AccountViewController.m in Sources */,

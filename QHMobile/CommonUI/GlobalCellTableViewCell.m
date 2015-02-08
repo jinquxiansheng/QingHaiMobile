@@ -11,7 +11,6 @@
 {
     
 }
-@property (nonatomic,strong)UIView  *sepLine;
 @end
 @implementation GlobalCellTableViewCell
 
@@ -50,6 +49,13 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+- (void)configCellContent:(NSInteger)row
+{}
+- (void)layoutSubViewsOnCell:(NSInteger) row
+{
+    _sepLine.frame = CGRectMake(0, _cellHeight - 1, SCREENWIDTH, 1);
+
 }
 
 @end

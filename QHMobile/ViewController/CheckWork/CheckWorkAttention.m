@@ -9,6 +9,7 @@
 #import "CheckWorkAttention.h"
 #import "KQCollectionCell.h"
 #import "RestRecordViewController.h"
+#import "LeaveApplicationViewController.h"
 @interface CheckWorkAttention ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
     NSArray  *_checkArray;
@@ -98,9 +99,23 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
-        RestRecordViewController *restCtrl = [[RestRecordViewController alloc] initWithNibName:@"RestRecordViewController" bundle:nil];
-        [self.navigationController pushViewController:restCtrl animated:YES];
+
+    switch (indexPath.row) {
+        case 0:
+        {
+            //请假申请
+            RestRecordViewController *restCtrl = [[RestRecordViewController alloc] initWithNibName:@"RestRecordViewController" bundle:nil];
+            [self.navigationController pushViewController:restCtrl animated:YES];
+            break;
+        }
+        case 1:
+        {
+           //加班申请
+            LeaveApplicationViewController *leaveCtrl = [[LeaveApplicationViewController alloc] initWithNibName:@"LeaveApplicationViewController" bundle:nil];
+            [self.navigationController pushViewController:leaveCtrl animated:YES];
+        }
+        default:
+            break;
     }
     
 }

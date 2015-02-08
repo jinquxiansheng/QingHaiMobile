@@ -12,5 +12,8 @@
 @property (nonatomic,strong) UILabel    *title;
 @property (nonatomic,strong) UILabel    *content;
 @property (nonatomic,assign) CGFloat    cellHeight;
+@property (nonatomic,strong)UIView      *sepLine;
+
 - (void)configCellContent:(NSInteger) row ;
+- (void)layoutSubViewsOnCell:(NSInteger) row ;
 @end

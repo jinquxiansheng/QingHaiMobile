@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface RestRecordViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIView *headView;
+@property (weak, nonatomic) IBOutlet UILabel *title;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIView *reasonView;
+
+@property (weak, nonatomic) IBOutlet UITextView *content;
 
 @end

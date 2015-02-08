@@ -9,6 +9,7 @@
 #import "PersonalViewController.h"
 #import "PersonDetailViewController.h"
 #import "MoreViewController.h"
+#import "PersonalViewCell.h"
 @interface PersonalViewController ()
 
 @end
@@ -19,19 +20,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self customNavigationHeadTitle:@"个人信息"];
-    
-    UIView *personInfoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 200)];
+    CGFloat bgHeight = 200;
+    UIView *personInfoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, bgHeight)];
   // [personInfoView addPaddingConstraintsWithSuperView:self.baseTableView.tableHeaderView top:0 bottom:0 left:0 right:9];
     personInfoView.backgroundColor = [UIColor lightGrayColor];
     self.baseTableView.tableHeaderView = personInfoView ;
 //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToMore:)];
 //    [personInfoView addGestureRecognizer:tap];
     
+    UIImageView *bgImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, bgHeight)];
+    bgImage.backgroundColor = [UIColor clearColor];
+    [personInfoView addSubview:bgImage];
     //头像
-    UIView *personHeadView = [[UIView alloc] init];
+    CGFloat headWidth = 120;
+    UIImageView *personHeadView = [[UIImageView alloc] init];
     personHeadView.backgroundColor = [UIColor yellowColor];
+    [personHeadView setImage:[UIImage imageNamed:@"key"]];
     [personInfoView addSubview:personHeadView];
-    [personHeadView addWHConstraintsWithSuperView:personInfoView width:120 height:120];
+    personHeadView.layer.masksToBounds = YES;
+    personHeadView.layer.cornerRadius = headWidth / 2;
+    [personHeadView addWHConstraintsWithSuperView:personInfoView width:headWidth height:120];
     [personHeadView addPaddingConstraintsWithSuperView:personInfoView top:20 bottom:CGFLOAT_CONSTRAINTS_INVALID left:CGFLOAT_CONSTRAINTS_INVALID right:CGFLOAT_CONSTRAINTS_INVALID];
     [personHeadView setEdge:personInfoView attr:NSLayoutAttributeCenterX constant:0];
     
@@ -98,15 +106,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellID = @"BrandTableViewCell";
-    UITableViewCell *cell   = [tableView dequeueReusableCellWithIdentifier:cellID];
+    PersonalViewCell *cell   = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+        cell = [[PersonalViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+        cell.cellHeight = 50 ;
 //        //        cell.backgroundColor = [UIColor clearColor];
 //        NSArray *nibs = [[NSBundle mainBundle]loadNibNamed:@"TestTableViewCell" owner:nil options:nil];
 //        cell = [nibs lastObject];
 //        cell.backgroundColor = [UIColor clearColor];
-        
+        [cell configCellContent:indexPath.row];
     }
     if (indexPath.row == 0) {
         cell.textLabel.text = @"分享到";

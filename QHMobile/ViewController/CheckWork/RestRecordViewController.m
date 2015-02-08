@@ -42,15 +42,15 @@
 */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 210;
+    return 190;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 2;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellID = @"BrandTableViewCell";
+    static NSString *cellID = @"RestRecordViewCell";
     RestRecordViewCell *cell   = [tableView dequeueReusableCellWithIdentifier:cellID];
     //cell的高度是动态变化的
     if (cell == nil)
@@ -58,7 +58,6 @@
         //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
         NSArray *nibs = [[NSBundle mainBundle]loadNibNamed:@"RestRecordViewCell" owner:nil options:nil];
         cell = [nibs lastObject];
-        cell.backgroundColor = [UIColor yellowColor];
     }
     return cell;
 }
