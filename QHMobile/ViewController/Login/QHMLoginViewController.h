@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QHMLoginViewController : UIViewController
+@interface QHMLoginViewController : UIViewController<UITextFieldDelegate>
 
 @end

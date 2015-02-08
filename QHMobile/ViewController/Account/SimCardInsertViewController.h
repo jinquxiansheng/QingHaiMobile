@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 yao. All rights reserved.
 //
 
-#import "BaseViewController.h"
-@interface SimCardInsertViewController : BaseViewController
+#import "SecondViewController.h"
+@interface SimCardInsertViewController : SecondViewController
 
 @end

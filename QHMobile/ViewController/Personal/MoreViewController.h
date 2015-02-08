@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 yao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "SecondViewController.h"
 
-@interface MoreViewController : BaseViewController
+@interface MoreViewController : SecondViewController
 
 @end

@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 yao. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "SecondViewController.h"
 
-@interface QHRegisterViewController : BaseViewController
+@interface QHRegisterViewController : SecondViewController
 
 @end

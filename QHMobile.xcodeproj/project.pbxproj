@@ -69,8 +69,12 @@
 		20CCF7351A81CC3200139EB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20CCF7341A81CC3200139EB3 /* Images.xcassets */; };
 		20CCF7381A81CC3200139EB3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CCF7361A81CC3200139EB3 /* LaunchScreen.xib */; };
 		20CCF7441A81CC3200139EB3 /* CollectionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CCF7431A81CC3200139EB3 /* CollectionDemoTests.m */; };
-		20CCF7801A81D5A500139EB3 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CCF77E1A81D5A500139EB3 /* CollectionCell.m */; };
-		20CCF7811A81D5A500139EB3 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CCF77F1A81D5A500139EB3 /* CollectionCell.xib */; };
+		20CCF7801A81D5A500139EB3 /* KQCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CCF77E1A81D5A500139EB3 /* KQCollectionCell.m */; };
+		20CCF7811A81D5A500139EB3 /* KQCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CCF77F1A81D5A500139EB3 /* KQCollectionCell.xib */; };
+		20D776B61A86169A0039ADA8 /* CheckButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D776B51A86169A0039ADA8 /* CheckButton.m */; };
+		20D776B91A861D390039ADA8 /* GlobalCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D776B81A861D390039ADA8 /* GlobalCellTableViewCell.m */; };
+		20D776BD1A8621300039ADA8 /* RegisterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D776BC1A8621300039ADA8 /* RegisterCell.m */; };
+		20D776C01A862A7B0039ADA8 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D776BF1A862A7B0039ADA8 /* SecondViewController.m */; };
 		20DB09A01A83A68900A7999C /* QHRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DB099E1A83A68900A7999C /* QHRegisterViewController.m */; };
 		20DB09A11A83A68900A7999C /* QHRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DB099F1A83A68900A7999C /* QHRegisterViewController.xib */; };
 		20DB09A51A83B63700A7999C /* SimCardInsertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DB09A31A83B63700A7999C /* SimCardInsertViewController.m */; };
@@ -228,9 +232,17 @@
 		20CCF73D1A81CC3200139EB3 /* CollectionDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20CCF7421A81CC3200139EB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20CCF7431A81CC3200139EB3 /* CollectionDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionDemoTests.m; sourceTree = "<group>"; };
-		20CCF77D1A81D5A500139EB3 /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
-		20CCF77E1A81D5A500139EB3 /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
-		20CCF77F1A81D5A500139EB3 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
+		20CCF77D1A81D5A500139EB3 /* KQCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KQCollectionCell.h; sourceTree = "<group>"; };
+		20CCF77E1A81D5A500139EB3 /* KQCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KQCollectionCell.m; sourceTree = "<group>"; };
+		20CCF77F1A81D5A500139EB3 /* KQCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KQCollectionCell.xib; sourceTree = "<group>"; };
+		20D776B41A86169A0039ADA8 /* CheckButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckButton.h; sourceTree = "<group>"; };
+		20D776B51A86169A0039ADA8 /* CheckButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckButton.m; sourceTree = "<group>"; };
+		20D776B71A861D390039ADA8 /* GlobalCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalCellTableViewCell.h; sourceTree = "<group>"; };
+		20D776B81A861D390039ADA8 /* GlobalCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalCellTableViewCell.m; sourceTree = "<group>"; };
+		20D776BB1A8621300039ADA8 /* RegisterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterCell.h; sourceTree = "<group>"; };
+		20D776BC1A8621300039ADA8 /* RegisterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterCell.m; sourceTree = "<group>"; };
+		20D776BE1A862A7B0039ADA8 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		20D776BF1A862A7B0039ADA8 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		20DB099D1A83A68900A7999C /* QHRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHRegisterViewController.h; sourceTree = "<group>"; };
 		20DB099E1A83A68900A7999C /* QHRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHRegisterViewController.m; sourceTree = "<group>"; };
 		20DB099F1A83A68900A7999C /* QHRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QHRegisterViewController.xib; sourceTree = "<group>"; };
@@ -442,6 +454,10 @@
 				20B0D8091A7F4A6A00462D6F /* CommonUI.m */,
 				20B0D80A1A7F4A6A00462D6F /* NoNetView.h */,
 				20B0D80B1A7F4A6A00462D6F /* NoNetView.m */,
+				20D776B41A86169A0039ADA8 /* CheckButton.h */,
+				20D776B51A86169A0039ADA8 /* CheckButton.m */,
+				20D776B71A861D390039ADA8 /* GlobalCellTableViewCell.h */,
+				20D776B81A861D390039ADA8 /* GlobalCellTableViewCell.m */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -583,6 +599,8 @@
 			children = (
 				20B0D8401A7F4A6A00462D6F /* BaseViewController.h */,
 				20B0D8411A7F4A6A00462D6F /* BaseViewController.m */,
+				20D776BE1A862A7B0039ADA8 /* SecondViewController.h */,
+				20D776BF1A862A7B0039ADA8 /* SecondViewController.m */,
 				20B0D8421A7F4A6A00462D6F /* NavBaseViewController.h */,
 				20B0D8431A7F4A6A00462D6F /* NavBaseViewController.m */,
 				20B0D8441A7F4A6A00462D6F /* Test2ViewController.h */,
@@ -659,6 +677,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		20D776BA1A8621140039ADA8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				20D776BB1A8621300039ADA8 /* RegisterCell.h */,
+				20D776BC1A8621300039ADA8 /* RegisterCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		20E95D5E1A825F530048CBDC /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -692,9 +719,9 @@
 		20E95D791A8272DC0048CBDC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				20CCF77D1A81D5A500139EB3 /* CollectionCell.h */,
-				20CCF77E1A81D5A500139EB3 /* CollectionCell.m */,
-				20CCF77F1A81D5A500139EB3 /* CollectionCell.xib */,
+				20CCF77D1A81D5A500139EB3 /* KQCollectionCell.h */,
+				20CCF77E1A81D5A500139EB3 /* KQCollectionCell.m */,
+				20CCF77F1A81D5A500139EB3 /* KQCollectionCell.xib */,
 				20E95D7A1A8273160048CBDC /* RestRecordViewCell.h */,
 				20E95D7B1A8273160048CBDC /* RestRecordViewCell.m */,
 				20E95D7C1A8273160048CBDC /* RestRecordViewCell.xib */,
@@ -705,6 +732,7 @@
 		20EC140F1A810FAD00E17D57 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				20D776BA1A8621140039ADA8 /* Cell */,
 				20EC14101A810FD700E17D57 /* QHMLoginViewController.h */,
 				20EC14111A810FD700E17D57 /* QHMLoginViewController.m */,
 				20EC14121A810FD700E17D57 /* QHMLoginViewController.xib */,
@@ -874,7 +902,7 @@
 				20DB09A11A83A68900A7999C /* QHRegisterViewController.xib in Resources */,
 				20B0D7E11A7F4A3F00462D6F /* InfoPlist.strings in Resources */,
 				20B0D88F1A7F4A6A00462D6F /* TestTableViewCell.xib in Resources */,
-				20CCF7811A81D5A500139EB3 /* CollectionCell.xib in Resources */,
+				20CCF7811A81D5A500139EB3 /* KQCollectionCell.xib in Resources */,
 				20B0D87F1A7F4A6A00462D6F /* Test2ViewController.xib in Resources */,
 				20EC14261A812E6900E17D57 /* CheckWorkAttention.xib in Resources */,
 				20DB09A61A83B63700A7999C /* SimCardInsertViewController.xib in Resources */,
@@ -966,7 +994,8 @@
 				20B0D86F1A7F4A6A00462D6F /* UIView+Helpers.m in Sources */,
 				20B0D87D1A7F4A6A00462D6F /* NavBaseViewController.m in Sources */,
 				20DB09A01A83A68900A7999C /* QHRegisterViewController.m in Sources */,
-				20CCF7801A81D5A500139EB3 /* CollectionCell.m in Sources */,
+				20CCF7801A81D5A500139EB3 /* KQCollectionCell.m in Sources */,
+				20D776BD1A8621300039ADA8 /* RegisterCell.m in Sources */,
 				20B0D8731A7F4A6A00462D6F /* BaseCore.m in Sources */,
 				20B0D87E1A7F4A6A00462D6F /* Test2ViewController.m in Sources */,
 				20B0D8761A7F4A6A00462D6F /* TestManager.m in Sources */,
@@ -984,6 +1013,7 @@
 				20B0D8711A7F4A6A00462D6F /* UncaughtExceptionHandler.m in Sources */,
 				20B0D88D1A7F4A6A00462D6F /* BaseView.m in Sources */,
 				20B0D7E71A7F4A3F00462D6F /* AppDelegate.m in Sources */,
+				20D776B91A861D390039ADA8 /* GlobalCellTableViewCell.m in Sources */,
 				20B0D86D1A7F4A6A00462D6F /* UITabBarController+HideTabBar.m in Sources */,
 				20B0D88E1A7F4A6A00462D6F /* TestTableViewCell.m in Sources */,
 				206FDCEE1A7F519E00D09416 /* MJRefreshConst.m in Sources */,
@@ -1008,7 +1038,9 @@
 				20B0D8801A7F4A6A00462D6F /* TestViewController.m in Sources */,
 				20B0D8781A7F4A6A00462D6F /* BaseModel.m in Sources */,
 				20B0D8671A7F4A6A00462D6F /* AdImageView.m in Sources */,
+				20D776C01A862A7B0039ADA8 /* SecondViewController.m in Sources */,
 				20B0D8901A7F4A6A00462D6F /* TestView2.m in Sources */,
+				20D776B61A86169A0039ADA8 /* CheckButton.m in Sources */,
 				20DB09A51A83B63700A7999C /* SimCardInsertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

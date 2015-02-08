@@ -7,7 +7,7 @@
 //
 
 #import "PersonDetailViewController.h"
-
+#import "GlobalCellTableViewCell.h"
 @interface PersonDetailViewController ()
 
 {
@@ -22,8 +22,8 @@
     // Do any additional setup after loading the view from its nib.
     _personDetailArray = @[@"姓名:",@"手机号:",@"邮箱:",@"部门:",@"工号"];
     [self customNavigationHeadTitle:@"个人信息"];
-    [self customNavigationBack:@"dading" normalImage:@"like" highlightImage:@""];
-    [self customNavigationDone:@"完成" normalImage:@"" highlightImage:@""];
+    self.cellHeight = 50;
+    
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -48,7 +48,7 @@
 */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return self.cellHeight;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -56,16 +56,12 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellID = @"BrandTableViewCell";
-    UITableViewCell *cell   = [tableView dequeueReusableCellWithIdentifier:cellID];
+    static NSString *cellID = @"GlobalCellTableViewCell";
+    GlobalCellTableViewCell *cell   = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
-        //        //        cell.backgroundColor = [UIColor clearColor];
-        //        NSArray *nibs = [[NSBundle mainBundle]loadNibNamed:@"TestTableViewCell" owner:nil options:nil];
-        //        cell = [nibs lastObject];
-        //        cell.backgroundColor = [UIColor clearColor];
-        
+        cell = [[GlobalCellTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+        cell.cellHeight = self.cellHeight;
     }
     cell.textLabel.text = _personDetailArray [indexPath.row] ;
     return cell;

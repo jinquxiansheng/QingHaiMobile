@@ -10,12 +10,14 @@
 #import "Test2ViewController.h"
 #import "QHMainViewController.h"
 #import "AccountCollectionViewCell.h"
-#import "CollectionCell.h"
+#import "KQCollectionCell.h"
 #import "RestRecordViewController.h"
 #import "SimCardInsertViewController.h"
 @interface AccountViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
     NSArray  *_accountArray;
+    CGFloat   _cellWidth;
+    CGFloat   _cellHeight;
 }
 @end
 
@@ -35,11 +37,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self customNavigationHeadTitle:@"账户信息"];
-    [self customNavigationBack:@"dading" normalImage:@"like" highlightImage:@""];
-    [self customNavigationDone:@"完成" normalImage:@"" highlightImage:@""];
     
     [self.collectionView registerClass:[AccountCollectionViewCell class] forCellWithReuseIdentifier:@"AccountCollectionViewCell"];
     _accountArray = @[@"现金台帐",@"SIM卡台帐",@"有价卡台帐",@"现金台帐",@"SIM卡台帐",@"有价卡台帐",@"现金台帐",@"SIM卡台帐"];
+    self.collectionView.backgroundColor = [UIColor colorWithHex:0xFFECECEC];
+
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -72,24 +74,26 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //NSLog(@"%d",SCREENWIDTH);
-    CGFloat cellWidth = SCREENWIDTH / 3 ;
+    _cellWidth = SCREENWIDTH / 3 ;
+    _cellHeight = 130;
+    
     if (iPhone6 || iPhone6Plus) {
-        cellWidth -= 1;
+        _cellWidth -= 1;
+        _cellHeight += 10;
     }
-    return CGSizeMake(cellWidth, 105);
+    return CGSizeMake(_cellWidth, _cellHeight);
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     AccountCollectionViewCell *cell = (AccountCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"AccountCollectionViewCell" forIndexPath:indexPath];
-    
-    //图片名称
-    // NSString *imageToLoad = [NSString stringWithFormat:@"%d.png", indexPath.row];
-    //加载图片
-    // cell.imageView.image = [UIImage imageNamed:imageToLoad];
-    //设置label文字
+    cell.cellWidth = _cellWidth;
+    cell.cellHeight = _cellHeight;
+    [cell configCollectionCellContent:indexPath.row];
     cell.label.text = _accountArray[indexPath.row];
-    cell.label.backgroundColor = [UIColor yellowColor];
-    
+    UIView *selectView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, _cellHeight)];
+    selectView.backgroundColor = [UIColor whiteColor];
+    cell.selectedBackgroundView = selectView;
+
     return cell;
     
 }

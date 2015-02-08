@@ -7,7 +7,7 @@
 //
 
 #import "MoreViewController.h"
-
+#import "GlobalCellTableViewCell.h"
 @interface MoreViewController ()
 {
     NSArray   *_tipArray;
@@ -21,8 +21,7 @@
     // Do any additional setup after loading the view from its nib.
     _tipArray = @[@"打开声音",@"上班打卡提醒",@"下班打卡提醒",@"填写日志提醒"];
     [self customNavigationHeadTitle:@"更多"];
-    [self customNavigationBack:@"dading" normalImage:@"like" highlightImage:@""];
-    [self customNavigationDone:@"完成" normalImage:@"" highlightImage:@""];
+    self.cellHeight = 50;
 
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -48,7 +47,7 @@
 */
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return self.cellHeight;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -56,11 +55,12 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellID = @"BrandTableViewCell";
-    UITableViewCell *cell   = [tableView dequeueReusableCellWithIdentifier:cellID];
+    static NSString *cellID = @"GlobalCellTableViewCell";
+    GlobalCellTableViewCell *cell   = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+        cell = [[GlobalCellTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+        cell.cellHeight = 50;
         //        //        cell.backgroundColor = [UIColor clearColor];
         //        NSArray *nibs = [[NSBundle mainBundle]loadNibNamed:@"TestTableViewCell" owner:nil options:nil];
         //        cell = [nibs lastObject];

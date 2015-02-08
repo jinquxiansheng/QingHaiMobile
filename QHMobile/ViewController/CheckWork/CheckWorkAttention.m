@@ -7,11 +7,13 @@
 //
 
 #import "CheckWorkAttention.h"
-#import "CollectionCell.h"
+#import "KQCollectionCell.h"
 #import "RestRecordViewController.h"
 @interface CheckWorkAttention ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
     NSArray  *_checkArray;
+    CGFloat   _cellWidth;
+    CGFloat   _cellHeight;
 }
 @end
 
@@ -31,9 +33,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self customNavigationHeadTitle:@"考勤管理"];
-    [self customNavigationBack:@"dading" normalImage:@"sort" highlightImage:@""];
-    [self.collectionView registerClass:[CollectionCell class] forCellWithReuseIdentifier:@"CollectionCell"];
+    [self.collectionView registerClass:[KQCollectionCell class] forCellWithReuseIdentifier:@"KQCollectionCell"];
+    self.collectionView.backgroundColor = [UIColor colorWithHex:0xFFECECEC];
+
     _checkArray = @[@"请假申请",@"加班申请",@"异常补卡",@"考勤记录",@"考勤日志"];
+    
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -59,24 +63,30 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //NSLog(@"%d",SCREENWIDTH);
-    CGFloat cellWidth = SCREENWIDTH / 3 ;
+     _cellWidth = SCREENWIDTH / 3 ;
+    _cellHeight = 130;
+
     if (iPhone6 || iPhone6Plus) {
-        cellWidth -= 1;
+        _cellWidth -= 1;
+        _cellHeight += 10;
     }
-    return CGSizeMake(cellWidth, 105);
+    return CGSizeMake(_cellWidth, _cellHeight);
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CollectionCell *cell = (CollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionCell" forIndexPath:indexPath];
-
+   KQCollectionCell  *cell = (KQCollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"KQCollectionCell" forIndexPath:indexPath];
+    cell.cellWidth = _cellWidth;
+    cell.cellHeight = _cellHeight;
+    [cell configCollectionCellContent:indexPath.row];
     //图片名称
    // NSString *imageToLoad = [NSString stringWithFormat:@"%d.png", indexPath.row];
     //加载图片
    // cell.imageView.image = [UIImage imageNamed:imageToLoad];
     //设置label文字
     cell.label.text = _checkArray[indexPath.row];
-    cell.label.backgroundColor = [UIColor yellowColor];
-    
+    UIView *selectView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, _cellHeight)];
+    selectView.backgroundColor = [UIColor whiteColor];
+    cell.selectedBackgroundView = selectView;
     return cell;
 
 }

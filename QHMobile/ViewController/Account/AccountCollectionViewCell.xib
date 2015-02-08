@@ -1,33 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AccountCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="106" height="97"/>
+            <rect key="frame" x="0.0" y="0.0" width="122" height="138"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="106" height="97"/>
+                <rect key="frame" x="0.0" y="0.0" width="122" height="138"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdk-eu-PQ6">
-                        <rect key="frame" x="15" y="38" width="83" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_1" translatesAutoresizingMaskIntoConstraints="NO" id="Xbb-QM-fdN">
+                        <rect key="frame" x="28" y="14" width="66" height="66"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rj1-3C-YVE">
+                        <rect key="frame" x="0.0" y="93" width="122" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <color key="backgroundColor" red="0.3451938638" green="0.15284199979999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Rj1-3C-YVE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Llv-6o-PIA"/>
+                <constraint firstAttribute="trailing" secondItem="Rj1-3C-YVE" secondAttribute="trailing" id="c2x-Ja-ZOn"/>
+                <constraint firstAttribute="centerX" secondItem="Xbb-QM-fdN" secondAttribute="centerX" id="fpD-9d-AKl"/>
+                <constraint firstItem="Xbb-QM-fdN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="14" id="gD0-hw-nCs"/>
+                <constraint firstItem="Rj1-3C-YVE" firstAttribute="top" secondItem="Xbb-QM-fdN" secondAttribute="bottom" constant="13" id="kVQ-8J-upZ"/>
+            </constraints>
             <size key="customSize" width="50" height="97"/>
             <connections>
-                <outlet property="label" destination="hdk-eu-PQ6" id="qDY-B9-7P2"/>
+                <outlet property="accountImg" destination="Xbb-QM-fdN" id="bmd-up-1mC"/>
+                <outlet property="label" destination="Rj1-3C-YVE" id="2nT-HJ-hkU"/>
             </connections>
             <point key="canvasLocation" x="190" y="207.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="icon_1" width="66" height="66"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

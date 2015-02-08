@@ -109,9 +109,9 @@
      [image release];*/
     
     UILabel *titleLabel = nil;
-    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 30)];
+    titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
     titleLabel.text = title;
-    titleLabel.font = [UIFont boldSystemFontOfSize:24];
+    titleLabel.font = [UIFont boldSystemFontOfSize:20];
     titleLabel.textColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1.0];
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.textAlignment   = NSTextAlignmentCenter;
@@ -134,10 +134,11 @@
     custom = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 30)];
     // 按钮
     button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(10, 0, 35, 30);
+    button.frame = CGRectMake(0, 0, 35, 30);
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0, -20, 0, 0)];
     [button addTarget:self action:@selector(navigationBack:) forControlEvents:UIControlEventTouchUpInside];
-    [button setBackgroundImage:[UIImage imageNamed:normal] forState:UIControlStateNormal];
-    [button setBackgroundImage:[UIImage imageNamed:highlight] forState:UIControlStateHighlighted];
+    [button setImage:[UIImage imageNamed:normal] forState:UIControlStateNormal];
+    [button setImage:[UIImage imageNamed:highlight] forState:UIControlStateHighlighted];
     [custom addSubview:button];
     // button.frame = CGRectMake(10, 0, frame.size.width, frame.size.height);
     // 标签
@@ -183,7 +184,7 @@
         posX = 0;
         frame.size.width = 70;
     }
-    button.frame = CGRectMake(posX, 0, width, height);
+    button.frame = CGRectMake(50, 5, width, height);
     
     [button setBackgroundImage:[UIImage imageNamed:highlight] forState:UIControlStateHighlighted];
     [custom addSubview:button];

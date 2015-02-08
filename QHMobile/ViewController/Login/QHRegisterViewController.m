@@ -8,6 +8,7 @@
 
 #import "QHRegisterViewController.h"
 #import "QHMainViewController.h"
+#import "RegisterCell.h"
 @interface QHRegisterViewController ()
 {
     NSArray   *_registerArray;
@@ -23,14 +24,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self customNavigationHeadTitle:@"注册帐号"];
-    [self customNavigationBack:@"返回" normalImage:@"" highlightImage:@""];
     [theUICore hiddenLoginNav:NO];
     _registerArray = @[@"手机号:",@"激活码:",@"密码:",@"确认密码"];
     //按钮背景设备
     [self.registerBtn setBackgroundImage:[[UIImage imageNamed:@"common_orange"] resizableImageWithCapInsets:UIEdgeInsetsMake(5, 5, 5, 5) ] forState:UIControlStateNormal];
     [self.registerBtn setBackgroundImage:[[UIImage imageNamed:@"common_orange_on"] resizableImageWithCapInsets:UIEdgeInsetsMake(5, 5, 5, 5) ] forState:UIControlStateHighlighted];
     
-
+    self.cellHeight = 60;
     
 }
 
@@ -40,7 +40,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return self.cellHeight;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -52,13 +52,16 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellID = @"BrandTableViewCell";
-    UITableViewCell *cell   = [tableView dequeueReusableCellWithIdentifier:cellID];
+    static NSString *cellID = @"RegisterCell";
+    RegisterCell *cell   = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
-        
+        cell = [[RegisterCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
+        cell.cellHeight = self.cellHeight;
+        [cell configCellContent:indexPath.row];
     }
+    //
+
     cell.textLabel.text = _registerArray[indexPath.row];
     return cell;
 }

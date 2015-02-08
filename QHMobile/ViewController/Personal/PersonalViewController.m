@@ -19,8 +19,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self customNavigationHeadTitle:@"个人信息"];
-    [self customNavigationBack:@"dading" normalImage:@"like" highlightImage:@""];
-    [self customNavigationDone:@"完成" normalImage:@"" highlightImage:@""];
     
     UIView *personInfoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 200)];
   // [personInfoView addPaddingConstraintsWithSuperView:self.baseTableView.tableHeaderView top:0 bottom:0 left:0 right:9];
@@ -125,6 +123,7 @@
     if (indexPath.row == 1) {
         MoreViewController *moreCtrl = [[MoreViewController alloc] initWithNibName:@"MoreViewController" bundle:nil];
         [self.navigationController pushViewController:moreCtrl animated:YES];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
 }
 

@@ -62,8 +62,8 @@ static  const  CGFloat   tabHeight = 48;
     
     self.tabBarHidden = YES;
     NSArray *buttonTextArray = @[@"首页",@"考勤",@"台帐",@"我的"];
-    NSArray *buttonImgArray = @[@"nav_home",@"nav_kaoqin",@"nav_taizhang",@"nav_my"];
-    NSArray *buttonImgOnArray = @[@"nav_home_on",@"nav_kaoqin_on",@"nav_taizhang_on",@"nav_my_on"];
+    NSArray *buttonImgArray = @[@"nav_home_on",@"nav_kaoqin",@"nav_taizhang",@"nav_my"];
+   // NSArray *buttonImgOnArray = @[@"nav_home_on",@"nav_kaoqin_on",@"nav_taizhang_on",@"nav_my_on"];
     CGFloat btnWidth = SCREENWIDTH / buttonTextArray.count;
     CGFloat x  = 0;
     for (int i = 0; i < buttonTextArray.count; i++) {
@@ -74,7 +74,7 @@ static  const  CGFloat   tabHeight = 48;
         button.backgroundColor = [UIColor clearColor];
         [button setTitle:[buttonTextArray objectAtIndex:i] forState:UIControlStateNormal];
         [button setImage:[UIImage imageNamed:buttonImgArray[i]]  forState:UIControlStateNormal] ;
-         [button setImage:[UIImage imageNamed:buttonImgOnArray[i]]  forState:UIControlStateHighlighted] ;
+        // [button setImage:[UIImage imageNamed:buttonImgOnArray[i]]  forState:UIControlStateHighlighted] ;
         button.titleLabel.textColor = [UIColor blackColor];
         button.titleLabel.font = [UIFont systemFontOfSize:15];
         [button addTarget:self action:@selector(selectedTab:) forControlEvents:UIControlEventTouchUpInside];
@@ -86,6 +86,56 @@ static  const  CGFloat   tabHeight = 48;
 - (void)selectedTab: (UIButton *)button
 {
     self.selectedIndex = button.tag;
+    switch (self.selectedIndex) {
+        case 0:
+        {
+           [button setImage:[UIImage imageNamed:@"nav_home_on"] forState:UIControlStateNormal];
+            UIButton *kaoqinBtn = [self.tabbarView.subviews objectAtIndex:1];
+            UIButton *taizhangBtn = [self.tabbarView.subviews objectAtIndex:2];
+            UIButton *myBtn = [self.tabbarView.subviews objectAtIndex:3];
+            [kaoqinBtn setImage:[UIImage imageNamed:@"nav_kaoqin"] forState:UIControlStateNormal];
+            [taizhangBtn setImage:[UIImage imageNamed:@"nav_taizhang"] forState:UIControlStateNormal];
+            [myBtn setImage:[UIImage imageNamed:@"nav_my"] forState:UIControlStateNormal];
+            break;
+        }
+        case 1:
+        {
+            [button setImage:[UIImage imageNamed:@"nav_kaoqin_on"] forState:UIControlStateNormal];
+            UIButton *homeBtn = [self.tabbarView.subviews objectAtIndex:0];
+            UIButton *taizhangBtn = [self.tabbarView.subviews objectAtIndex:2];
+            UIButton *myBtn = [self.tabbarView.subviews objectAtIndex:3];
+            [homeBtn setImage:[UIImage imageNamed:@"nav_home"] forState:UIControlStateNormal];
+            [taizhangBtn setImage:[UIImage imageNamed:@"nav_taizhang"] forState:UIControlStateNormal];
+            [myBtn setImage:[UIImage imageNamed:@"nav_my"] forState:UIControlStateNormal];
+            break;
+        }
+            
+        case 2:
+        {
+            [button setImage:[UIImage imageNamed:@"nav_taizhang_on"] forState:UIControlStateNormal];
+            UIButton *homeBtn = [self.tabbarView.subviews objectAtIndex:0];
+            UIButton *kaoqinBtn = [self.tabbarView.subviews objectAtIndex:1];
+            UIButton *myBtn = [self.tabbarView.subviews objectAtIndex:3];
+            [homeBtn setImage:[UIImage imageNamed:@"nav_home"] forState:UIControlStateNormal];
+            [kaoqinBtn setImage:[UIImage imageNamed:@"nav_kaoqin"] forState:UIControlStateNormal];
+            [myBtn setImage:[UIImage imageNamed:@"nav_my"] forState:UIControlStateNormal];
+            break;
+        }
+        case 3:
+        {
+            [button setImage:[UIImage imageNamed:@"nav_my_on"] forState:UIControlStateNormal];
+            UIButton *homeBtn = [self.tabbarView.subviews objectAtIndex:0];
+            UIButton *kaoqinBtn = [self.tabbarView.subviews objectAtIndex:1];
+            UIButton *taizhangBtn = [self.tabbarView.subviews objectAtIndex:2];
+            [homeBtn setImage:[UIImage imageNamed:@"nav_home"] forState:UIControlStateNormal];
+            [kaoqinBtn setImage:[UIImage imageNamed:@"nav_kaoqin"] forState:UIControlStateNormal];
+            [taizhangBtn setImage:[UIImage imageNamed:@"nav_taizhang"] forState:UIControlStateNormal];
+            break;
+        }
+
+        default:
+            break;
+    }
 }
 - (void)didReceiveMemoryWarning
 {
