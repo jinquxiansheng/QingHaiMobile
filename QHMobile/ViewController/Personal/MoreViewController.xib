@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoreViewController">
             <connections>
-                <outlet property="baseTableView" destination="jRs-UY-Pmt" id="Mwz-Z3-JYR"/>
+                <outlet property="baseTableView" destination="joL-06-NIB" id="ogb-cW-AFe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,30 +16,24 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jRs-UY-Pmt">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="joL-06-NIB">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="8rj-dr-8Tr"/>
-                        <outlet property="delegate" destination="-1" id="2sR-rL-kos"/>
+                        <outlet property="dataSource" destination="-1" id="eKh-Rd-hmo"/>
+                        <outlet property="delegate" destination="-1" id="ShO-o8-Xv3"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="jRs-UY-Pmt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="71a-TI-EvZ"/>
-                <constraint firstAttribute="bottom" secondItem="jRs-UY-Pmt" secondAttribute="bottom" id="8uU-Ub-45y"/>
-                <constraint firstItem="jRs-UY-Pmt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QbA-he-bzb"/>
-                <constraint firstAttribute="trailing" secondItem="jRs-UY-Pmt" secondAttribute="trailing" id="neM-UC-um3"/>
+                <constraint firstAttribute="bottom" secondItem="joL-06-NIB" secondAttribute="bottom" id="9x1-MB-4iP"/>
+                <constraint firstItem="joL-06-NIB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="EjW-RM-9mb"/>
+                <constraint firstAttribute="trailing" secondItem="joL-06-NIB" secondAttribute="trailing" id="sQE-a4-cAG"/>
+                <constraint firstItem="joL-06-NIB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="zH6-3S-hdD"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="258" y="273"/>
         </view>
     </objects>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

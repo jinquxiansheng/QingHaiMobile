@@ -5,9 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersonalViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController">
             <connections>
-                <outlet property="baseTableView" destination="9C7-Hj-MtP" id="mnv-cc-to2"/>
+                <outlet property="baseTableView" destination="jRs-UY-Pmt" id="Mwz-Z3-JYR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,22 +16,22 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9C7-Hj-MtP">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jRs-UY-Pmt">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="OPw-Kx-6K3"/>
-                        <outlet property="delegate" destination="-1" id="JAO-2x-pe3"/>
+                        <outlet property="dataSource" destination="-1" id="8rj-dr-8Tr"/>
+                        <outlet property="delegate" destination="-1" id="2sR-rL-kos"/>
                     </connections>
                 </tableView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="9C7-Hj-MtP" secondAttribute="trailing" id="0Nv-6l-4Fx"/>
-                <constraint firstItem="9C7-Hj-MtP" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ikO-97-4Kw"/>
-                <constraint firstItem="9C7-Hj-MtP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jE5-cz-nFc"/>
-                <constraint firstAttribute="bottom" secondItem="9C7-Hj-MtP" secondAttribute="bottom" constant="40" id="nan-vP-3Nu"/>
+                <constraint firstItem="jRs-UY-Pmt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="71a-TI-EvZ"/>
+                <constraint firstAttribute="bottom" secondItem="jRs-UY-Pmt" secondAttribute="bottom" id="8uU-Ub-45y"/>
+                <constraint firstItem="jRs-UY-Pmt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="QbA-he-bzb"/>
+                <constraint firstAttribute="trailing" secondItem="jRs-UY-Pmt" secondAttribute="trailing" id="neM-UC-um3"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="258" y="273"/>

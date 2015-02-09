@@ -8,10 +8,13 @@
 
 #import "PersonalViewController.h"
 #import "PersonDetailViewController.h"
-#import "MoreViewController.h"
+#import "SettingViewController.h"
 #import "PersonalViewCell.h"
+#import "MoreViewController.h"
 @interface PersonalViewController ()
-
+{
+    NSArray   *_personArray;
+}
 @end
 
 @implementation PersonalViewController
@@ -20,27 +23,37 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self customNavigationHeadTitle:@"个人信息"];
-    CGFloat bgHeight = 200;
-    UIView *personInfoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, bgHeight)];
-  // [personInfoView addPaddingConstraintsWithSuperView:self.baseTableView.tableHeaderView top:0 bottom:0 left:0 right:9];
-    personInfoView.backgroundColor = [UIColor lightGrayColor];
-    self.baseTableView.tableHeaderView = personInfoView ;
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToMore:)];
-//    [personInfoView addGestureRecognizer:tap];
+    _personArray = @[@"设置",@"更多",@"部门台帐查询",@"退出"];
+    self.baseTableView.scrollEnabled = NO;
+    CGFloat bgHeight = SCREENWIDTH * 241 / 320;
     
-    UIImageView *bgImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, bgHeight)];
+    UIView *personInfoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, bgHeight)];
+    personInfoView.backgroundColor = [UIColor clearColor];
+    self.baseTableView.tableHeaderView = personInfoView ;
+    
+    UIImageView *bgImage = [[UIImageView alloc]init];
     bgImage.backgroundColor = [UIColor clearColor];
+    [bgImage setImage:[UIImage imageNamed:@"my_new"]];
     [personInfoView addSubview:bgImage];
+    [bgImage addPaddingConstraintsWithSuperView:personInfoView top:0 bottom:0 left:0 right:0];
+
     //头像
-    CGFloat headWidth = 120;
+    CGFloat headWidth = 125;
+    if (iPhone6Plus) {
+        headWidth = 161;
+    };
     UIImageView *personHeadView = [[UIImageView alloc] init];
     personHeadView.backgroundColor = [UIColor yellowColor];
     [personHeadView setImage:[UIImage imageNamed:@"key"]];
     [personInfoView addSubview:personHeadView];
     personHeadView.layer.masksToBounds = YES;
     personHeadView.layer.cornerRadius = headWidth / 2;
-    [personHeadView addWHConstraintsWithSuperView:personInfoView width:headWidth height:120];
-    [personHeadView addPaddingConstraintsWithSuperView:personInfoView top:20 bottom:CGFLOAT_CONSTRAINTS_INVALID left:CGFLOAT_CONSTRAINTS_INVALID right:CGFLOAT_CONSTRAINTS_INVALID];
+    [personHeadView addWHConstraintsWithSuperView:personInfoView width:headWidth height:headWidth];
+    CGFloat top = 44;
+    if (iPhone6Plus) {
+        top = 55;
+    }
+    [personHeadView addPaddingConstraintsWithSuperView:personInfoView top:top bottom:CGFLOAT_CONSTRAINTS_INVALID left:CGFLOAT_CONSTRAINTS_INVALID right:CGFLOAT_CONSTRAINTS_INVALID];
     [personHeadView setEdge:personInfoView attr:NSLayoutAttributeCenterX constant:0];
     
     //名称
@@ -49,18 +62,18 @@
     nameLabel.textAlignment = NSTextAlignmentCenter;
     [personInfoView addSubview:nameLabel];
     [nameLabel addWHConstraintsWithSuperView:personInfoView width:SCREENWIDTH height:40];
-    [nameLabel addPaddingConstraintsWithSuperView:personInfoView top:140 bottom:CGFLOAT_CONSTRAINTS_INVALID left:0 right:CGFLOAT_CONSTRAINTS_INVALID];
+    [nameLabel addPaddingConstraintsWithSuperView:personInfoView top:CGFLOAT_CONSTRAINTS_INVALID bottom:CGFLOAT_CONSTRAINTS_INVALID left:0 right:CGFLOAT_CONSTRAINTS_INVALID];
+    [personHeadView addPaddingConstraintsWithNextView:nameLabel superView:personInfoView verticalPadding:@"20" horizontalPadding:NSSTRING_CONSTRAINTS_INVALID];
     
-    
-    //设置
-    UIButton *setingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [setingBtn setTitle:@"设置" forState:UIControlStateNormal];
-    setingBtn.backgroundColor = [UIColor greenColor];
-    setingBtn.titleLabel.font = [UIFont systemFontOfSize:12];
-    [personInfoView addSubview:setingBtn];
-    [setingBtn addTarget:self action:@selector(goToPersonDetail:) forControlEvents:UIControlEventTouchUpInside];
-    [setingBtn addWHConstraintsWithSuperView:personInfoView width:35 height:35];
-    [setingBtn addPaddingConstraintsWithSuperView:personInfoView top:10 bottom:CGFLOAT_CONSTRAINTS_INVALID left:CGFLOAT_CONSTRAINTS_INVALID right:10];
+//    //设置
+//    UIButton *setingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [setingBtn setTitle:@"设置" forState:UIControlStateNormal];
+//    setingBtn.backgroundColor = [UIColor greenColor];
+//    setingBtn.titleLabel.font = [UIFont systemFontOfSize:12];
+//    [personInfoView addSubview:setingBtn];
+//    [setingBtn addTarget:self action:@selector(goToPersonDetail:) forControlEvents:UIControlEventTouchUpInside];
+//    [setingBtn addWHConstraintsWithSuperView:personInfoView width:35 height:35];
+//    [setingBtn addPaddingConstraintsWithSuperView:personInfoView top:10 bottom:CGFLOAT_CONSTRAINTS_INVALID left:CGFLOAT_CONSTRAINTS_INVALID right:10];
     
     
 }
@@ -101,7 +114,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return _personArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -115,25 +128,33 @@
 //        NSArray *nibs = [[NSBundle mainBundle]loadNibNamed:@"TestTableViewCell" owner:nil options:nil];
 //        cell = [nibs lastObject];
 //        cell.backgroundColor = [UIColor clearColor];
-        [cell configCellContent:indexPath.row];
+        //[cell configCellContent:indexPath.row];
     }
-    if (indexPath.row == 0) {
-        cell.textLabel.text = @"分享到";
-    }
-    if (indexPath.row == 1) {
-        cell.textLabel.text = @"更多";
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
+//    if (indexPath.row == 0) {
+//        cell.textLabel.text = @"分享到";
+//    }
+//    if (indexPath.row == 1) {
+//        cell.textLabel.text = @"更多";
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    }
+    cell.textLabel.text = _personArray[indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
    
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == 0) {
+        SettingViewController *setingCtrl = [[SettingViewController alloc] initWithNibName:@"SettingViewController" bundle:nil];
+        [self.navigationController pushViewController:setingCtrl animated:YES];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
     if (indexPath.row == 1) {
         MoreViewController *moreCtrl = [[MoreViewController alloc] initWithNibName:@"MoreViewController" bundle:nil];
         [self.navigationController pushViewController:moreCtrl animated:YES];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
+    
 }
 
 - (void)goToPersonDetail:(id)sender
