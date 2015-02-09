@@ -137,7 +137,7 @@
 #-----------------------------------
 # REQUEST
 #-----------------------------------
-# url		: http://域名/sign/lists
+# url		: http://cmcc.fengcms.com/sign/lists
 # method 	: POST
 # params	: 
 {
