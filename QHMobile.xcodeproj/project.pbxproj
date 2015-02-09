@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		200732F31A83111900E9D0C0 /* AccountCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 200732F11A83111900E9D0C0 /* AccountCollectionViewCell.m */; };
 		200732F41A83111900E9D0C0 /* AccountCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 200732F21A83111900E9D0C0 /* AccountCollectionViewCell.xib */; };
+		2066F65D1A89009000F27680 /* LBSLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2066F65B1A89009000F27680 /* LBSLocationViewController.m */; };
+		2066F65E1A89009000F27680 /* LBSLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2066F65C1A89009000F27680 /* LBSLocationViewController.xib */; };
 		206FDCEC1A7F519E00D09416 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 206FDCDC1A7F519E00D09416 /* MJRefresh.bundle */; };
 		206FDCED1A7F519E00D09416 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 206FDCDF1A7F519E00D09416 /* MJRefreshBaseView.m */; };
 		206FDCEE1A7F519E00D09416 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 206FDCE11A7F519E00D09416 /* MJRefreshConst.m */; };
@@ -129,6 +131,9 @@
 		200732F01A83111900E9D0C0 /* AccountCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountCollectionViewCell.h; sourceTree = "<group>"; };
 		200732F11A83111900E9D0C0 /* AccountCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountCollectionViewCell.m; sourceTree = "<group>"; };
 		200732F21A83111900E9D0C0 /* AccountCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountCollectionViewCell.xib; sourceTree = "<group>"; };
+		2066F65A1A89009000F27680 /* LBSLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBSLocationViewController.h; path = ../CheckWork/LBSLocationViewController.h; sourceTree = "<group>"; };
+		2066F65B1A89009000F27680 /* LBSLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBSLocationViewController.m; path = ../CheckWork/LBSLocationViewController.m; sourceTree = "<group>"; };
+		2066F65C1A89009000F27680 /* LBSLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LBSLocationViewController.xib; path = ../CheckWork/LBSLocationViewController.xib; sourceTree = "<group>"; };
 		206FDCDC1A7F519E00D09416 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		206FDCDD1A7F519E00D09416 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		206FDCDE1A7F519E00D09416 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
@@ -794,6 +799,9 @@
 		20EC14271A812FF800E17D57 /* FirstPage */ = {
 			isa = PBXGroup;
 			children = (
+				2066F65A1A89009000F27680 /* LBSLocationViewController.h */,
+				2066F65B1A89009000F27680 /* LBSLocationViewController.m */,
+				2066F65C1A89009000F27680 /* LBSLocationViewController.xib */,
 				20EC14281A812FF800E17D57 /* FirstPageViewController.h */,
 				20EC14291A812FF800E17D57 /* FirstPageViewController.m */,
 				20EC142A1A812FF800E17D57 /* FirstPageViewController.xib */,
@@ -944,6 +952,7 @@
 				20DB09A61A83B63700A7999C /* SimCardInsertViewController.xib in Resources */,
 				206FDCEC1A7F519E00D09416 /* MJRefresh.bundle in Resources */,
 				20B0D8811A7F4A6A00462D6F /* TestViewController.xib in Resources */,
+				2066F65E1A89009000F27680 /* LBSLocationViewController.xib in Resources */,
 				20B0D7E91A7F4A3F00462D6F /* Images.xcassets in Resources */,
 				20E95D781A8272D50048CBDC /* RestRecordViewController.xib in Resources */,
 				20EC142C1A812FF800E17D57 /* FirstPageViewController.xib in Resources */,
@@ -1058,6 +1067,7 @@
 				206FDCF31A7F519E00D09416 /* UIView+Extension.m in Sources */,
 				20B0D8691A7F4A6A00462D6F /* NoNetView.m in Sources */,
 				206FDCED1A7F519E00D09416 /* MJRefreshBaseView.m in Sources */,
+				2066F65D1A89009000F27680 /* LBSLocationViewController.m in Sources */,
 				206FDCF01A7F519E00D09416 /* MJRefreshHeaderView.m in Sources */,
 				20EC140A1A810E8300E17D57 /* UIColor+Addition.m in Sources */,
 				20B0D8701A7F4A6A00462D6F /* UIViewAdditions.m in Sources */,

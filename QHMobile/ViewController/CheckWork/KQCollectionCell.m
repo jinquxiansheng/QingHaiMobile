@@ -22,6 +22,7 @@
     //self.CheckManagerBtn.backgroundColor = [UIColor colorWithHex:0xFFECECEC];
     self.label.textColor = [UIColor colorWithHex:0xFFa3a1a1];
     _kqImgArray = @[@"kq_iocn_1",@"kq_iocn_2",@"kq_iocn_3",@"kq_iocn_4",@"kq_iocn_5"];
+    self.backgroundColor = [UIColor whiteColor];
     
 }
 - (id)initWithFrame:(CGRect)frame
@@ -48,13 +49,13 @@
         
         // 加载nib
         self = [arrayOfViews objectAtIndex:0];
-        sepline = [[UIView alloc]init];
-        sepline.backgroundColor = [UIColor colorWithHex:0xFFD4D4D4];
-        [self addSubview:sepline];
-        
-        sepline2 = [[UIView alloc]init];
-        sepline2.backgroundColor = [UIColor colorWithHex:0xFFD4D4D4];
-        [self addSubview:sepline2];
+//        sepline = [[UIView alloc]init];
+//        sepline.backgroundColor = [UIColor colorWithHex:0xFFD4D4D4];
+//        [self addSubview:sepline];
+//        
+//        sepline2 = [[UIView alloc]init];
+//        sepline2.backgroundColor = [UIColor colorWithHex:0xFFD4D4D4];
+//        [self addSubview:sepline2];
     }
     return self;
 }

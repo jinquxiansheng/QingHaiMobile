@@ -37,7 +37,7 @@
     [self.collectionView registerClass:[KQCollectionCell class] forCellWithReuseIdentifier:@"KQCollectionCell"];
     self.collectionView.backgroundColor = [UIColor colorWithHex:0xFFECECEC];
 
-    _checkArray = @[@"请假申请",@"加班申请",@"异常补卡",@"考勤记录",@"考勤日志"];
+    _checkArray = @[@"请假申请",@"异常补录",@"考勤记录"];
     
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -64,13 +64,15 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //NSLog(@"%d",SCREENWIDTH);
-     _cellWidth = SCREENWIDTH / 3 ;
-    _cellHeight = 130;
-
-    if (iPhone6 || iPhone6Plus) {
-        _cellWidth -= 1;
-        _cellHeight += 10;
-    }
+//     _cellWidth = SCREENWIDTH / 3 ;
+//    _cellHeight = 130;
+//
+//    if (iPhone6 || iPhone6Plus) {
+//        _cellWidth -= 1;
+//        _cellHeight += 10;
+//    }
+    _cellWidth = SCREENWIDTH / 2 - 15;
+    _cellHeight = 90;
     return CGSizeMake(_cellWidth, _cellHeight);
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -85,8 +87,9 @@
    // cell.imageView.image = [UIImage imageNamed:imageToLoad];
     //设置label文字
     cell.label.text = _checkArray[indexPath.row];
+    //cell.frame = CGRectMake(0, 0, _cellWidth, _cellHeight);
     UIView *selectView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, _cellHeight)];
-    selectView.backgroundColor = [UIColor whiteColor];
+    selectView.backgroundColor = [UIColor grayColor];
     cell.selectedBackgroundView = selectView;
     return cell;
 

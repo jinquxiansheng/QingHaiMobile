@@ -7,7 +7,7 @@
 //
 
 #import "FirstPageViewController.h"
-
+#import "LBSLocationViewController.h"
 @interface FirstPageViewController ()
 @property (weak, nonatomic) IBOutlet UIView *managerView;
 @property (weak, nonatomic) IBOutlet UIView *onWorkView;
@@ -91,5 +91,7 @@
 }
 
 - (IBAction)onWorkAction:(id)sender {
+    LBSLocationViewController *checkInCtrk = [[LBSLocationViewController alloc] initWithNibName:@"LBSLocationViewController" bundle:nil];
+    [self.navigationController pushViewController:checkInCtrk animated:YES];
 }
 @end

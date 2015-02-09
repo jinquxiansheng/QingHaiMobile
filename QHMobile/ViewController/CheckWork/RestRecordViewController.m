@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self customNavigationHeadTitle:@"请假记录"];
+    [self customNavigationDone:@"" normalImage:@"add" highlightImage:@"add_on"];
     self.navigationController.navigationBarHidden = NO;
 }
 - (void)viewWillAppear:(BOOL)animated
