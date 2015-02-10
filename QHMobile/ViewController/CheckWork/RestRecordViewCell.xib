@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,68 +14,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pxd-LN-Phs">
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pxd-LN-Phs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="事假" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9D-yH-XSS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="事假" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9D-yH-XSS">
                                 <rect key="frame" x="266" y="24" width="34" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="6Pj-wy-zNO"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014-11-12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVB-tT-CnY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2014-11-12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVB-tT-CnY">
                                 <rect key="frame" x="19" y="24" width="90" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="WJr-c2-ixd"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="EVB-tT-CnY" firstAttribute="top" secondItem="pxd-LN-Phs" secondAttribute="top" constant="24" id="D8j-iR-cfH"/>
-                            <constraint firstAttribute="height" constant="60" id="Ora-oj-4FF"/>
-                            <constraint firstAttribute="trailing" secondItem="T9D-yH-XSS" secondAttribute="trailing" constant="20" id="Utb-3R-Ne3"/>
-                            <constraint firstItem="T9D-yH-XSS" firstAttribute="top" secondItem="pxd-LN-Phs" secondAttribute="top" constant="24" id="mbD-K9-KN8"/>
-                            <constraint firstItem="EVB-tT-CnY" firstAttribute="leading" secondItem="pxd-LN-Phs" secondAttribute="leading" constant="19" id="wTD-7S-k8R"/>
-                        </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOy-6a-EgP">
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KOy-6a-EgP">
                         <rect key="frame" x="0.0" y="60" width="320" height="129"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jns-pe-xzp">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jns-pe-xzp">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="129" id="o0w-nl-v6J"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="129" id="Qeg-Ah-iYw"/>
-                            <constraint firstItem="jns-pe-xzp" firstAttribute="top" secondItem="KOy-6a-EgP" secondAttribute="top" id="ohJ-JB-ViR"/>
-                            <constraint firstAttribute="trailing" secondItem="jns-pe-xzp" secondAttribute="trailing" id="vVs-NK-9IH"/>
-                            <constraint firstItem="jns-pe-xzp" firstAttribute="leading" secondItem="KOy-6a-EgP" secondAttribute="leading" id="yRE-go-h6u"/>
-                        </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="KOy-6a-EgP" secondAttribute="trailing" constant="-8" id="1cR-8M-ZHC"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="pxd-LN-Phs" secondAttribute="trailing" constant="-8" id="925-z3-2U5"/>
-                    <constraint firstItem="pxd-LN-Phs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="PWP-kk-UbQ"/>
-                    <constraint firstItem="KOy-6a-EgP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="Soy-l3-6KF"/>
-                    <constraint firstItem="KOy-6a-EgP" firstAttribute="top" secondItem="pxd-LN-Phs" secondAttribute="bottom" id="arD-Xx-vg4"/>
-                    <constraint firstItem="pxd-LN-Phs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="xhw-Ix-Jwb"/>
-                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="content" destination="jns-pe-xzp" id="BAN-HI-GKE"/>

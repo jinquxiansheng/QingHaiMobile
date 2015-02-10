@@ -7,8 +7,10 @@
 //
 
 #import "LBSLocationViewController.h"
-
 @interface LBSLocationViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *locationBtn;
+
+- (IBAction)startLocation:(id)sender;
 
 @end
 
@@ -18,13 +20,173 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self customNavigationHeadTitle:@"LBS定位"];
+    _locService = [[BMKLocationService alloc]init];
+    _geocodesearch = [[BMKGeoCodeSearch alloc]init];
+    _locService.delegate = self;
+   // [_locService startUserLocationService];
+
+//    _mapView = [[BMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 400)];
+//    [self.view addSubview:_mapView];
+
 
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [theUICore showBottomTab:NO];
+    [_mapView viewWillAppear];
+    _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+    _locService.delegate = self;
+    _geocodesearch.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
+
+}
+-(void)viewWillDisappear:(BOOL)animated {
+    [_mapView viewWillDisappear];
+    _mapView.delegate = nil; // 不用时，置nil
+    _locService.delegate = nil;
+    _geocodesearch.delegate = nil; // 不用时，置nil
     
+}
+//根据anntation生成对应的View
+- (BMKAnnotationView *)mapView:(BMKMapView *)view viewForAnnotation:(id <BMKAnnotation>)annotation
+{
+    NSString *AnnotationViewID = @"annotationViewID";
+    //根据指定标识查找一个可被复用的标注View，一般在delegate中使用，用此函数来代替新申请一个View
+    BMKAnnotationView *annotationView = [view dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
+    if (annotationView == nil) {
+        annotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:AnnotationViewID];
+        ((BMKPinAnnotationView*)annotationView).pinColor = BMKPinAnnotationColorRed;
+        ((BMKPinAnnotationView*)annotationView).animatesDrop = YES;
+    }
+    
+    annotationView.centerOffset = CGPointMake(0, -(annotationView.frame.size.height * 0.5));
+    annotationView.annotation = annotation;
+    annotationView.canShowCallout = TRUE;
+    return annotationView;
+}
+- (void)onGetGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
+{
+    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
+    [_mapView removeAnnotations:array];
+    array = [NSArray arrayWithArray:_mapView.overlays];
+    [_mapView removeOverlays:array];
+    if (error == 0) {
+        BMKPointAnnotation* item = [[BMKPointAnnotation alloc]init];
+        item.coordinate = result.location;
+        item.title = result.address;
+        [_mapView addAnnotation:item];
+        _mapView.centerCoordinate = result.location;
+        NSString* titleStr;
+        NSString* showmeg;
+        
+        titleStr = @"正向地理编码";
+        showmeg = [NSString stringWithFormat:@"经度:%f,纬度:%f",item.coordinate.latitude,item.coordinate.longitude];
+        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
+        [myAlertView show];
+    }
+}
+
+-(void) onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
+{
+    NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
+    [_mapView removeAnnotations:array];
+    array = [NSArray arrayWithArray:_mapView.overlays];
+    [_mapView removeOverlays:array];
+    if (error == 0) {
+        BMKPointAnnotation* item = [[BMKPointAnnotation alloc]init];
+        item.coordinate = result.location;
+        item.title = result.address;
+        [_mapView addAnnotation:item];
+        _mapView.centerCoordinate = result.location;
+        NSString* titleStr;
+        NSString* showmeg;
+        titleStr = @"提示";
+        showmeg = [NSString stringWithFormat:@"您的位置:%@",item.title];
+        
+        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
+        [myAlertView show];
+    }
+}
+
+//停止定位
+-(IBAction)stopLocation:(id)sender
+{
+    [_locService stopUserLocationService];
+    _mapView.showsUserLocation = NO;
+
+}
+
+/**
+ *在地图View将要启动定位时，会调用此函数
+ *@param mapView 地图View
+ */
+- (void)willStartLocatingUser
+{
+    NSLog(@"start locate");
+}
+
+/**
+ *用户方向更新后，会调用此函数
+ *@param userLocation 新的用户位置
+ */
+- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
+{
+    [_mapView updateLocationData:userLocation];
+    NSLog(@"heading is %@",userLocation.heading);
+}
+
+/**
+ *用户位置更新后，会调用此函数
+ *@param userLocation 新的用户位置
+ */
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
+{
+    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+    [_mapView updateLocationData:userLocation];
+    [self stopLocation:nil];
+    CLLocationCoordinate2D pt = (CLLocationCoordinate2D){0, 0};
+    
+    pt = (CLLocationCoordinate2D){userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude};
+    BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
+    reverseGeocodeSearchOption.reverseGeoPoint = pt;
+    BOOL flag = [_geocodesearch reverseGeoCode:reverseGeocodeSearchOption];
+    if(flag)
+    {
+        NSLog(@"反geo检索发送成功");
+    }
+    else
+    {
+        NSLog(@"反geo检索发送失败");
+    }
+    
+    
+}
+
+/**
+ *在地图View停止定位后，会调用此函数
+ *@param mapView 地图View
+ */
+- (void)didStopLocatingUser
+{
+    NSLog(@"stop locate");
+}
+
+/**
+ *定位失败后，会调用此函数
+ *@param mapView 地图View
+ *@param error 错误号，参考CLError.h中定义的错误号
+ */
+- (void)didFailToLocateUserWithError:(NSError *)error
+{
+    NSLog(@"location error");
+}
+
+
+- (void)dealloc {
+    if (_mapView) {
+        _mapView = nil;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,4 +204,12 @@
 }
 */
 
+- (IBAction)startLocation:(id)sender {
+    NSLog(@"进入普通定位态");
+    [_locService startUserLocationService];
+    _mapView.showsUserLocation = NO;//先关闭显示的定位图层
+    _mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
+    _mapView.showsUserLocation = YES;//显示定位图层
+    
+}
 @end

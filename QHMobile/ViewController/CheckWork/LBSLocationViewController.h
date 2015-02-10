@@ -7,7 +7,13 @@
 //
 
 #import "SecondViewController.h"
+#import "BMapKit.h"
 
-@interface LBSLocationViewController : SecondViewController
+@interface LBSLocationViewController : SecondViewController<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate>
+{
+    IBOutlet BMKMapView* _mapView;
+    BMKLocationService* _locService;
+    BMKGeoCodeSearch* _geocodesearch;
+}
 
 @end
