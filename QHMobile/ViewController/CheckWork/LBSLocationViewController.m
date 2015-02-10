@@ -18,13 +18,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+
     // Do any additional setup after loading the view from its nib.
     [self customNavigationHeadTitle:@"LBS定位"];
     _locService = [[BMKLocationService alloc]init];
     _geocodesearch = [[BMKGeoCodeSearch alloc]init];
-    _locService.delegate = self;
-     [_locService startUserLocationService];
-   // [_locService startUserLocationService];
+//    _locService.delegate = self;
+//     [_locService startUserLocationService];
+//    [_locService startUserLocationService];
 
 //    _mapView = [[BMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 400)];
 //    [self.view addSubview:_mapView];
@@ -144,6 +146,7 @@
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
     NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+    //这里的逻辑应该是签到成功，带服务器返回成功的标志以后，才能将签到按钮隐藏
     [_mapView updateLocationData:userLocation];
     [self stopLocation:nil];
     CLLocationCoordinate2D pt = (CLLocationCoordinate2D){0, 0};
@@ -184,11 +187,11 @@
 }
 
 
-- (void)dealloc {
-    if (_mapView) {
-        _mapView = nil;
-    }
-}
+//- (void)dealloc {
+//    if (_mapView) {
+//        _mapView = nil;
+//    }
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -207,10 +210,10 @@
 
 - (IBAction)startLocation:(id)sender {
     NSLog(@"进入普通定位态");
-   
-    _mapView.showsUserLocation = NO;//先关闭显示的定位图层
-    _mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
-    _mapView.showsUserLocation = YES;//显示定位图层
+    [_locService startUserLocationService];
+//    _mapView.showsUserLocation = NO;//先关闭显示的定位图层
+//    _mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
+//    _mapView.showsUserLocation = YES;//显示定位图层
     
 }
 @end

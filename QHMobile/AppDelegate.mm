@@ -15,6 +15,8 @@
 @interface AppDelegate()<BMKGeneralDelegate>
 {
     BMKMapManager* _mapManager;
+    BMKLocationService* _locService;
+
 
 }
 
@@ -26,6 +28,10 @@
 {
     // 要使用百度地图，请先启动BaiduMapManager
     _mapManager = [[BMKMapManager alloc]init];
+//    _locService = [[BMKLocationService alloc]init];
+//    _locService.delegate = self;
+//    [_locService startUserLocationService];
+
     BOOL ret = [_mapManager start:@"X9jGwSnUpZqdjtvFbcMdK1Fs" generalDelegate:self];
     
     if (!ret) {
@@ -58,6 +64,56 @@
     }
     return YES;
 }
+///**
+// *在地图View将要启动定位时，会调用此函数
+// *@param mapView 地图View
+// */
+//- (void)willStartLocatingUser
+//{
+//    NSLog(@"start locate");
+//}
+//
+///**
+// *用户方向更新后，会调用此函数
+// *@param userLocation 新的用户位置
+// */
+//- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
+//{
+//    //[_mapView updateLocationData:userLocation];
+//    NSLog(@"heading is %@",userLocation.heading);
+//}
+//
+///**
+// *用户位置更新后，会调用此函数
+// *@param userLocation 新的用户位置
+// */
+//- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
+//{
+//    NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+//   // [_mapView updateLocationData:userLocation];
+//    //[self stopLocation:nil];
+//     [_locService stopUserLocationService];
+//    
+//}
+//
+///**
+// *在地图View停止定位后，会调用此函数
+// *@param mapView 地图View
+// */
+//- (void)didStopLocatingUser
+//{
+//    NSLog(@"stop locate");
+//}
+//
+///**
+// *定位失败后，会调用此函数
+// *@param mapView 地图View
+// *@param error 错误号，参考CLError.h中定义的错误号
+// */
+//- (void)didFailToLocateUserWithError:(NSError *)error
+//{
+//    NSLog(@"location error");
+//}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -82,6 +138,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+     [BMKMapView didForeGround];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
