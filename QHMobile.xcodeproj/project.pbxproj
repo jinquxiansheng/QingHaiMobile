@@ -88,6 +88,7 @@
 		20D7B3F31A8785AA00561F5A /* LeaveApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D7B3F11A8785AA00561F5A /* LeaveApplicationViewController.m */; };
 		20D7B3F41A8785AA00561F5A /* LeaveApplicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20D7B3F21A8785AA00561F5A /* LeaveApplicationViewController.xib */; };
 		20D7B3F71A87861000561F5A /* LeaveApplicationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D7B3F61A87861000561F5A /* LeaveApplicationCell.m */; };
+		20D9ADCE1A8A5C6100EA9A20 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D9ADCD1A8A5C6100EA9A20 /* KxMenu.m */; };
 		20DB09A01A83A68900A7999C /* QHRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DB099E1A83A68900A7999C /* QHRegisterViewController.m */; };
 		20DB09A11A83A68900A7999C /* QHRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20DB099F1A83A68900A7999C /* QHRegisterViewController.xib */; };
 		20DB09A51A83B63700A7999C /* SimCardInsertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20DB09A31A83B63700A7999C /* SimCardInsertViewController.m */; };
@@ -336,6 +337,8 @@
 		20D7B3F21A8785AA00561F5A /* LeaveApplicationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeaveApplicationViewController.xib; sourceTree = "<group>"; };
 		20D7B3F51A87861000561F5A /* LeaveApplicationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaveApplicationCell.h; sourceTree = "<group>"; };
 		20D7B3F61A87861000561F5A /* LeaveApplicationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaveApplicationCell.m; sourceTree = "<group>"; };
+		20D9ADCC1A8A5C6100EA9A20 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		20D9ADCD1A8A5C6100EA9A20 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		20DB099D1A83A68900A7999C /* QHRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHRegisterViewController.h; sourceTree = "<group>"; };
 		20DB099E1A83A68900A7999C /* QHRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHRegisterViewController.m; sourceTree = "<group>"; };
 		20DB099F1A83A68900A7999C /* QHRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QHRegisterViewController.xib; sourceTree = "<group>"; };
@@ -873,6 +876,15 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		20D9ADC81A8A528900EA9A20 /* DropDownList */ = {
+			isa = PBXGroup;
+			children = (
+				20D9ADCC1A8A5C6100EA9A20 /* KxMenu.h */,
+				20D9ADCD1A8A5C6100EA9A20 /* KxMenu.m */,
+			);
+			name = DropDownList;
+			sourceTree = "<group>";
+		};
 		20E95D5E1A825F530048CBDC /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -939,6 +951,7 @@
 		20EC14211A812E6900E17D57 /* CheckWork */ = {
 			isa = PBXGroup;
 			children = (
+				20D9ADC81A8A528900EA9A20 /* DropDownList */,
 				20E95D791A8272DC0048CBDC /* Cell */,
 				20EC14221A812E6900E17D57 /* CheckWorkAttention.h */,
 				20EC14231A812E6900E17D57 /* CheckWorkAttention.m */,
@@ -1210,6 +1223,7 @@
 				20B0D86C1A7F4A6A00462D6F /* UIImage+Additions.m in Sources */,
 				20B0D87A1A7F4A6A00462D6F /* EasyAccessTokenRequest.m in Sources */,
 				206FDCF11A7F519E00D09416 /* UIScrollView+Extension.m in Sources */,
+				20D9ADCE1A8A5C6100EA9A20 /* KxMenu.m in Sources */,
 				20B0D86A1A7F4A6A00462D6F /* NSError+ErrorState.m in Sources */,
 				20E95D771A8272D50048CBDC /* RestRecordViewController.m in Sources */,
 				20B0D8681A7F4A6A00462D6F /* CommonUI.m in Sources */,

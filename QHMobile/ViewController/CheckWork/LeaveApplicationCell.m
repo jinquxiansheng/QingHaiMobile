@@ -42,6 +42,7 @@
         _leaveTypeBtn.backgroundColor = [UIColor clearColor];
         [_leaveTypeBtn setTitleColor:[UIColor colorWithHex:0xFFBBBBBB] forState:UIControlStateNormal];
         [_leaveTypeBtn setTitle:@"请选择请假类别" forState:UIControlStateNormal];
+        [_leaveTypeBtn addTarget:self.delegate action:@selector(selectType:) forControlEvents:UIControlEventTouchUpInside];
         // 请假是由
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.backgroundColor = [UIColor clearColor];

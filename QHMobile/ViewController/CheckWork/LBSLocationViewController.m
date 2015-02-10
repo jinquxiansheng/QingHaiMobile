@@ -24,13 +24,9 @@
     [self customNavigationHeadTitle:@"LBS定位"];
     _locService = [[BMKLocationService alloc]init];
     _geocodesearch = [[BMKGeoCodeSearch alloc]init];
-//    _locService.delegate = self;
-//     [_locService startUserLocationService];
-//    [_locService startUserLocationService];
-
-//    _mapView = [[BMKMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 400)];
-//    [self.view addSubview:_mapView];
-
+    [self.locationBtn.layer setCornerRadius:5];
+    [self.locationBtn setBackgroundImage:[UIImage getMiddleStretchableImage:@"dingwei"] forState:UIControlStateNormal];
+     [self.locationBtn setBackgroundImage:[UIImage getMiddleStretchableImage:@"dingwei_on"] forState:UIControlStateNormal];
 
 }
 - (void)viewWillAppear:(BOOL)animated

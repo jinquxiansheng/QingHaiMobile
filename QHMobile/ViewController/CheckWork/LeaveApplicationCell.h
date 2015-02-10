@@ -9,5 +9,5 @@
 #import "GlobalCellTableViewCell.h"
 
 @interface LeaveApplicationCell : GlobalCellTableViewCell
-
+@property (nonatomic,assign) id delegate;
 @end
