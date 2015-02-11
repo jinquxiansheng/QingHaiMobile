@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 yao. All rights reserved.
 //
 
-#import "LeaveApplicationCell.h"
-@interface LeaveApplicationCell()<UITextViewDelegate>
+#import "UnNormalApplicationCell.h"
+@interface UnNormalApplicationCell()<UITextViewDelegate>
 {
     
 }
@@ -17,20 +17,20 @@
 @property (nonatomic,strong) UIDatePicker           *datePicker;
 @end
 
-@implementation LeaveApplicationCell
+@implementation UnNormalApplicationCell
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 - (void)awakeFromNib {
     // Initialization code
     
     //self.CheckManagerBtn.backgroundColor = [UIColor colorWithHex:0xFFECECEC];
-  
+    
     
 }
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -41,7 +41,7 @@
         _leaveTypeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _leaveTypeBtn.backgroundColor = [UIColor clearColor];
         [_leaveTypeBtn setTitleColor:[UIColor colorWithHex:0xFFBBBBBB] forState:UIControlStateNormal];
-        [_leaveTypeBtn setTitle:@"请选择请假类别" forState:UIControlStateNormal];
+        [_leaveTypeBtn setTitle:@"请选择补卡类别" forState:UIControlStateNormal];
         [_leaveTypeBtn addTarget:self.delegate action:@selector(selectType:) forControlEvents:UIControlEventTouchUpInside];
         // 请假是由
         _titleLabel = [[UILabel alloc] init];
@@ -54,20 +54,6 @@
         _reasonTextView.font = [UIFont systemFontOfSize:16];
         _reasonTextView.returnKeyType = UIReturnKeyDone;
         _reasonTextView.delegate = self;
-        //选择日期
-//        _datePicker = [[UIDatePicker alloc] init];
-//        // 设置时区
-//        [_datePicker setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
-//        // 设置当前显示时间
-//        //[_datePicker setDate:tempDate animated:YES];
-//        // 设置显示最大时间（此处为当前时间）
-//        [_datePicker setMaximumDate:[NSDate date]];
-//        // 设置UIDatePicker的显示模式
-//        [_datePicker setDatePickerMode:UIDatePickerModeDate];
-//        _datePicker.hidden = YES;
-//        // 当值发生改变的时候调用的方法
-//       // [_datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
-        
     }
     return self;
 }
@@ -76,7 +62,7 @@
     switch (row) {
         case 0:
         {
-            self.textLabel.text = @"请假类别:";
+            self.textLabel.text = @"补卡类别:";
             self.textLabel.textColor = [UIColor colorWithHex:0xFFff8400];
             [self.contentView addSubview:_leaveTypeBtn];
             break;
@@ -86,7 +72,7 @@
             [self.contentView addSubview:self.titleLabel];
             [self.contentView addSubview:_reasonTextView];
             self.titleLabel.text = @"事由:";
-            self.reasonTextView.text = @"请输入请假具体是由最多30个字符";
+            self.reasonTextView.text = @"请输入补卡具体是由最多30个字符";
             break;
         }
         case 2:
@@ -104,7 +90,7 @@
         {
             [self.contentView addSubview:self.titleLabel];
             self.titleLabel.text = @"共2天0小时";
-           // self.titleLabel.frame = CGRectMake(130,  10, 150, 30);
+            // self.titleLabel.frame = CGRectMake(130,  10, 150, 30);
             break;
         }
             
@@ -116,9 +102,9 @@
 {
     [super layoutSubviews];
     _leaveTypeBtn.frame = CGRectMake(60, 0, 200, self.cellHeight);
-   // _titleLabel.frame = CGRectMake(10, 10, 50, 30);
+    // _titleLabel.frame = CGRectMake(10, 10, 50, 30);
     _reasonTextView.frame = CGRectMake(50, 7, 280, 90);
-   // _datePicker.frame = CGRectMake(40, 0, 200, 0);
+    // _datePicker.frame = CGRectMake(40, 0, 200, 0);
     
     
 }

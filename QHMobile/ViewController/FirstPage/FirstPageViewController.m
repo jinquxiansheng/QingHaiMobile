@@ -45,7 +45,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self customNavigationHeadTitle:@"考勤管理系统"];
-    [self customNavigationDone:@"" normalImage:@"caidan" highlightImage:@"caidan_on"];
+  //  [self customNavigationDone:@"" normalImage:@"caidan" highlightImage:@"caidan_on"];
     //签到 签退视图
     if (iPhone4) {
         CGFloat movePadding = 48;

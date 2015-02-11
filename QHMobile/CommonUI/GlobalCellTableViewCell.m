@@ -23,7 +23,12 @@
 //}
 //cell.textLabel.text = _registerArray[indexPath.row];
 //cell.textLabel.textColor = [UIColor colorWithHex:0Xffa3a1a1];
-    
+    self.contentView.backgroundColor = [UIColor colorWithHex:0xfffffeff];
+    self.textLabel.textColor = [UIColor colorWithHex:0Xffa3a1a1];
+    _sepLine = [[UIView alloc]init];
+    _sepLine.backgroundColor = [UIColor colorWithHex:0xfff8f8f8];
+    [self.contentView addSubview:_sepLine];
+
 }
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

@@ -10,6 +10,8 @@
 #import "KQCollectionCell.h"
 #import "RestRecordViewController.h"
 #import "LeaveApplicationViewController.h"
+#import "UnNormalApplicationViewController.h"
+#import "OnWorkListViewController.h"
 @interface CheckWorkAttention ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
     NSArray  *_checkArray;
@@ -113,9 +115,16 @@
         }
         case 1:
         {
-           //加班申请
-            LeaveApplicationViewController *leaveCtrl = [[LeaveApplicationViewController alloc] initWithNibName:@"LeaveApplicationViewController" bundle:nil];
-            [self.navigationController pushViewController:leaveCtrl animated:YES];
+           //异常补漏
+            UnNormalApplicationViewController *unNormalCtrl = [[UnNormalApplicationViewController alloc] initWithNibName:@"UnNormalApplicationViewController" bundle:nil];
+            [self.navigationController pushViewController:unNormalCtrl animated:YES];
+        }
+        case 2:
+        {
+            OnWorkListViewController *onWorkCtrl = [[OnWorkListViewController alloc] initWithNibName:@"OnWorkListViewController" bundle:nil];
+            [self.navigationController pushViewController:onWorkCtrl animated:YES];
+            
+            break;
         }
         default:
             break;

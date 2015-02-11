@@ -1,49 +1,41 @@
 //
-//  RestRecordViewController.m
+//  OnWorkListViewController.m
 //  QHMobile
 //
-//  Created by yao on 15/2/4.
+//  Created by yao on 15/2/11.
 //  Copyright (c) 2015年 yao. All rights reserved.
 //
 
-#import "RestRecordViewController.h"
-#import "RestRecordViewCell.h"
-#import "LeaveApplicationViewController.h"
+#import "OnWorkListViewController.h"
+#import "OnWorkCell.h"
 #import "SearchDateView.h"
-@interface RestRecordViewController ()
+@interface OnWorkListViewController ()
 
-@property (nonatomic,strong)IBOutlet SearchDateView *searchView;
 @end
 
-@implementation RestRecordViewController
+@implementation OnWorkListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self customNavigationHeadTitle:@"请假记录"];
-    [self customNavigationDone:@"" normalImage:@"add" highlightImage:@"add_on"];
-    self.navigationController.navigationBarHidden = NO;
-    
+    [self customNavigationHeadTitle:@"考勤记录"];
     SearchDateView *searchView = [[SearchDateView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 50)];
     searchView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:searchView];
+
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [theUICore showBottomTab:NO];
+    
+}
 
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-- (void)navigationDone:(id)sender
-{
-    //加班申请
-    LeaveApplicationViewController *leaveCtrl = [[LeaveApplicationViewController alloc] initWithNibName:@"LeaveApplicationViewController" bundle:nil];
-    [self.navigationController pushViewController:leaveCtrl animated:YES];
-}
 /*
 #pragma mark - Navigation
 
@@ -59,18 +51,19 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 6;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellID = @"RestRecordViewCell";
-    RestRecordViewCell *cell   = [tableView dequeueReusableCellWithIdentifier:cellID];
+    static NSString *cellID = @"OnWorkCell";
+    OnWorkCell *cell   = [tableView dequeueReusableCellWithIdentifier:cellID];
     //cell的高度是动态变化的
     if (cell == nil)
     {
         //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
-        NSArray *nibs = [[NSBundle mainBundle]loadNibNamed:@"RestRecordViewCell" owner:nil options:nil];
+        NSArray *nibs = [[NSBundle mainBundle]loadNibNamed:@"OnWorkCell" owner:nil options:nil];
         cell = [nibs lastObject];
+        cell.cellHeight = 158;
     }
     return cell;
 }

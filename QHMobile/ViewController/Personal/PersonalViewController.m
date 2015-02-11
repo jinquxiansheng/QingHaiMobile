@@ -154,6 +154,12 @@
         [self.navigationController pushViewController:moreCtrl animated:YES];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
+    if (indexPath.row == 3) {
+        //退出
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    }
     
 }
 
