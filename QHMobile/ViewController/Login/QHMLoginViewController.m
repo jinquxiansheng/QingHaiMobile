@@ -96,6 +96,11 @@
 {
    [self showFocusImageWithTextFieldTag:textField.tag];
 }
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 /*
 #pragma mark - Navigation
 

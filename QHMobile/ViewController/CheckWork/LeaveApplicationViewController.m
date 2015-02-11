@@ -164,7 +164,7 @@
             //    // [_datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
             //
             UIToolbar *tools = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
-            UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Done", @"") style:UIBarButtonItemStyleDone target:self action:@selector(handleActionBarDone:)];
+            UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"完成", @"") style:UIBarButtonItemStyleDone target:self action:@selector(handleActionBarDone:)];
             UIBarButtonItem *leftflexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
             [tools setItems:[NSArray arrayWithObjects:leftflexible,doneButton, nil]];
             // _datePicker.inputAccessoryView = tools;
@@ -173,7 +173,7 @@
             
             UITextView *texts = [[UITextView alloc] initWithFrame:CGRectMake(100, 0, 200, 50)];
             [cell.contentView addSubview:texts];
-            [texts becomeFirstResponder];
+           // [texts becomeFirstResponder];
             texts.backgroundColor = [UIColor yellowColor];
             texts.inputView = _datePicker;
             texts.inputAccessoryView = tools;
@@ -189,6 +189,8 @@
     [cell layoutSubViewsOnCell:indexPath.row];
     return cell;
 }
+- (void)handleActionBarDone:(id)sender
+{}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 2) {

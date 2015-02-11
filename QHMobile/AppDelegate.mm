@@ -12,6 +12,7 @@
 #import "QHMLoginViewController.h"
 #import "UncaughtExceptionHandler.h"
 #import "BMapKit.h"
+#import "IQKeyboardManager.h"
 @interface AppDelegate()<BMKGeneralDelegate>
 {
     BMKMapManager* _mapManager;
@@ -26,6 +27,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    application.statusBarOrientation = UIInterfaceOrientationPortrait;
+
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+    
     // 要使用百度地图，请先启动BaiduMapManager
     _mapManager = [[BMKMapManager alloc]init];
 
@@ -34,7 +39,7 @@
     if (!ret) {
         NSLog(@"manager start failed!");
     }
-
+   // [IQKeyBoardManager installKeyboardManager];
    // InstallUncaughtExceptionHandler();
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.

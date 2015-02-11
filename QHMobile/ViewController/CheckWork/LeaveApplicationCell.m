@@ -7,7 +7,7 @@
 //
 
 #import "LeaveApplicationCell.h"
-@interface LeaveApplicationCell()
+@interface LeaveApplicationCell()<UITextViewDelegate>
 {
     
 }
@@ -52,7 +52,8 @@
         _reasonTextView.backgroundColor = [UIColor clearColor];
         _reasonTextView.textColor = [UIColor colorWithHex:0xFFa3a1a1];
         _reasonTextView.font = [UIFont systemFontOfSize:16];
-        
+        _reasonTextView.returnKeyType = UIReturnKeyDone;
+        _reasonTextView.delegate = self;
         //选择日期
 //        _datePicker = [[UIDatePicker alloc] init];
 //        // 设置时区
@@ -129,5 +130,11 @@
     else
         _titleLabel.frame = CGRectMake(10, 10, 50, 30);
 }
-
-@end
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range
+ replacementText:(NSString *)text {
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}@end
