@@ -8,7 +8,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestRecordViewController">
             <connections>
                 <outlet property="baseTableView" destination="rF8-M6-heJ" id="A4O-EB-l3T"/>
-                <outlet property="searchView" destination="LgX-YA-ocH" id="zhk-GF-aaW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,10 +16,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LgX-YA-ocH" customClass="SearchDateView">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rF8-M6-heJ">
                     <rect key="frame" x="0.0" y="50" width="320" height="518"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

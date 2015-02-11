@@ -10,7 +10,7 @@
 #import "KQCollectionCell.h"
 #import "RestRecordViewController.h"
 #import "LeaveApplicationViewController.h"
-#import "UnNormalApplicationViewController.h"
+#import "UnNormalListViewController.h"
 #import "OnWorkListViewController.h"
 @interface CheckWorkAttention ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
@@ -116,8 +116,10 @@
         case 1:
         {
            //异常补漏
-            UnNormalApplicationViewController *unNormalCtrl = [[UnNormalApplicationViewController alloc] initWithNibName:@"UnNormalApplicationViewController" bundle:nil];
-            [self.navigationController pushViewController:unNormalCtrl animated:YES];
+            UnNormalListViewController *unNormalListCtrl = [[UnNormalListViewController alloc] initWithNibName:@"UnNormalListViewController" bundle:nil];
+            [self.navigationController pushViewController:unNormalListCtrl animated:YES];
+            break;
+            
         }
         case 2:
         {
