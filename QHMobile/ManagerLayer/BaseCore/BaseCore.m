@@ -29,8 +29,8 @@ static      BaseCore        *baseManager;
     //数据库配置
     [[DataManager shareManager] createDatabase];
     //广告view
-    AdImageView *ad = [[AdImageView alloc] init];
-    [ad show];
+//    AdImageView *ad = [[AdImageView alloc] init];
+//    [ad show];
 
 }
 @end

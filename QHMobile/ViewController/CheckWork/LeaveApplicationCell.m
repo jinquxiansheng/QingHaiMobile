@@ -14,7 +14,7 @@
 @property (nonatomic,strong)UIButton             *leaveTypeBtn;
 @property (nonatomic,strong)UILabel                 *titleLabel;
 @property (nonatomic,strong)UITextView              *reasonTextView;
-//@property (nonatomic,strong) UIDatePicker           *datePicker;
+@property (nonatomic,strong) UIDatePicker           *datePicker;
 @end
 
 @implementation LeaveApplicationCell
@@ -53,7 +53,7 @@
         _reasonTextView.textColor = [UIColor colorWithHex:0xFFa3a1a1];
         _reasonTextView.font = [UIFont systemFontOfSize:16];
         
-//        //选择日期
+        //选择日期
 //        _datePicker = [[UIDatePicker alloc] init];
 //        // 设置时区
 //        [_datePicker setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
@@ -63,6 +63,7 @@
 //        [_datePicker setMaximumDate:[NSDate date]];
 //        // 设置UIDatePicker的显示模式
 //        [_datePicker setDatePickerMode:UIDatePickerModeDate];
+//        _datePicker.hidden = YES;
 //        // 当值发生改变的时候调用的方法
 //       // [_datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
         
@@ -90,7 +91,7 @@
         case 2:
         {
             self.textLabel.text = @"从";
-           // [self.contentView addSubview:_datePicker];
+            [self.contentView addSubview:_datePicker];
             break;
         }
         case 3:

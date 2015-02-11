@@ -28,9 +28,6 @@
 {
     // 要使用百度地图，请先启动BaiduMapManager
     _mapManager = [[BMKMapManager alloc]init];
-//    _locService = [[BMKLocationService alloc]init];
-//    _locService.delegate = self;
-//    [_locService startUserLocationService];
 
     BOOL ret = [_mapManager start:@"X9jGwSnUpZqdjtvFbcMdK1Fs" generalDelegate:self];
     

@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *commit;
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
 @property (strong,nonatomic) UIButton  *buttonType;
+@property (nonatomic,strong) UIDatePicker           *datePicker;
 
 @end
 
@@ -99,8 +100,8 @@
 //    [KxMenu showMenuInView:self.view
 //                  fromRect:sender.frame
 //                 menuItems:menuItems];
-
-
+    
+   
 
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -146,6 +147,38 @@
     {
         cell = [[LeaveApplicationCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
         cell.delegate = self;
+        if (indexPath.row == 2) {
+            _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 200, 150)];
+            _datePicker.backgroundColor = [UIColor whiteColor];
+            // 设置时区
+            // [_datePicker setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+            // 设置当前显示时间
+            //[_datePicker setDate:tempDate animated:YES];
+            // 设置显示最大时间（此处为当前时间）
+            //[_datePicker setMaximumDate:[NSDate date]];
+            // 设置UIDatePicker的显示模式
+            //    [_datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
+            //    //_datePicker.hidden = YES;
+            //    [self.view addSubview:_datePicker];
+            //    // 当值发生改变的时候调用的方法
+            //    // [_datePicker addTarget:self action:@selector(datePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
+            //
+            UIToolbar *tools = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
+            UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Done", @"") style:UIBarButtonItemStyleDone target:self action:@selector(handleActionBarDone:)];
+            UIBarButtonItem *leftflexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+            [tools setItems:[NSArray arrayWithObjects:leftflexible,doneButton, nil]];
+            // _datePicker.inputAccessoryView = tools;
+            //_datePicker.inputAccessoryView
+            
+            
+            UITextView *texts = [[UITextView alloc] initWithFrame:CGRectMake(100, 0, 200, 50)];
+            [cell.contentView addSubview:texts];
+            [texts becomeFirstResponder];
+            texts.backgroundColor = [UIColor yellowColor];
+            texts.inputView = _datePicker;
+            texts.inputAccessoryView = tools;
+
+        }
         [cell configCellContent:indexPath.row];
     }
     cell.cellHeight =  50 ;
@@ -158,8 +191,12 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
-        
+    if (indexPath.row == 2) {
+//        [UIView animateWithDuration:.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+//            _datePicker.frame = CGRectMake(0, 300, 320, 150);
+//        } completion:^(BOOL finished) {
+//            
+//        }];
     }
 }
 - (void)selectType:(UIButton *)button
