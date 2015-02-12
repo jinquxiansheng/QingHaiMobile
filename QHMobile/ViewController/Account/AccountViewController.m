@@ -39,7 +39,7 @@
     [self customNavigationHeadTitle:@"账户信息"];
     
     [self.collectionView registerClass:[AccountCollectionViewCell class] forCellWithReuseIdentifier:@"AccountCollectionViewCell"];
-    _accountArray = @[@"现金台帐",@"SIM卡台帐",@"有价卡台帐",@"现金台帐",@"SIM卡台帐",@"有价卡台帐",@"现金台帐",@"SIM卡台帐"];
+    _accountArray = @[@"现金台帐",@"SIM卡台帐",@"有价卡台帐",@"终端台帐",@"返回检查台帐",@"班前会台帐",@"投诉台帐台帐",@"固定资产台帐"];
     self.collectionView.backgroundColor = [UIColor colorWithHex:0xFFECECEC];
 
 }
