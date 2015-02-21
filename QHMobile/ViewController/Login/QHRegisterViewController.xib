@@ -48,13 +48,10 @@
             <constraints>
                 <constraint firstItem="DHu-eh-baz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="63" id="PGb-ce-bSJ"/>
                 <constraint firstItem="Afo-jz-gaE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="W0i-VD-bYX"/>
-                <constraint firstAttribute="trailing" secondItem="DHu-eh-baz" secondAttribute="trailing" constant="66" id="eJE-Cf-SNZ"/>
                 <constraint firstItem="DHu-eh-baz" firstAttribute="top" secondItem="Afo-jz-gaE" secondAttribute="bottom" constant="63" id="nwN-U9-kL7"/>
-                <constraint firstAttribute="trailing" secondItem="Afo-jz-gaE" secondAttribute="trailing" id="sWG-6N-kUs"/>
                 <constraint firstItem="Afo-jz-gaE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tcR-3a-UaJ"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="258" y="273"/>
+            <nil key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

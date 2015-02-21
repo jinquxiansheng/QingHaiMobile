@@ -39,6 +39,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.loginBtn setTitleColor:[UIColor colorWithHex:0xFF424242] forState:UIControlStateNormal];
+    self.navigationController.navigationBarHidden = YES;
     if (iPhone4)
     {
         self.loginView.top -= 44;
@@ -114,16 +115,55 @@
 - (IBAction)LoginAction:(id)sender {
     QHMainViewController *qhCtrl = [[QHMainViewController alloc] initWithNibName:@"QHMLoginViewController" bundle:nil];
     [self presentViewController:qhCtrl animated:YES completion:nil];
-    
+//    HttpCallBack *selfCallBack = [[HttpCallBack alloc] init];
+//    
+//    selfCallBack.doneBlock = ^(id result,NSUInteger tag)
+//    {
+////        NoNetView *noView =(NoNetView *) [bself.view viewWithTag:kViewTag];
+////        [noView hide];
+////        bself.brandArray = result;
+////        [bself reloadView];
+//        // [weakSelf.baseTableView headerEndRefreshing];
+//        NSString *info = [result objectForKey:@"info"];
+////        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"t" message:info delegate:nil cancelButtonTitle:@"ce" otherButtonTitles:nil, nil];
+////        [alert show];
+//         NSLog(@"%@",info);
+//    };
+//    selfCallBack.failedBlock = ^(NSError *error)
+//    {
+//        if (error.NetState == ErrorNoNet)
+//        {
+////            NoNetView *noView = [[NoNetView alloc] initWithSelect:@selector(refreshView) withTarget:bself targetView:bself.view];
+////            noView.tag = kViewTag;
+////            [noView showInView:bself.view];
+//        }
+//    };
+//   [MANAGER loginWithPhone:@"133013398220" pwd:@"123456" callBack:selfCallBack target:self];
+//  // [MANAGER checkinWithLng:@"102.112239" lat:@"36.504831" gid:@"1" address:@"青海省海东地区平安县平安路122" callBack:selfCallBack];
+//   // [MANAGER selectDepartmentWithID:@"1" callBack:selfCallBack];
+//    [MANAGER checkListWithCallBack:selfCallBack];
+   // [MANAGER checkWithType:@"1" callBack:selfCallBack];
+   // [MANAGER workApplicationWithType: ctype:<#(NSString *)#> s_time:<#(NSString *)#> e_time:<#(NSString *)#> reason:<#(NSString *)#> callBack:<#(HttpCallBack *)#>];
+    //[MANAGER applicationListMoreWithType:@"1" callBack:selfCallBack];
+   // [MANAGER accountListWithCallBack:selfCallBack];
+   //  [MANAGER submitApplicationListMoreWithItem:<#(NSString *)#> callBack:<#(HttpCallBack *)#>];
+   // [MANAGER userAllInfoWithCallBack:selfCallBack];
 }
 
 
 - (IBAction)goRegister:(id)sender {
-    QHRegisterViewController *registerCtrl = [[QHRegisterViewController alloc] initWithNibName:@"QHRegisterViewController" bundle:nil];
-    
-    [theUICore.loginNav pushViewController:registerCtrl animated:YES];
+//    QHRegisterViewController *registerCtrl = [[QHRegisterViewController alloc] initWithNibName:@"QHRegisterViewController" bundle:nil];
+//    
+//    [theUICore.loginNav pushViewController:registerCtrl animated:YES];
+//    [MBProgressHUD showHUDAddedTo:self.view
+//                         animated:YES];
+ //   [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(hideProgess) userInfo:nil repeats:NO];
 }
 
+//- (void)hideProgess
+//{
+//    [MBProgressHUD hideHUDForView:self.view animated:YES];
+//}
 - (IBAction)remberPwdAction:(id)sender {
     if (!self.remberPwdBtn.checkOn)
         [self.remberPwdBtn setImage:[UIImage imageNamed:@"checkbox_on"] forState:UIControlStateNormal];

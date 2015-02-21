@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -10,70 +10,115 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="158" id="88f-qE-KiI" customClass="OnWorkCell">
             <rect key="frame" x="0.0" y="0.0" width="320" height="158"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="88f-qE-KiI" id="JmG-0S-J3U">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="88f-qE-KiI" id="8Em-3n-65f">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LBS地图打卡【上班打卡】" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmv-4L-W2u">
-                        <rect key="frame" x="0.0" y="18" width="301" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LBS地图打卡【上班打卡】" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmv-4L-W2u">
+                        <rect key="frame" x="0.0" y="0.0" width="301" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="301" id="FQv-Fz-szn"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="签到地址:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9X-wv-XcD" customClass="QHMobileLabel">
-                        <rect key="frame" x="0.0" y="49" width="87" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签到地址:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9X-wv-XcD" customClass="QHMobileLabel">
+                        <rect key="frame" x="0.0" y="0.0" width="87" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="青海省西宁市白颐路" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsV-UB-eSU" customClass="QHMobileContentLabel">
-                        <rect key="frame" x="80" y="49" width="226" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="青海省西宁市白颐路" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsV-UB-eSU" customClass="QHMobileContentLabel">
+                        <rect key="frame" x="80" y="0.0" width="226" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="226" id="lg3-31-NkJ"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="签到时间:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhr-iX-Zpe" customClass="QHMobileLabel">
-                        <rect key="frame" x="0.0" y="72" width="87" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签到时间:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhr-iX-Zpe" customClass="QHMobileLabel">
+                        <rect key="frame" x="0.0" y="0.0" width="87" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2015-02-09 16:36:03" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2I-s1-5da" customClass="QHMobileContentLabel">
-                        <rect key="frame" x="80" y="72" width="226" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-02-09 16:36:03" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2I-s1-5da" customClass="QHMobileContentLabel">
+                        <rect key="frame" x="80" y="0.0" width="226" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="部门:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBH-qc-Dad" customClass="QHMobileLabel">
-                        <rect key="frame" x="0.0" y="96" width="87" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="部门:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBH-qc-Dad" customClass="QHMobileLabel">
+                        <rect key="frame" x="0.0" y="0.0" width="87" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="87" id="HdD-Sc-Lhm"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="部门1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vc-me-NKc" customClass="QHMobileContentLabel">
-                        <rect key="frame" x="50" y="96" width="226" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="部门1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vc-me-NKc" customClass="QHMobileContentLabel">
+                        <rect key="frame" x="50" y="0.0" width="226" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="226" id="TV1-aZ-BZa"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="签到人:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz7-fb-1cG" customClass="QHMobileLabel">
-                        <rect key="frame" x="0.0" y="127" width="66" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="签到人:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hz7-fb-1cG" customClass="QHMobileLabel">
+                        <rect key="frame" x="0.0" y="0.0" width="66" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="66" id="jW4-xY-0vZ"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="张兰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuz-sV-MVX" customClass="QHMobileContentLabel">
-                        <rect key="frame" x="64" y="125" width="226" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="张兰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuz-sV-MVX" customClass="QHMobileContentLabel">
+                        <rect key="frame" x="64" y="0.0" width="226" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="226" id="Lao-Mv-TCA"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </tableViewCellContentView>
+            <constraints>
+                <constraint firstItem="Wmv-4L-W2u" firstAttribute="baseline" secondItem="5Vc-me-NKc" secondAttribute="baseline" id="A9E-fq-HSY"/>
+                <constraint firstItem="mhr-iX-Zpe" firstAttribute="trailing" secondItem="sBH-qc-Dad" secondAttribute="trailing" id="Age-uF-vtE"/>
+                <constraint firstItem="5Vc-me-NKc" firstAttribute="baseline" secondItem="xuz-sV-MVX" secondAttribute="baseline" id="DtP-d1-Ukx"/>
+                <constraint firstItem="hz7-fb-1cG" firstAttribute="leading" secondItem="Wmv-4L-W2u" secondAttribute="leading" id="I4h-fO-PVO"/>
+                <constraint firstItem="sBH-qc-Dad" firstAttribute="baseline" secondItem="5Vc-me-NKc" secondAttribute="baseline" id="JCT-Qn-ngE"/>
+                <constraint firstItem="mhr-iX-Zpe" firstAttribute="leading" secondItem="hz7-fb-1cG" secondAttribute="leading" id="JRx-Il-O2i"/>
+                <constraint firstItem="t9X-wv-XcD" firstAttribute="baseline" secondItem="hz7-fb-1cG" secondAttribute="baseline" id="Jbr-dO-bpO"/>
+                <constraint firstItem="k2I-s1-5da" firstAttribute="leading" secondItem="dsV-UB-eSU" secondAttribute="leading" id="M2e-Y8-FNp"/>
+                <constraint firstItem="dsV-UB-eSU" firstAttribute="baseline" secondItem="xuz-sV-MVX" secondAttribute="baseline" id="Msd-Ic-5Rv"/>
+                <constraint firstItem="k2I-s1-5da" firstAttribute="leading" secondItem="88f-qE-KiI" secondAttribute="leading" constant="80" id="azY-XJ-0s6"/>
+                <constraint firstItem="xuz-sV-MVX" firstAttribute="leading" secondItem="88f-qE-KiI" secondAttribute="leading" constant="64" id="cbt-bi-Z5d"/>
+                <constraint firstItem="mhr-iX-Zpe" firstAttribute="baseline" secondItem="t9X-wv-XcD" secondAttribute="baseline" id="cql-SI-HvC"/>
+                <constraint firstItem="5Vc-me-NKc" firstAttribute="leading" secondItem="88f-qE-KiI" secondAttribute="leading" constant="50" id="daW-ly-dJ1"/>
+                <constraint firstItem="dsV-UB-eSU" firstAttribute="trailing" secondItem="k2I-s1-5da" secondAttribute="trailing" id="gje-cn-2tP"/>
+                <constraint firstItem="mhr-iX-Zpe" firstAttribute="baseline" secondItem="sBH-qc-Dad" secondAttribute="baseline" id="hPV-ZF-7aS"/>
+                <constraint firstItem="k2I-s1-5da" firstAttribute="baseline" secondItem="dsV-UB-eSU" secondAttribute="baseline" id="l00-fg-TUW"/>
+                <constraint firstItem="t9X-wv-XcD" firstAttribute="leading" secondItem="Wmv-4L-W2u" secondAttribute="leading" id="lXI-uc-Tr1"/>
+                <constraint firstItem="sBH-qc-Dad" firstAttribute="leading" secondItem="mhr-iX-Zpe" secondAttribute="leading" id="pCj-x6-Eek"/>
+                <constraint firstItem="mhr-iX-Zpe" firstAttribute="leading" secondItem="88f-qE-KiI" secondAttribute="leading" id="pnm-rw-A2R"/>
+                <constraint firstItem="mhr-iX-Zpe" firstAttribute="trailing" secondItem="t9X-wv-XcD" secondAttribute="trailing" id="vEW-7x-D0b"/>
+                <constraint firstItem="t9X-wv-XcD" firstAttribute="top" secondItem="88f-qE-KiI" secondAttribute="top" id="weO-70-Fxc"/>
+            </constraints>
             <connections>
                 <outlet property="workStateLabel" destination="Wmv-4L-W2u" id="3Ni-hK-znZ"/>
             </connections>
-            <point key="canvasLocation" x="226" y="222"/>
         </tableViewCell>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>

@@ -27,7 +27,7 @@ static      BaseCore        *baseManager;
     //启动信息
     [[InteralCache shareInteralCache] systemStart];
     //数据库配置
-    [[DataManager shareManager] createDatabase];
+   // [[DataManager shareManager] createDatabase];
     //广告view
 //    AdImageView *ad = [[AdImageView alloc] init];
 //    [ad show];

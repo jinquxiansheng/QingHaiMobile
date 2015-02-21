@@ -12,20 +12,29 @@
 {
     NSMutableDictionary *_dataModePost;
     NSMutableDictionary *_dataModeGet;
+    __block MBProgressHUD   *_hud;
     
 }
 @end
 
 @implementation QHMBaseRequest
 
-- (void)dealloc
+- (id)init
 {
-    self.url = nil;
-    self.errorCode = nil;
-    self.cookie = nil;
-    [self baseClear];
-    [super dealloc];
+    if (self) {
+        _needLoadView = YES;
+    }
+    return self;
 }
+//- (void)dealloc
+//{
+//    self.url = nil;
+//    self.errorCode = nil;
+//    self.cookie = nil;
+//   // self.target = nil;
+//    [self baseClear];
+//    [super dealloc];
+//}
 - (void)saveCache:(id)object
 {
     
@@ -37,10 +46,21 @@
 - (void)sendToServer:(HttpCallBack *)callback;
 {
     __block QHMBaseRequest   *bself = self;
+      __block UIViewController *viewController = (UIViewController *)self.target;
+    // [MBProgressHUD showHUDAddedTo:viewController.view animated:YES];
+    if (_needLoadView) {
+        _hud = [[MBProgressHUD alloc] initWithView:viewController.view];
+        _hud.delegate = self;
+        [viewController.view addSubview:_hud];
+        _hud.labelText = _loadingText;
+        [_hud show:YES];
+
+    }
+ 
     //AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    
-    self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];//设置相应内容类型
-    self.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];//设置相应内容类型
+    self.manager.responseSerializer.acceptableContentTypes =[NSSet setWithObjects:@"application/json", @"text/html",@"text/json",@"text/javascript",@"application/json", nil];
+    self.manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    self.manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     if (self.cookie.length > 0 && self.cookie) {
         [self.manager.requestSerializer setValue:self.cookie forHTTPHeaderField:@"Cookie"];
         
@@ -58,6 +78,7 @@
         if (self.requestType == Get )
         {
             [self.manager GET:self.url parameters:_dataModeGet success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                [_hud hide:YES];
                 [bself handleSuccesWithObject:responseObject callBack:callback];
                 
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -68,11 +89,14 @@
         {
             [self.manager POST:self.url parameters:_dataModePost success:^(AFHTTPRequestOperation *operation, id responseObject)
              {
-                 [bself handleSuccesWithObject:responseObject callBack:callback];
+                 [_hud hide:YES];
+                [self handleSuccesWithObject:responseObject callBack:callback];
                  
              } failure:^(AFHTTPRequestOperation *operation, NSError *error)
              {
+                 
                  [bself handleFaildWithError:error callBack:callback];
+               
              }];
         }
     }
@@ -87,6 +111,15 @@
     self.manager = [AFHTTPRequestOperationManager manager];
     
 }
+- (void)setUrl:(NSString *)url
+{
+   NSString *rUrl = [[GlobalUrl shareManager] configUrl:url];
+    _url = rUrl;
+}
+//- (NSString *)url
+//{
+//    return self.url;
+//}
 #pragma mark - 方法
 #pragma mark -添加GET参数
 - (BOOL)addGetParameter:(NSString *)strSection value:(NSString *)strValue
@@ -130,29 +163,36 @@
 }
 - (void)baseClear
 {
-    if( _url )
-    {
-        [_url release];
-        _url = nil;
-    }
-    if( _dataModeGet )
-    {
-        [_dataModeGet removeAllObjects];
-        [_dataModeGet release];
-        _dataModeGet = nil;
-    }
-    if( _dataModePost )
-    {
-        [_dataModePost removeAllObjects];
-        [_dataModePost release];
-        _dataModePost = nil;
-    }
-    if (self.manager) {
-        self.manager = nil;
-    }
-    if (self.resultDic) {
-        self.resultDic = nil;
-    }
+//    if( _url )
+//    {
+//        [_url release];
+//        _url = nil;
+//    }
+//    if( _dataModeGet )
+//    {
+//        [_dataModeGet removeAllObjects];
+//        [_dataModeGet release];
+//        _dataModeGet = nil;
+//    }
+//    if( _dataModePost )
+//    {
+//        [_dataModePost removeAllObjects];
+//        [_dataModePost release];
+//        _dataModePost = nil;
+//    }
+//    if (self.manager) {
+//        self.manager = nil;
+//    }
+//    if (self.resultDic) {
+//        self.resultDic = nil;
+//    }
+//    if (_info) {
+//        self.info = nil;
+//
+//    }
+//    if (_status) {
+//        self.status = nil;
+//    }
 }
 - (BOOL)dataOverDue:(NSTimeInterval)interval date:(NSDate *)date
 {
@@ -171,14 +211,20 @@
 }
 - (void)handleSuccesWithObject:(id)responseObject callBack:(HttpCallBack *)callback
 {
-    [self baseClear];
-    NSDictionary *info = [responseObject objectForKey:@"RESULT"];
-    self.resultDic = info;
-    callback.doneBlock (self.resultDic,1);
+   
+//    NSDictionary *info = [responseObject objectForKey:@"info"];
+//    self.resultDic = info;
+//    self.info = [responseObject objectForKey:@"info"];
+//    self.status = [responseObject objectForKey:<#(id)#>];
+    NSString *receiveStr =  [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+    NSDictionary *receiveData = [receiveStr objectFromJSONString];
+    callback.doneBlock (receiveData,1);
+     [self baseClear];
 }
+
 - (void)handleFaildWithError:(NSError *)error callBack:(HttpCallBack *)callback
 {
-    
+    [_hud hide:YES];
     NSString *errorMsg = nil;
     switch (error.code) {
         case ERRORCODEWITHOFFLINE:
@@ -201,6 +247,16 @@
     }
     error.errorMsg = errorMsg;
     callback.failedBlock (error);
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:error.errorMsg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+    [alert show];
+
     [self baseClear];
+}
+#pragma mark -- MBProgress Delegaet
+- (void)hudWasHidden:(MBProgressHUD *)hud
+{
+    // Remove HUD from screen when the HUD was hidded
+    [_hud removeFromSuperview];
+    
 }
 @end

@@ -85,7 +85,7 @@
         [myAlertView show];
     }
 }
-
+#pragma mark -经纬度解析成功
 -(void) onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
 {
     NSArray* array = [NSArray arrayWithArray:_mapView.annotations];
@@ -106,6 +106,11 @@
         UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
         [myAlertView show];
     }
+}
+#pragma mark - AlertView Delegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
 }
 
 //停止定位
@@ -145,20 +150,21 @@
     //这里的逻辑应该是签到成功，带服务器返回成功的标志以后，才能将签到按钮隐藏
     [_mapView updateLocationData:userLocation];
     [self stopLocation:nil];
+    //开始解析经纬度，返回具体的位置
     CLLocationCoordinate2D pt = (CLLocationCoordinate2D){0, 0};
     
     pt = (CLLocationCoordinate2D){userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude};
     BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
     reverseGeocodeSearchOption.reverseGeoPoint = pt;
     BOOL flag = [_geocodesearch reverseGeoCode:reverseGeocodeSearchOption];
-    if(flag)
-    {
-        NSLog(@"反geo检索发送成功");
-    }
-    else
-    {
-        NSLog(@"反geo检索发送失败");
-    }
+//    if(flag)
+//    {
+//        NSLog(@"反geo检索发送成功");
+//    }
+//    else
+//    {
+//        NSLog(@"反geo检索发送失败");
+//    }
     
     
 }
@@ -205,6 +211,7 @@
 */
 
 - (IBAction)startLocation:(id)sender {
+    
     NSLog(@"进入普通定位态");
     [_locService startUserLocationService];
 //    _mapView.showsUserLocation = NO;//先关闭显示的定位图层

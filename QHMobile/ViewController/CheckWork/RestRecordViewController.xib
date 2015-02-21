@@ -33,8 +33,7 @@
                 <constraint firstAttribute="trailing" secondItem="rF8-M6-heJ" secondAttribute="trailing" id="osV-zZ-OAD"/>
                 <constraint firstItem="rF8-M6-heJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rcE-dJ-A4t"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="258" y="273"/>
+            <nil key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

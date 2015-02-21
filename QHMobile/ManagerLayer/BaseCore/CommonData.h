@@ -22,7 +22,7 @@
 #define         ERRORCODEWITHCANCEL                         -999        //取消请求
 
 
-#define         ERRORMSGOFFLINE                             @"无网络状态"
+#define         ERRORMSGOFFLINE                             @"当前网络不可用，请检查你的网络设置"
 #define         ERRORMSGTIMEOUT                             @"网络请求超时"
 #define         ERRORMSGCANCEL                              @"请求取消"
 

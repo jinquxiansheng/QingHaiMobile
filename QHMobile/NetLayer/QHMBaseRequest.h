@@ -10,20 +10,29 @@
 #import"AFNetworking.h"
 #import "InteralCache.h"
 #import "JSONKit.h"
+#import "QHMGlobal.h"
+#import "GlobalUrl.h"
+#import "MBProgressHUD.h"
 typedef NS_ENUM(NSInteger, RequestType)
 {
     Get,
     Post
 };
 
-@interface QHMBaseRequest :    NSObject
+@interface QHMBaseRequest :    NSObject<MBProgressHUDDelegate>
+
 @property (nonatomic,copy)  NSString *url;
 @property (nonatomic,assign)RequestType  requestType;
 @property (nonatomic,copy)  NSString *errorCode;
 @property (nonatomic,copy)  NSString *cookie;
-@property (nonatomic,retain)AFHTTPRequestOperationManager *manager;
+@property (nonatomic,strong)AFHTTPRequestOperationManager *manager;
 @property (nonatomic,assign)BOOL  needSaveCache;
-@property (nonatomic,retain)NSDictionary  *resultDic;
+@property (nonatomic,strong)NSDictionary  *resultDic;
+@property (nonatomic,copy) NSString *info;
+@property (nonatomic,copy) NSString *status;
+@property (nonatomic,copy) NSString *loadingText;
+@property (nonatomic,assign)BOOL needLoadView;
+@property (nonatomic,strong)id target;
 
 - (void)sendToServer:(HttpCallBack *)callback;
 - (BOOL)addPostParameter:(NSString *)strName value:(NSString *)strValue;

@@ -16,8 +16,11 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_1" translatesAutoresizingMaskIntoConstraints="NO" id="Xbb-QM-fdN">
                         <rect key="frame" x="28" y="14" width="66" height="66"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rj1-3C-YVE">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rj1-3C-YVE">
                         <rect key="frame" x="0.0" y="93" width="122" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Eg4-pe-rCf"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -28,8 +31,8 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Rj1-3C-YVE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Llv-6o-PIA"/>
+                <constraint firstItem="Rj1-3C-YVE" firstAttribute="centerX" secondItem="Xbb-QM-fdN" secondAttribute="centerX" id="RTt-hT-KBy"/>
                 <constraint firstAttribute="trailing" secondItem="Rj1-3C-YVE" secondAttribute="trailing" id="c2x-Ja-ZOn"/>
-                <constraint firstAttribute="centerX" secondItem="Xbb-QM-fdN" secondAttribute="centerX" id="fpD-9d-AKl"/>
                 <constraint firstItem="Xbb-QM-fdN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="14" id="gD0-hw-nCs"/>
                 <constraint firstItem="Rj1-3C-YVE" firstAttribute="top" secondItem="Xbb-QM-fdN" secondAttribute="bottom" constant="13" id="kVQ-8J-upZ"/>
             </constraints>
@@ -38,7 +41,6 @@
                 <outlet property="accountImg" destination="Xbb-QM-fdN" id="bmd-up-1mC"/>
                 <outlet property="label" destination="Rj1-3C-YVE" id="2nT-HJ-hkU"/>
             </connections>
-            <point key="canvasLocation" x="190" y="207.5"/>
         </collectionViewCell>
     </objects>
     <resources>

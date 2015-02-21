@@ -32,8 +32,7 @@
                 <constraint firstAttribute="bottom" secondItem="JaG-Sp-v0f" secondAttribute="bottom" id="Pft-r9-Vqg"/>
                 <constraint firstItem="JaG-Sp-v0f" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="o5W-7D-bY4"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="258" y="273"/>
+            <nil key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

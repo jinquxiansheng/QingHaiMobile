@@ -10,5 +10,8 @@
 
 @implementation BaseModel
 - (void)attachToDictionary:(NSDictionary *)dict
-{}
+{
+    _CODE_GETSTRING_(dict, @"id", self.status, @"")
+
+}
 @end

@@ -37,7 +37,6 @@
                 <outlet property="kqImg" destination="Urh-xS-6Hv" id="dmo-Hp-xV4"/>
                 <outlet property="label" destination="gEg-xD-Khu" id="6gB-JU-6WQ"/>
             </connections>
-            <point key="canvasLocation" x="2" y="-99"/>
         </collectionViewCell>
     </objects>
     <resources>

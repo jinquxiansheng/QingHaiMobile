@@ -7,7 +7,8 @@
 //
 
 #import "SearchDateView.h"
-const static CGFloat labelWidth = 80;
+#import "CustomDateTextField.h"
+const static CGFloat labelWidth = 40;
 
 @interface SearchDateView()
 @property (nonatomic,strong) UIDatePicker           *datePicker;
@@ -24,41 +25,40 @@ const static CGFloat labelWidth = 80;
 */
 - (id)initWithFrame:(CGRect)frame
 {
+    //cmcc.fengcms.com
     self = [super initWithFrame:frame];
     if (self) {
-        UILabel *startLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, labelWidth, 30)];
+        UILabel *startLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, labelWidth, self.height)];
         startLab.text = @"开始日期";
+        startLab.numberOfLines = 0;
         startLab.backgroundColor = [UIColor yellowColor];
         [self addSubview:startLab];
         
-//        UILabel *testLab = [[UILabel alloc] initWithFrame:CGRectMake(150, 0, labelWidth, 30)];
-//        testLab.text = @"日期控件";
-//        testLab.backgroundColor = [UIColor blueColor];
-//        testLab.textColor = [UIColor whiteColor];
-//        [self addSubview:testLab];
 
-        UILabel *endLab = [[UILabel alloc] initWithFrame:CGRectMake(250, 0, labelWidth, 30)];
+        UILabel *endLab = [[UILabel alloc] initWithFrame:CGRectMake(SCREENWIDTH - 90, 0, labelWidth, self.height)];
         endLab.text = @"结束日期";
+        endLab.numberOfLines = 0;
         endLab.backgroundColor = [UIColor yellowColor];
         [self addSubview:endLab];
       
-        _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 200, 150)];
-        _datePicker.backgroundColor = [UIColor whiteColor];
-
-        UIToolbar *tools = [[UIToolbar alloc] initWithFrame:CGRectMake(50, 0, 200, 50)];
-        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"完成", @"") style:UIBarButtonItemStyleDone target:self action:@selector(handleActionBarDone:)];
-        UIBarButtonItem *leftflexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-        [tools setItems:[NSArray arrayWithObjects:leftflexible,doneButton, nil]];
-        // _datePicker.inputAccessoryView = tools;
-        //_datePicker.inputAccessoryView
         
+//        _datePicker = [[UIDatePicker alloc] init];
+//        _datePicker.backgroundColor = [UIColor whiteColor];
+//        UIToolbar *tools = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 40)];
+//        tools.backgroundColor = [UIColor redColor];
+//        UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"完成", @"") style:UIBarButtonItemStyleDone target:self action:@selector(handleActionBarDone:)];
+//        UIBarButtonItem *leftflexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+//        [tools setItems:[NSArray arrayWithObjects:leftflexible,doneButton, nil]];
+//        UITextField *startTextView = [[UITextField alloc] initWithFrame:CGRectMake(startLab.left + startLab.width, 0, 100, self.height)];
+//        [self addSubview:startTextView];
+//        // [texts becomeFirstResponder];
+//        startTextView.backgroundColor = [UIColor greenColor];
+//        startTextView.inputView = _datePicker;
+//        startTextView.inputAccessoryView = tools;
         
-        UITextView *texts = [[UITextView alloc] initWithFrame:CGRectMake(100, 0, 200, 50)];
-        [self addSubview:texts];
-        // [texts becomeFirstResponder];
-        texts.backgroundColor = [UIColor yellowColor];
-        texts.inputView = _datePicker;
-        texts.inputAccessoryView = tools;
+        CustomDateTextField *dateView = [[CustomDateTextField alloc] initWithFrame:CGRectMake(startLab.left + startLab.width, 0, 100, self.height)];
+        [self addSubview:dateView];
+        
 
     }
     return self;

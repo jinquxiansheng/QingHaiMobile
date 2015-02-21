@@ -18,31 +18,50 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-nG-Hha">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LHd-nG-Hha">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="354"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="354" id="WYx-Pc-fDx"/>
+                    </constraints>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="cH3-cR-NgH"/>
                         <outlet property="delegate" destination="-1" id="wtt-4W-NlY"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJ9-Fh-8cN">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jJ9-Fh-8cN">
                     <rect key="frame" x="46" y="421" width="113" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="113" id="340-vA-yS2"/>
+                        <constraint firstAttribute="height" constant="48" id="Gxg-mf-Uwg"/>
+                    </constraints>
                     <state key="normal" title="提交">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CM-s2-nwM">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3CM-s2-nwM">
                     <rect key="frame" x="167" y="421" width="113" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="113" id="CsR-sH-A3m"/>
+                    </constraints>
                     <state key="normal" title="取消">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <point key="canvasLocation" x="190" y="273"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="LHd-nG-Hha" secondAttribute="trailing" id="3CI-bV-OgO"/>
+                <constraint firstItem="jJ9-Fh-8cN" firstAttribute="top" secondItem="3CM-s2-nwM" secondAttribute="top" id="MLu-nU-OKR"/>
+                <constraint firstItem="LHd-nG-Hha" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="MTT-b9-nHg"/>
+                <constraint firstItem="jJ9-Fh-8cN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="46" id="PIk-iV-uii"/>
+                <constraint firstAttribute="bottom" secondItem="jJ9-Fh-8cN" secondAttribute="bottom" constant="99" id="bc8-Z0-ARs"/>
+                <constraint firstItem="LHd-nG-Hha" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gWN-et-vU7"/>
+                <constraint firstItem="3CM-s2-nwM" firstAttribute="leading" secondItem="jJ9-Fh-8cN" secondAttribute="trailing" constant="8" symbolic="YES" id="itQ-aK-8lr"/>
+                <constraint firstItem="jJ9-Fh-8cN" firstAttribute="bottom" secondItem="3CM-s2-nwM" secondAttribute="bottom" id="vQw-7E-W5Z"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

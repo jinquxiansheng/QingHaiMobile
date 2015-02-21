@@ -39,7 +39,7 @@
                 <constraint firstItem="5nJ-pT-UJ8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bV4-Z6-AHH"/>
                 <constraint firstAttribute="trailing" secondItem="5nJ-pT-UJ8" secondAttribute="trailing" id="s4W-5U-xEb"/>
             </constraints>
-            <point key="canvasLocation" x="198" y="257"/>
+            <nil key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

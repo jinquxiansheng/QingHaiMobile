@@ -10,6 +10,9 @@
 
 @interface BaseModel : NSObject
 - (void)attachToDictionary:(NSDictionary *)dict;
+@property (nonatomic,copy)NSString *status;
+@property (nonatomic,copy) NSString *info;
+
 #pragma mark - 通用函数
 //----------------------------------------------------------------------------------------------------------------------
 //  通用函数

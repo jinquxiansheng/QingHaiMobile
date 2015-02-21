@@ -21,10 +21,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
     [self customNavigationHeadTitle:@"个人信息"];
     _personArray = @[@"设置",@"更多",@"部门台帐查询",@"退出"];
-    self.baseTableView.scrollEnabled = NO;
+    if (!iPhone4)
+        self.baseTableView.scrollEnabled = NO;
     CGFloat bgHeight = SCREENWIDTH * 241 / 320;
     
     UIView *personInfoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, bgHeight)];
@@ -42,6 +44,9 @@
     if (iPhone6Plus) {
         headWidth = 161;
     };
+    if (iPhone6) {
+        headWidth = 146;
+    }
     UIImageView *personHeadView = [[UIImageView alloc] init];
     personHeadView.backgroundColor = [UIColor yellowColor];
     [personHeadView setImage:[UIImage imageNamed:@"key"]];
@@ -53,6 +58,9 @@
     if (iPhone6Plus) {
         top = 55;
     }
+    if (iPhone6) {
+        top = 52;
+    }
     [personHeadView addPaddingConstraintsWithSuperView:personInfoView top:top bottom:CGFLOAT_CONSTRAINTS_INVALID left:CGFLOAT_CONSTRAINTS_INVALID right:CGFLOAT_CONSTRAINTS_INVALID];
     [personHeadView setEdge:personInfoView attr:NSLayoutAttributeCenterX constant:0];
     
@@ -62,18 +70,10 @@
     nameLabel.textAlignment = NSTextAlignmentCenter;
     [personInfoView addSubview:nameLabel];
     [nameLabel addWHConstraintsWithSuperView:personInfoView width:SCREENWIDTH height:40];
-    [nameLabel addPaddingConstraintsWithSuperView:personInfoView top:CGFLOAT_CONSTRAINTS_INVALID bottom:CGFLOAT_CONSTRAINTS_INVALID left:0 right:CGFLOAT_CONSTRAINTS_INVALID];
+    [nameLabel addPaddingConstraintsWithSuperView:personInfoView top:CGFLOAT_CONSTRAINTS_INVALID bottom:CGFLOAT_CONSTRAINTS_INVALID left:1 right:CGFLOAT_CONSTRAINTS_INVALID];
     [personHeadView addPaddingConstraintsWithNextView:nameLabel superView:personInfoView verticalPadding:@"20" horizontalPadding:NSSTRING_CONSTRAINTS_INVALID];
     
-//    //设置
-//    UIButton *setingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-//    [setingBtn setTitle:@"设置" forState:UIControlStateNormal];
-//    setingBtn.backgroundColor = [UIColor greenColor];
-//    setingBtn.titleLabel.font = [UIFont systemFontOfSize:12];
-//    [personInfoView addSubview:setingBtn];
-//    [setingBtn addTarget:self action:@selector(goToPersonDetail:) forControlEvents:UIControlEventTouchUpInside];
-//    [setingBtn addWHConstraintsWithSuperView:personInfoView width:35 height:35];
-//    [setingBtn addPaddingConstraintsWithSuperView:personInfoView top:10 bottom:CGFLOAT_CONSTRAINTS_INVALID left:CGFLOAT_CONSTRAINTS_INVALID right:10];
+
     
     
 }
