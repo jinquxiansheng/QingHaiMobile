@@ -13,6 +13,7 @@
 #import "QHMGlobal.h"
 #import "GlobalUrl.h"
 #import "MBProgressHUD.h"
+#import "BaseModel.h"
 typedef NS_ENUM(NSInteger, RequestType)
 {
     Get,

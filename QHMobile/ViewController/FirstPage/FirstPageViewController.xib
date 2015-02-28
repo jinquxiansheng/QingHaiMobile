@@ -7,7 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstPageViewController">
             <connections>
-                <outlet property="leftStepBtn" destination="Nn9-ml-209" id="MhD-9k-Hkr"/>
                 <outlet property="managerView" destination="Wz1-bv-7es" id="3GM-QU-1kA"/>
                 <outlet property="offWorkBtn" destination="XQg-XQ-7vV" id="Saf-Gz-kea"/>
                 <outlet property="offWorkLabel" destination="LUK-mk-UTE" id="e4I-cz-dQ6"/>
@@ -15,7 +14,6 @@
                 <outlet property="onWorkBtn" destination="F2e-5O-5Sd" id="26q-0V-bJT"/>
                 <outlet property="onWorkLabel" destination="MpA-fu-Hk6" id="Isu-SR-56t"/>
                 <outlet property="onWorkView" destination="d1I-s0-1Ri" id="TjW-Gg-NF5"/>
-                <outlet property="rightStepBtn" destination="pS2-n5-UWf" id="kFX-oh-WRy"/>
                 <outlet property="scrollView" destination="BEg-v0-K3o" id="OSF-Bq-y0F"/>
                 <outlet property="sepLine" destination="dyC-EQ-imR" id="iOv-Hn-PDu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -29,32 +27,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BEg-v0-K3o">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="340"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="滚动广告" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="adQ-kY-b4Z">
-                            <rect key="frame" x="73" y="116" width="185" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Nn9-ml-209">
-                            <rect key="frame" x="-1" y="113" width="40" height="101"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="fouse_left">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted" image="fouse_left_on"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pS2-n5-UWf">
-                            <rect key="frame" x="280" y="113" width="40" height="101"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="fouse_right">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted" image="fouse_right_on"/>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.308176281" green="1" blue="0.053104150289999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </scrollView>
                 <view contentMode="scaleToFill" id="Wz1-bv-7es">
                     <rect key="frame" x="0.0" y="340" width="320" height="180"/>
@@ -124,10 +97,6 @@
         </view>
     </objects>
     <resources>
-        <image name="fouse_left" width="38" height="63"/>
-        <image name="fouse_left_on" width="38" height="63"/>
-        <image name="fouse_right" width="38" height="63"/>
-        <image name="fouse_right_on" width="38" height="63"/>
         <image name="qianchu" width="79" height="79"/>
         <image name="qianchu_on" width="79" height="79"/>
         <image name="qiandao" width="79" height="79"/>

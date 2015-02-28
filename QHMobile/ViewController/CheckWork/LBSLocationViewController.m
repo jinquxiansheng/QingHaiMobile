@@ -7,7 +7,17 @@
 //
 
 #import "LBSLocationViewController.h"
+#define kLocationSuccessTag             1
+#define kLocationFailedTag              2
+#define kCheckInSuccessTag              3
+#define kCheckInFailedTag               4
 @interface LBSLocationViewController ()
+{
+    CGFloat   _lat;
+    CGFloat   _long;
+    NSString  *_address;
+    
+}
 @property (weak, nonatomic) IBOutlet UIButton *locationBtn;
 
 - (IBAction)startLocation:(id)sender;
@@ -98,19 +108,53 @@
         item.title = result.address;
         [_mapView addAnnotation:item];
         _mapView.centerCoordinate = result.location;
-        NSString* titleStr;
-        NSString* showmeg;
-        titleStr = @"提示";
-        showmeg = [NSString stringWithFormat:@"您的位置:%@",item.title];
-        
-        UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showmeg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
-        [myAlertView show];
+        [self showAlertViewWithTag:kLocationSuccessTag message:item.title];
     }
+}
+#pragma mark -根据定位信息，弹出提示框提示
+- (void)showAlertViewWithTag:(NSInteger)tag message:(NSString *)message
+{
+    NSString* titleStr;
+    NSString* showMsg;
+    titleStr = @"提示";
+    if (tag == kLocationSuccessTag)
+        showMsg = [NSString stringWithFormat:@"您的位置:%@",message];
+    else
+        showMsg = message;
+    
+    UIAlertView *myAlertView = [[UIAlertView alloc] initWithTitle:titleStr message:showMsg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定",nil];
+    myAlertView.tag = tag;
+    [myAlertView show];
 }
 #pragma mark - AlertView Delegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    
+//    //点击确认以后开始签到，调用接口
+//    HttpCallBack *selfCallBack = [[HttpCallBack alloc] init];
+//    
+//    selfCallBack.doneBlock = ^(id result,NSUInteger tag)
+//    {
+//        //        NoNetView *noView =(NoNetView *) [bself.view viewWithTag:kViewTag];
+//        //        [noView hide];
+//        //        bself.brandArray = result;
+//        //        [bself reloadView];
+//        // [weakSelf.baseTableView headerEndRefreshing];
+//        NSString *info = [result objectForKey:@"info"];
+//        //        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"t" message:info delegate:nil cancelButtonTitle:@"ce" otherButtonTitles:nil, nil];
+//        //        [alert show];
+//        NSLog(@"%@",info);
+//    };
+//    selfCallBack.failedBlock = ^(NSError *error)
+//    {
+//        if (error.NetState == ErrorNoNet)
+//        {
+//            //            NoNetView *noView = [[NoNetView alloc] initWithSelect:@selector(refreshView) withTarget:bself targetView:bself.view];
+//            //            noView.tag = kViewTag;
+//            //            [noView showInView:bself.view];
+//        }
+//    };
+//    [MANAGER checkinWithLng:@"102.112239" lat:@"36.504831" gid:@"1" address:@"青海省海东地区平安县平安路122" callBack:selfCallBack];
+
 }
 
 //停止定位
@@ -152,11 +196,10 @@
     [self stopLocation:nil];
     //开始解析经纬度，返回具体的位置
     CLLocationCoordinate2D pt = (CLLocationCoordinate2D){0, 0};
-    
     pt = (CLLocationCoordinate2D){userLocation.location.coordinate.latitude, userLocation.location.coordinate.longitude};
     BMKReverseGeoCodeOption *reverseGeocodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
     reverseGeocodeSearchOption.reverseGeoPoint = pt;
-    BOOL flag = [_geocodesearch reverseGeoCode:reverseGeocodeSearchOption];
+//    BOOL flag = [_geocodesearch reverseGeoCode:reverseGeocodeSearchOption];
 //    if(flag)
 //    {
 //        NSLog(@"反geo检索发送成功");
@@ -177,7 +220,7 @@
 {
     NSLog(@"stop locate");
 }
-
+#pragma mark --定位失败后，会调用此函数
 /**
  *定位失败后，会调用此函数
  *@param mapView 地图View
@@ -185,7 +228,10 @@
  */
 - (void)didFailToLocateUserWithError:(NSError *)error
 {
-    NSLog(@"location error");
+    [self stopLocation:nil];
+    [self showAlertViewWithTag:kLocationFailedTag message:@"定位信息出问题,请检查网络是否正常"];
+
+
 }
 
 

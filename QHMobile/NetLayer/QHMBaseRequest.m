@@ -23,6 +23,8 @@
 {
     if (self) {
         _needLoadView = YES;
+        _needSaveCache = NO;
+
     }
     return self;
 }

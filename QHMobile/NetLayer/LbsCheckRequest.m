@@ -36,7 +36,7 @@ static     LbsCheckRequest   *manager = nil;
         callback.failedBlock (error);
         
     };
-    self.needSaveCache = NO;
+    self.needLoadView = NO;
     [self addPostParameter:@"lng" value:lng];
     [self addPostParameter:@"lat" value:lat];
     [self addPostParameter:@"gid" value:gid];

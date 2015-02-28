@@ -7,10 +7,10 @@
 //
 
 #import "QHMLoginViewController.h"
-#import "QHMainViewController.h"
 #import "QHRegisterViewController.h"
 #import "NavBaseViewController.h"
 #import "CheckButton.h"
+#import "QHMLoginViewController+HandleReturnInfo.h"
 #define kIDTextTag                  1 
 #define kPwdTextTag                 2
 @interface QHMLoginViewController ()
@@ -102,48 +102,29 @@
     [textField resignFirstResponder];
     return YES;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 - (IBAction)LoginAction:(id)sender {
-    QHMainViewController *qhCtrl = [[QHMainViewController alloc] initWithNibName:@"QHMLoginViewController" bundle:nil];
-    [self presentViewController:qhCtrl animated:YES completion:nil];
-//    HttpCallBack *selfCallBack = [[HttpCallBack alloc] init];
-//    
-//    selfCallBack.doneBlock = ^(id result,NSUInteger tag)
-//    {
-////        NoNetView *noView =(NoNetView *) [bself.view viewWithTag:kViewTag];
-////        [noView hide];
-////        bself.brandArray = result;
-////        [bself reloadView];
-//        // [weakSelf.baseTableView headerEndRefreshing];
-//        NSString *info = [result objectForKey:@"info"];
-////        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"t" message:info delegate:nil cancelButtonTitle:@"ce" otherButtonTitles:nil, nil];
-////        [alert show];
-//         NSLog(@"%@",info);
-//    };
-//    selfCallBack.failedBlock = ^(NSError *error)
-//    {
-//        if (error.NetState == ErrorNoNet)
-//        {
-////            NoNetView *noView = [[NoNetView alloc] initWithSelect:@selector(refreshView) withTarget:bself targetView:bself.view];
-////            noView.tag = kViewTag;
-////            [noView showInView:bself.view];
-//        }
-//    };
-//   [MANAGER loginWithPhone:@"133013398220" pwd:@"123456" callBack:selfCallBack target:self];
+    HttpCallBack *selfCallBack = [[HttpCallBack alloc] init];
+    QHMLoginViewController    *bself = (QHMLoginViewController *)self;
+    selfCallBack.doneBlock = ^(BaseModel *info,NSUInteger tag)
+    {
+        [bself handleResultWithStastu:info.status];
+         NSLog(@"%@",info.info);
+    };
+    selfCallBack.failedBlock = ^(NSError *error)
+    {
+        if (error.NetState == ErrorNoNet)
+        {
+        }
+    };
+   [MANAGER loginWithPhone:@"13301398220" pwd:@"123456" callBack:selfCallBack target:self];
 //  // [MANAGER checkinWithLng:@"102.112239" lat:@"36.504831" gid:@"1" address:@"青海省海东地区平安县平安路122" callBack:selfCallBack];
 //   // [MANAGER selectDepartmentWithID:@"1" callBack:selfCallBack];
 //    [MANAGER checkListWithCallBack:selfCallBack];
    // [MANAGER checkWithType:@"1" callBack:selfCallBack];
-   // [MANAGER workApplicationWithType: ctype:<#(NSString *)#> s_time:<#(NSString *)#> e_time:<#(NSString *)#> reason:<#(NSString *)#> callBack:<#(HttpCallBack *)#>];
+   // [MANAGER workApplicationWithType: ctype:<#(NSString *)#> s_time:<#(NSString *)#> e_time:<#(NSString *)#> reason:(NSString *) callBack:<#(HttpCallBack *)#>];
     //[MANAGER applicationListMoreWithType:@"1" callBack:selfCallBack];
    // [MANAGER accountListWithCallBack:selfCallBack];
    //  [MANAGER submitApplicationListMoreWithItem:<#(NSString *)#> callBack:<#(HttpCallBack *)#>];

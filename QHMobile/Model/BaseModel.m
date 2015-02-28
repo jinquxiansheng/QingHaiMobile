@@ -11,7 +11,8 @@
 @implementation BaseModel
 - (void)attachToDictionary:(NSDictionary *)dict
 {
-    _CODE_GETSTRING_(dict, @"id", self.status, @"")
+    _CODE_GETSTRING_(dict, @"status", self.status, @"")
+    _CODE_GETSTRING_(dict, @"info", self.info, @"")
 
 }
 @end

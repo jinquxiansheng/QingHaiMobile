@@ -40,12 +40,13 @@ static     LoginRequest   *manager = nil;
 //            [bself saveCache:result];
 //        }
         
-        
-        callback.doneBlock (result,1);
+        BaseModel *info = [[BaseModel alloc] init];
+        [info attachToDictionary:result];
+        callback.doneBlock (info,1);
     };
     selfCallBack.failedBlock = ^(NSError *error)
     {
-              callback.failedBlock (error);
+        callback.failedBlock (error);
         
         
     };
