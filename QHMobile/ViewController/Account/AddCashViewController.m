@@ -1,35 +1,31 @@
 //
-//  SecondViewController.m
+//  AddCashViewController.m
 //  QHMobile
 //
-//  Created by yao on 15/2/7.
+//  Created by yao on 15/3/3.
 //  Copyright (c) 2015年 yao. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "AddCashViewController.h"
 
-@interface SecondViewController ()
+@interface AddCashViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation AddCashViewController
 
 - (void)viewDidLoad {
+    self.urlStr = @"http://cmcc.fengcms.com/financial/submited/dispatcher/item/cash";
+
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self customNavigationBack:@"" normalImage:@"fanhui" highlightImage:@"fanhui_on"];
+    // Do any additional setup after loading the view from its nib.
+    [self customNavigationHeadTitle:@"现金台帐"];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [theUICore showBottomTab:NO];
-    
-    
 }
 
 /*

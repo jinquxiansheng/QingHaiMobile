@@ -13,11 +13,13 @@
 #import "KQCollectionCell.h"
 #import "RestRecordViewController.h"
 #import "SimCardInsertViewController.h"
+#import "CashViewController.h"
 @interface AccountViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
     NSArray  *_accountArray;
     CGFloat   _cellWidth;
     CGFloat   _cellHeight;
+    
 }
 @end
 
@@ -106,8 +108,10 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        RestRecordViewController *restCtrl = [[RestRecordViewController alloc] initWithNibName:@"RestRecordViewController" bundle:nil];
-        [self.navigationController pushViewController:restCtrl animated:YES];
+//        RestRecordViewController *restCtrl = [[RestRecordViewController alloc] initWithNibName:@"RestRecordViewController" bundle:nil];
+//        [self.navigationController pushViewController:restCtrl animated:YES];
+        CashViewController *cashCtrl = [[CashViewController alloc] initWithNibName:@"CashViewController" bundle:nil];
+        [self.navigationController pushViewController:cashCtrl animated:YES];
     }
     if (indexPath.row == 1) {
         SimCardInsertViewController *cardCtrl = [[SimCardInsertViewController alloc] initWithNibName:@"SimCardInsertViewController" bundle:nil];

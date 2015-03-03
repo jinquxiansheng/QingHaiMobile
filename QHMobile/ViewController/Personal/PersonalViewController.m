@@ -11,6 +11,7 @@
 #import "SettingViewController.h"
 #import "PersonalViewCell.h"
 #import "MoreViewController.h"
+#import "AccountSelectViewController.h"
 @interface PersonalViewController ()
 {
     NSArray   *_personArray;
@@ -153,6 +154,11 @@
         MoreViewController *moreCtrl = [[MoreViewController alloc] initWithNibName:@"MoreViewController" bundle:nil];
         [self.navigationController pushViewController:moreCtrl animated:YES];
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+    if (indexPath.row == 2) {
+        //部门台帐查询
+        AccountSelectViewController *asCtrl = [[AccountSelectViewController alloc] initWithNibName:@"AccountSelectViewController" bundle:nil];
+        [self.navigationController pushViewController:asCtrl animated:YES];
     }
     if (indexPath.row == 3) {
         //退出

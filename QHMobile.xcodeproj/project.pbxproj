@@ -12,6 +12,13 @@
 		205926C31A9DAA5900514468 /* QHMLoginViewController+HandleReturnInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 205926C21A9DAA5900514468 /* QHMLoginViewController+HandleReturnInfo.m */; };
 		2066F65D1A89009000F27680 /* LBSLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2066F65B1A89009000F27680 /* LBSLocationViewController.m */; };
 		2066F65E1A89009000F27680 /* LBSLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2066F65C1A89009000F27680 /* LBSLocationViewController.xib */; };
+		206D4C9C1AA6029E00DA97E2 /* AccountSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 206D4C9A1AA6029E00DA97E2 /* AccountSelectViewController.m */; };
+		206D4C9D1AA6029E00DA97E2 /* AccountSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 206D4C9B1AA6029E00DA97E2 /* AccountSelectViewController.xib */; };
+		206D4CA11AA6056900DA97E2 /* CashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 206D4C9F1AA6056900DA97E2 /* CashViewController.m */; };
+		206D4CA21AA6056900DA97E2 /* CashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 206D4CA01AA6056900DA97E2 /* CashViewController.xib */; };
+		206D4CA51AA6085E00DA97E2 /* MyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 206D4CA41AA6085E00DA97E2 /* MyWebViewController.m */; };
+		206D4CA91AA60A0200DA97E2 /* AddCashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 206D4CA71AA60A0200DA97E2 /* AddCashViewController.m */; };
+		206D4CAA1AA60A0200DA97E2 /* AddCashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 206D4CA81AA60A0200DA97E2 /* AddCashViewController.xib */; };
 		206FDCEC1A7F519E00D09416 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 206FDCDC1A7F519E00D09416 /* MJRefresh.bundle */; };
 		206FDCED1A7F519E00D09416 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 206FDCDF1A7F519E00D09416 /* MJRefreshBaseView.m */; };
 		206FDCEE1A7F519E00D09416 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 206FDCE11A7F519E00D09416 /* MJRefreshConst.m */; };
@@ -183,6 +190,17 @@
 		2066F65A1A89009000F27680 /* LBSLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LBSLocationViewController.h; path = ../CheckWork/LBSLocationViewController.h; sourceTree = "<group>"; };
 		2066F65B1A89009000F27680 /* LBSLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LBSLocationViewController.m; path = ../CheckWork/LBSLocationViewController.m; sourceTree = "<group>"; };
 		2066F65C1A89009000F27680 /* LBSLocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LBSLocationViewController.xib; path = ../CheckWork/LBSLocationViewController.xib; sourceTree = "<group>"; };
+		206D4C991AA6029D00DA97E2 /* AccountSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSelectViewController.h; sourceTree = "<group>"; };
+		206D4C9A1AA6029E00DA97E2 /* AccountSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSelectViewController.m; sourceTree = "<group>"; };
+		206D4C9B1AA6029E00DA97E2 /* AccountSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountSelectViewController.xib; sourceTree = "<group>"; };
+		206D4C9E1AA6056900DA97E2 /* CashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CashViewController.h; sourceTree = "<group>"; };
+		206D4C9F1AA6056900DA97E2 /* CashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CashViewController.m; sourceTree = "<group>"; };
+		206D4CA01AA6056900DA97E2 /* CashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CashViewController.xib; sourceTree = "<group>"; };
+		206D4CA31AA6085E00DA97E2 /* MyWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWebViewController.h; sourceTree = "<group>"; };
+		206D4CA41AA6085E00DA97E2 /* MyWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWebViewController.m; sourceTree = "<group>"; };
+		206D4CA61AA60A0200DA97E2 /* AddCashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCashViewController.h; sourceTree = "<group>"; };
+		206D4CA71AA60A0200DA97E2 /* AddCashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCashViewController.m; sourceTree = "<group>"; };
+		206D4CA81AA60A0200DA97E2 /* AddCashViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCashViewController.xib; sourceTree = "<group>"; };
 		206FDCDC1A7F519E00D09416 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 		206FDCDD1A7F519E00D09416 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		206FDCDE1A7F519E00D09416 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
@@ -1100,6 +1118,14 @@
 				20DB09A21A83B63700A7999C /* SimCardInsertViewController.h */,
 				20DB09A31A83B63700A7999C /* SimCardInsertViewController.m */,
 				20DB09A41A83B63700A7999C /* SimCardInsertViewController.xib */,
+				206D4C9E1AA6056900DA97E2 /* CashViewController.h */,
+				206D4C9F1AA6056900DA97E2 /* CashViewController.m */,
+				206D4CA01AA6056900DA97E2 /* CashViewController.xib */,
+				206D4CA61AA60A0200DA97E2 /* AddCashViewController.h */,
+				206D4CA71AA60A0200DA97E2 /* AddCashViewController.m */,
+				206D4CA81AA60A0200DA97E2 /* AddCashViewController.xib */,
+				206D4CA31AA6085E00DA97E2 /* MyWebViewController.h */,
+				206D4CA41AA6085E00DA97E2 /* MyWebViewController.m */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -1120,6 +1146,9 @@
 				20ECC20D1A88801E00F54F07 /* MoreViewController.h */,
 				20ECC20E1A88801E00F54F07 /* MoreViewController.m */,
 				20ECC20F1A88801E00F54F07 /* MoreViewController.xib */,
+				206D4C991AA6029D00DA97E2 /* AccountSelectViewController.h */,
+				206D4C9A1AA6029E00DA97E2 /* AccountSelectViewController.m */,
+				206D4C9B1AA6029E00DA97E2 /* AccountSelectViewController.xib */,
 			);
 			path = Personal;
 			sourceTree = "<group>";
@@ -1343,10 +1372,12 @@
 				20E27A8B1A8B98B600C45900 /* OnWorkListViewController.xib in Resources */,
 				20E27A811A8B904B00C45900 /* UnNormalApplicationViewController.xib in Resources */,
 				20EC14261A812E6900E17D57 /* CheckWorkAttention.xib in Resources */,
+				206D4CA21AA6056900DA97E2 /* CashViewController.xib in Resources */,
 				20DB09A61A83B63700A7999C /* SimCardInsertViewController.xib in Resources */,
 				206FDCEC1A7F519E00D09416 /* MJRefresh.bundle in Resources */,
 				20B0D8811A7F4A6A00462D6F /* TestViewController.xib in Resources */,
 				20E27A901A8B997400C45900 /* OnWorkCell.xib in Resources */,
+				206D4CAA1AA60A0200DA97E2 /* AddCashViewController.xib in Resources */,
 				2066F65E1A89009000F27680 /* LBSLocationViewController.xib in Resources */,
 				20B0D7E91A7F4A3F00462D6F /* Images.xcassets in Resources */,
 				20E95D781A8272D50048CBDC /* RestRecordViewController.xib in Resources */,
@@ -1359,6 +1390,7 @@
 				20D603591A89B8E3000FF71D /* mapapi.bundle in Resources */,
 				20E95D631A825F530048CBDC /* AccountViewController.xib in Resources */,
 				206FDCF91A7F547A00D09416 /* Launch Screen.xib in Resources */,
+				206D4C9D1AA6029E00DA97E2 /* AccountSelectViewController.xib in Resources */,
 				20E27A9B1A8BA2AE00C45900 /* UnNormalListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1436,6 +1468,7 @@
 				200732F31A83111900E9D0C0 /* AccountCollectionViewCell.m in Sources */,
 				208BA0461A958DE000F5EF91 /* LbsCheckRequest.m in Sources */,
 				20B0D86F1A7F4A6A00462D6F /* UIView+Helpers.m in Sources */,
+				206D4CA11AA6056900DA97E2 /* CashViewController.m in Sources */,
 				20B0D87D1A7F4A6A00462D6F /* NavBaseViewController.m in Sources */,
 				20DB09A01A83A68900A7999C /* QHRegisterViewController.m in Sources */,
 				208BA0451A958DE000F5EF91 /* CheckTypeRequest.m in Sources */,
@@ -1461,6 +1494,7 @@
 				20E95D721A826E3A0048CBDC /* SettingViewController.m in Sources */,
 				20D7B3EF1A8756AF00561F5A /* PersonalViewCell.m in Sources */,
 				20B0D86C1A7F4A6A00462D6F /* UIImage+Additions.m in Sources */,
+				206D4C9C1AA6029E00DA97E2 /* AccountSelectViewController.m in Sources */,
 				20E27A9A1A8BA2AE00C45900 /* UnNormalListViewController.m in Sources */,
 				20B0D87A1A7F4A6A00462D6F /* EasyAccessTokenRequest.m in Sources */,
 				206FDCF11A7F519E00D09416 /* UIScrollView+Extension.m in Sources */,
@@ -1491,6 +1525,7 @@
 				206FDCF01A7F519E00D09416 /* MJRefreshHeaderView.m in Sources */,
 				20E27A931A8B9D6800C45900 /* QHMobileLabel.m in Sources */,
 				20EC140A1A810E8300E17D57 /* UIColor+Addition.m in Sources */,
+				206D4CA91AA60A0200DA97E2 /* AddCashViewController.m in Sources */,
 				208BA0491A958DE000F5EF91 /* SubmitAccountListRequest.m in Sources */,
 				20B0D8701A7F4A6A00462D6F /* UIViewAdditions.m in Sources */,
 				20EC142B1A812FF800E17D57 /* FirstPageViewController.m in Sources */,
@@ -1510,6 +1545,7 @@
 				20E27A8A1A8B98B600C45900 /* OnWorkListViewController.m in Sources */,
 				20E95D6D1A826B900048CBDC /* PersonDetailViewController.m in Sources */,
 				205926C31A9DAA5900514468 /* QHMLoginViewController+HandleReturnInfo.m in Sources */,
+				206D4CA51AA6085E00DA97E2 /* MyWebViewController.m in Sources */,
 				20ECC2101A88801E00F54F07 /* MoreViewController.m in Sources */,
 				20E958591A8B38DB00B4B011 /* IQToolbar.m in Sources */,
 				20B0D8791A7F4A6A00462D6F /* BrandModel.m in Sources */,
