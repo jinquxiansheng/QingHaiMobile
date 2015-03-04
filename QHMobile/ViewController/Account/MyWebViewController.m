@@ -7,7 +7,7 @@
 //
 
 #import "MyWebViewController.h"
-
+#import "MBProgressHUD.h"
 @interface MyWebViewController ()<UIWebViewDelegate>
 
 @end
@@ -21,8 +21,9 @@
     [self.view addSubview:webView];
     webView.scalesPageToFit =YES;
     webView.delegate =self;
-    NSURL *url =[NSURL URLWithString:self.urlStr];
+    NSURL *url =[NSURL URLWithString:self.listUrl];
     NSURLRequest *request =[NSURLRequest requestWithURL:url];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [webView loadRequest:request];
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView
@@ -31,10 +32,12 @@
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+
     UIAlertView *alterview = [[UIAlertView alloc] initWithTitle:@"" message:[error localizedDescription]  delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [alterview show];
 }

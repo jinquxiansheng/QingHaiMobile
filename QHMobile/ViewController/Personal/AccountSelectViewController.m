@@ -17,11 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.webView.scalesPageToFit =YES;
-    self.webView.delegate =self;
-    NSURL *url =[NSURL URLWithString:@"http://cmcc.fengcms.com/manage/home/index"];
-    NSURLRequest *request =[NSURLRequest requestWithURL:url];
-    [self.webView loadRequest:request];
+//    self.webView.scalesPageToFit =YES;
+//    self.webView.delegate =self;
+//    NSURL *url =[NSURL URLWithString:@"http://cmcc.fengcms.com/manage/home/index"];
+//    NSURLRequest *request =[NSURLRequest requestWithURL:url];
+//    [self.webView loadRequest:request];
+    [self customNavigationHeadTitle:self.title];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,23 +40,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [theUICore showBottomTab:NO];
-    
-}
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
-}
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
-    
-}
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
-    UIAlertView *alterview = [[UIAlertView alloc] initWithTitle:@"" message:[error localizedDescription]  delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-    [alterview show];
-}
 
 @end

@@ -15,9 +15,9 @@
 @implementation CashViewController
 
 - (void)viewDidLoad {
-    self.urlStr = @"http://cmcc.fengcms.com/financial/submited/lists/item/cash";
+   // self.listUrl = [[GlobalUrl shareManager] configUrl:QHMOBILECASHLISTURL];
     [super viewDidLoad];
-    [self customNavigationHeadTitle:@"现金台帐"];
+    [self customNavigationHeadTitle:self.title];
     [self customNavigationDone:@"" normalImage:@"add" highlightImage:@"add_on"];
 }
 
@@ -28,6 +28,8 @@
 - (void)navigationDone:(id)sender
 {
     AddCashViewController *addCtrl = [[AddCashViewController alloc] initWithNibName:@"AddCashViewController" bundle:nil];
+    addCtrl.listUrl = self.dispatcherUrl;
+    addCtrl.title = self.title;
     [self.navigationController pushViewController:addCtrl animated:YES];
 }
 /*

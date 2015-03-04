@@ -17,6 +17,8 @@
 @interface AccountViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 {
     NSArray  *_accountArray;
+    NSArray  *_listArray;
+    NSArray  *_dispatchArray;
     CGFloat   _cellWidth;
     CGFloat   _cellHeight;
     
@@ -41,8 +43,10 @@
     [self customNavigationHeadTitle:@"账户信息"];
     
     [self.collectionView registerClass:[AccountCollectionViewCell class] forCellWithReuseIdentifier:@"AccountCollectionViewCell"];
-    _accountArray = @[@"现金台帐",@"SIM卡台帐",@"有价卡台帐",@"终端台帐",@"返回检查台帐",@"班前会台帐",@"投诉台帐台帐",@"固定资产台帐"];
     self.collectionView.backgroundColor = [UIColor colorWithHex:0xFFECECEC];
+    _accountArray = @[@"现金台帐",@"SIM卡台帐",@"有价卡台帐",@"终端台帐",@"返回检查台帐",@"班前会台帐",@"投诉台帐台帐",@"固定资产台帐"];
+    _listArray = @[QHMOBILECASHLISTURL,QHMOBILESIMLISTURL,QHMOBILECARDLISTURL,QHMOBILETERMINALLISTURL];
+    _dispatchArray = @[QHMOBILECASHDISPATCHERURL,QHMOBILESIMDISPATCHERURL,QHMOBILECARDDISPATCHERURL,QHMOBILETERMINALDISPATCHERURL];
 
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -107,16 +111,16 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
-//        RestRecordViewController *restCtrl = [[RestRecordViewController alloc] initWithNibName:@"RestRecordViewController" bundle:nil];
-//        [self.navigationController pushViewController:restCtrl animated:YES];
-        CashViewController *cashCtrl = [[CashViewController alloc] initWithNibName:@"CashViewController" bundle:nil];
-        [self.navigationController pushViewController:cashCtrl animated:YES];
-    }
-    if (indexPath.row == 1) {
-        SimCardInsertViewController *cardCtrl = [[SimCardInsertViewController alloc] initWithNibName:@"SimCardInsertViewController" bundle:nil];
-        [self.navigationController pushViewController:cardCtrl animated:YES];
-    }
+   
+    CashViewController *cashCtrl = [[CashViewController alloc] initWithNibName:@"CashViewController" bundle:nil];
+    cashCtrl.listUrl = [[GlobalUrl shareManager] configUrl:_listArray[indexPath.row]];
+    cashCtrl.dispatcherUrl = [[GlobalUrl shareManager] configUrl:_dispatchArray[indexPath.row]];
+    cashCtrl.title = _accountArray[indexPath.row];
+    [self.navigationController pushViewController:cashCtrl animated:YES];
+//    if (indexPath.row == 1) {
+//        SimCardInsertViewController *cardCtrl = [[SimCardInsertViewController alloc] initWithNibName:@"SimCardInsertViewController" bundle:nil];
+//        [self.navigationController pushViewController:cardCtrl animated:YES];
+//    }
 }
 
 

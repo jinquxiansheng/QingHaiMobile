@@ -15,11 +15,11 @@
 @implementation AddCashViewController
 
 - (void)viewDidLoad {
-    self.urlStr = @"http://cmcc.fengcms.com/financial/submited/dispatcher/item/cash";
+   // self.listUrl = @"http://cmcc.fengcms.com/financial/submited/dispatcher/item/cash";
 
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self customNavigationHeadTitle:@"现金台帐"];
+    [self customNavigationHeadTitle:self.title];
 
 }
 

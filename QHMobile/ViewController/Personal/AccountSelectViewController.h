@@ -6,9 +6,8 @@
 //  Copyright (c) 2015年 yao. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "MyWebViewController.h"
 
-@interface AccountSelectViewController : SecondViewController
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@interface AccountSelectViewController : MyWebViewController
 
 @end

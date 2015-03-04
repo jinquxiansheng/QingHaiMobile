@@ -158,6 +158,8 @@
     if (indexPath.row == 2) {
         //部门台帐查询
         AccountSelectViewController *asCtrl = [[AccountSelectViewController alloc] initWithNibName:@"AccountSelectViewController" bundle:nil];
+        asCtrl.listUrl = [[GlobalUrl shareManager] configUrl:QHMOBILEACCOUNTLISTURL];
+        asCtrl.title = _personArray[indexPath.row];
         [self.navigationController pushViewController:asCtrl animated:YES];
     }
     if (indexPath.row == 3) {
