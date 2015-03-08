@@ -19,7 +19,7 @@
 
 - (BOOL)saveEmployeeWithID:(NSString *)Id  pwd:(NSString *)pwd rememberPwd:(NSString *)remSign;
 - (LoginUserModel *)selectLoginInfo;
-- (NSString *)selectPwdWithID:(NSString *)Id;
+- (LoginUserModel *)selectPwdWithID:(NSString *)Id;
 - (BOOL)deletePwdWithId:(NSString *)Id;
 
 

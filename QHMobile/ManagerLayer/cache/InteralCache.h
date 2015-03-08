@@ -21,7 +21,7 @@
 
 - (void)saveEmployeeWithID:(NSString *)Id  pwd:(NSString *)pwd rememberPwd:(NSString *)remSign;
 - (LoginUserModel *)selectLoginInfo;
-- (NSString *)selectPwdWithID:(NSString *)Id;
+- (LoginUserModel *)selectPwdWithID:(NSString *)Id;
 - (void)deletePwdWithId:(NSString *)Id;
 
 @end

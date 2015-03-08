@@ -62,8 +62,21 @@
     
     LoginUserModel *loginModel = [[InteralCache shareInteralCache] selectLoginInfo];
     NSLog(@"log %@",loginModel.remSign);
+    self.userID.text = loginModel.Id;
+    self.userPwd.text = loginModel.pwd;
+    self.remberPwdBtn.checkOn = [loginModel.remSign isEqualToString:@"1"] ? TRUE:FALSE;
+    [self checkStatus];
     
 }
+- (void)checkStatus
+{
+    if (self.remberPwdBtn.checkOn) {
+        [self.remberPwdBtn setImage:[UIImage imageNamed:@"checkbox_on"] forState:UIControlStateNormal];
+    }
+    else
+        [self.remberPwdBtn setImage:[UIImage imageNamed:@"checkbox"] forState:UIControlStateNormal];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -90,11 +103,17 @@
     if (tag == kPwdTextTag) {
         self.pwdImgFocus.hidden = !self.pwdImgFocus.hidden;
     }
-
 }
 #pragma mark -textfield 
 - (void)textFieldDidBeginEditing:(UITextField *)textField         // became first responder
 {
+    if (textField.tag == 2) {
+        LoginUserModel *model = [[InteralCache shareInteralCache] selectPwdWithID:self.userID.text];
+        self.userPwd.text = model.pwd;
+        if (!self.remberPwdBtn.checkOn)
+            self.remberPwdBtn.checkOn = [model.remSign isEqualToString:@"1"] ? TRUE:FALSE;
+        [self checkStatus];
+    }
     [self showFocusImageWithTextFieldTag:textField.tag];
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -154,12 +173,17 @@
 //    [MBProgressHUD hideHUDForView:self.view animated:YES];
 //}
 - (IBAction)remberPwdAction:(id)sender {
+    
+    [self setRememberPwdStatus];
+    self.remberPwdBtn.checkOn = !self.remberPwdBtn.checkOn ;
+
+}
+- (void)setRememberPwdStatus
+{
     if (!self.remberPwdBtn.checkOn)
         [self.remberPwdBtn setImage:[UIImage imageNamed:@"checkbox_on"] forState:UIControlStateNormal];
     else
         [self.remberPwdBtn setImage:[UIImage imageNamed:@"checkbox"] forState:UIControlStateNormal];
-        
-    self.remberPwdBtn.checkOn = !self.remberPwdBtn.checkOn ;
-
+ 
 }
 @end

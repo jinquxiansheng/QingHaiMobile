@@ -110,7 +110,7 @@ static      InteralCache    *interalManager = nil;
    return  [[DataManager shareManager] selectLoginInfo];
 }
 
-- (NSString *)selectPwdWithID:(NSString *)Id
+- (LoginUserModel *)selectPwdWithID:(NSString *)Id;
 {
     return  [[DataManager shareManager] selectPwdWithID:Id];
 }

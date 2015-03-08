@@ -68,7 +68,7 @@ static  DataManager     *manager = nil;
     {
          NSLog(@"创建完成");
         //[self.db executeUpdate:@"CREATE TABLE TestShopTable (key text,info text,curdate)"];
-        [self.db executeUpdate:@"CREATE TABLE Employee (id INTEGER PRIMARY KEY,userID text,pwd text,sign text)"];
+        [self.db executeUpdate:@"CREATE TABLE Employee (id INTEGER PRIMARY KEY,userID text,pwd text,sign text,curdate date)"];
 
 
     }
@@ -80,11 +80,18 @@ static  DataManager     *manager = nil;
     }
     int rowCount = [self.db intForQuery:@"SELECT count(*) FROM Employee where userID = ?",Id];
     if (rowCount == 0) {
-        return [self.db executeUpdate:@"INSERT INTO Employee (userID, pwd,sign) VALUES (?,?,?)",Id,pwd,remSign];
+
+        return [self.db executeUpdate:@"INSERT INTO Employee (userID, pwd,sign,curdate) VALUES (?,?,?,?)",Id,[self passwpordSign:remSign pwd:pwd],remSign,[[NSDate date] debugDescription]];
     }
     else
     {
-        return [self.db executeUpdate:@"update Employee set pwd = ? , sign = ? where userID = ?",[self passwpordSign:remSign pwd:pwd],remSign,Id];
+        NSLog(@"%@,%@",[self passwpordSign:remSign pwd:pwd],[[NSDate date] debugDescription]);
+        return [self.db executeUpdate:@"update Employee set pwd = ? , sign = ? ,curdate = ? where userID = ?",[self passwpordSign:remSign pwd:pwd],remSign,[[NSDate date] debugDescription],Id];
+         FMResultSet *rs = [self.db executeQuery:@"select * from Employee where userId = ?",Id];
+        while ([rs next]) {
+            NSLog(@"%@",[rs stringForColumn:@"curdate"]);
+
+        }
     }
     return FALSE;
 
@@ -96,9 +103,22 @@ static  DataManager     *manager = nil;
 - (LoginUserModel *)selectLoginInfo
 {
     LoginUserModel *model = [[LoginUserModel alloc] init];
+    FMResultSet *rs = [self.db executeQuery:@"select  * FROM Employee order by  curdate desc limit 0,1"];
     
-    FMResultSet *rs = [self.db executeQuery:@"select  * FROM Employee order by  id desc limit 1"];
-    
+    while ([rs next]) {
+        model.pwd = [rs stringForColumn:@"pwd"];
+        model.Id = [rs stringForColumn:@"userID"];
+        model.remSign = [rs stringForColumn:@"sign"];
+    }
+    // NSLog(@"%@",resultDict);
+    return model;
+
+}
+
+- (LoginUserModel *)selectPwdWithID:(NSString *)Id
+{
+    LoginUserModel *model = [[LoginUserModel alloc] init];
+    FMResultSet *rs = [self.db executeQuery:@"select  * FROM Employee where userID = ?",Id];
     while ([rs next]) {
         model.pwd = [rs stringForColumn:@"pwd"];
         model.Id = [rs stringForColumn:@"userID"];
