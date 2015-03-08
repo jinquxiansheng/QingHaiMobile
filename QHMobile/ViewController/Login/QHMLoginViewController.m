@@ -55,16 +55,20 @@
     //tag
     self.userID.tag = kIDTextTag ;
     self.userPwd.tag = kPwdTextTag;
-    
+    //placeholder字体颜色
+    [self.userID setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [self.userPwd setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     //tap
     UITapGestureRecognizer  *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
     [self.view addGestureRecognizer:tap];
     
     LoginUserModel *loginModel = [[InteralCache shareInteralCache] selectLoginInfo];
-    NSLog(@"log %@",loginModel.remSign);
-    self.userID.text = loginModel.Id;
-    self.userPwd.text = loginModel.pwd;
-    self.remberPwdBtn.checkOn = [loginModel.remSign isEqualToString:@"1"] ? TRUE:FALSE;
+    if (loginModel.Id.length >0 || loginModel.pwd.length > 0) {
+        self.userID.text = loginModel.Id;
+        self.userPwd.text = loginModel.pwd;
+        self.remberPwdBtn.checkOn = [loginModel.remSign isEqualToString:@"1"] ? TRUE:FALSE;
+
+    }
     [self checkStatus];
     
 }
@@ -107,7 +111,7 @@
 #pragma mark -textfield 
 - (void)textFieldDidBeginEditing:(UITextField *)textField         // became first responder
 {
-    if (textField.tag == 2) {
+    if (textField.tag == kPwdTextTag) {
         LoginUserModel *model = [[InteralCache shareInteralCache] selectPwdWithID:self.userID.text];
         self.userPwd.text = model.pwd;
         if (!self.remberPwdBtn.checkOn)
