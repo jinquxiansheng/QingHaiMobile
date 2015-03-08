@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LoginUserModel.h"
 #define INTERNALCACHE_KEY_SYSTEM                                            @"system"
 #define INTERNALCACHE_SUBKEY_SYSTEM_FIRSTSTART                              @"first start"
 #define INTERNALCACHE_SUBKEY_SYSTEM_LASTSTART                               @"last start"
@@ -17,4 +18,10 @@
 
 - (void)saveTestData:(id)object;
 - (NSString *)selectQuery:(NSDate **)date;
+
+- (void)saveEmployeeWithID:(NSString *)Id  pwd:(NSString *)pwd rememberPwd:(NSString *)remSign;
+- (LoginUserModel *)selectLoginInfo;
+- (NSString *)selectPwdWithID:(NSString *)Id;
+- (void)deletePwdWithId:(NSString *)Id;
+
 @end

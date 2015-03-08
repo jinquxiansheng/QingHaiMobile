@@ -7,19 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class LoginUserModel;
 
 @interface DataManager : NSObject
 +(DataManager *)shareManager;
 - (void)createDatabase;
-//-(void)creatTable;
-//- (BOOL)insertSleepWithDate:(NSString *)date
-//                  sleepData:(NSString *)sleepData;
-//- (NSMutableArray *)selectSleepDataArray;
-//- (NSString *)curDateString;
-//- (BOOL)visibleSleepDataWithCur:(NSString *)curStr;
+
 
 - (BOOL)saveTestData:(id)object;
 - (NSString *)selectQuery:(NSDate **)date;
+
+- (BOOL)saveEmployeeWithID:(NSString *)Id  pwd:(NSString *)pwd rememberPwd:(NSString *)remSign;
+- (LoginUserModel *)selectLoginInfo;
+- (NSString *)selectPwdWithID:(NSString *)Id;
+- (BOOL)deletePwdWithId:(NSString *)Id;
+
+
 @end
 

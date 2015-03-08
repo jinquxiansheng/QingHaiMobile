@@ -100,4 +100,23 @@ static      InteralCache    *interalManager = nil;
 {
    return  [[DataManager shareManager] selectQuery:date];
 }
+- (void)saveEmployeeWithID:(NSString *)Id  pwd:(NSString *)pwd rememberPwd:(NSString *)remSign
+{
+    [[DataManager shareManager] saveEmployeeWithID:Id pwd:pwd rememberPwd:remSign];
+
+}
+- (LoginUserModel *)selectLoginInfo
+{
+   return  [[DataManager shareManager] selectLoginInfo];
+}
+
+- (NSString *)selectPwdWithID:(NSString *)Id
+{
+    return  [[DataManager shareManager] selectPwdWithID:Id];
+}
+- (void)deletePwdWithId:(NSString *)Id
+{
+     [[DataManager shareManager] deletePwdWithId:Id];
+}
+
 @end

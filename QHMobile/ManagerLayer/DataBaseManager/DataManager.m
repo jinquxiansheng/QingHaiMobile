@@ -9,6 +9,7 @@
 #import "DataManager.h"
 #import "JSONKit.h"
 #import "FMDB.h"
+#import "LoginUserModel.h"
 static  DataManager     *manager = nil;
 
 @interface DataManager ()
@@ -38,7 +39,7 @@ static  DataManager     *manager = nil;
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];
-    NSString *dbPath = [documentDirectory stringByAppendingPathComponent:@"Shop.db"];
+    NSString *dbPath = [documentDirectory stringByAppendingPathComponent:@"MobileWork.db"];
     self.db  = [FMDatabase databaseWithPath:dbPath] ;
     if (![self.db open]) {
         return ;
@@ -66,11 +67,59 @@ static  DataManager     *manager = nil;
     if(![self.db tableExists:@"TestShopTable"])
     {
          NSLog(@"创建完成");
+        //[self.db executeUpdate:@"CREATE TABLE TestShopTable (key text,info text,curdate)"];
+        [self.db executeUpdate:@"CREATE TABLE Employee (id INTEGER PRIMARY KEY,userID text,pwd text,sign text)"];
+
 
     }
-    [self.db executeUpdate:@"CREATE TABLE TestShopTable (key text,info text,curdate)"];
 }
+- (BOOL)saveEmployeeWithID:(NSString *)Id  pwd:(NSString *)pwd rememberPwd:(NSString *)remSign
+{
+    if (!self.db) {
+        [self createDatabase];
+    }
+    int rowCount = [self.db intForQuery:@"SELECT count(*) FROM Employee where userID = ?",Id];
+    if (rowCount == 0) {
+        return [self.db executeUpdate:@"INSERT INTO Employee (userID, pwd,sign) VALUES (?,?,?)",Id,pwd,remSign];
+    }
+    else
+    {
+        return [self.db executeUpdate:@"update Employee set pwd = ? , sign = ? where userID = ?",[self passwpordSign:remSign pwd:pwd],remSign,Id];
+    }
+    return FALSE;
 
+}
+- (NSString *)passwpordSign:(NSString *)remSign pwd:(NSString *)pwd
+{
+    return  [remSign isEqualToString:@"1"] ? pwd : @"";
+}
+- (LoginUserModel *)selectLoginInfo
+{
+    LoginUserModel *model = [[LoginUserModel alloc] init];
+    
+    FMResultSet *rs = [self.db executeQuery:@"select  * FROM Employee order by  id desc limit 1"];
+    
+    while ([rs next]) {
+        model.pwd = [rs stringForColumn:@"pwd"];
+        model.Id = [rs stringForColumn:@"userID"];
+        model.remSign = [rs stringForColumn:@"sign"];
+    }
+    // NSLog(@"%@",resultDict);
+    return model;
+
+}
+- (BOOL)deletePwdWithId:(NSString *)Id
+{
+    if (!self.db) {
+        [self createDatabase];
+    }
+    int rowCount = [self.db intForQuery:@"SELECT count(*) FROM Employee where ID = ?",Id];
+    if (rowCount > 0) {
+        return [self.db executeUpdate:@"delete  from Employee where ID = ?",Id];
+    }
+    return FALSE;
+
+}
 - (BOOL)saveTestData:(id)object
 {
     if (!self.db) {
@@ -105,54 +154,4 @@ static  DataManager     *manager = nil;
    // NSLog(@"%@",resultDict);
     return result;
 }
-//- (BOOL)insertSleepWithDate:(NSString *)date
-//                  sleepData:(NSString *)sleepData
-//{
-//    if(!self.db)
-//    {
-//        [self createDatabase];
-//    }
-//
-//   return  [self.db executeUpdate:@"INSERT INTO SleepListInfo (curdate, sleepData) VALUES (?,?)",date,sleepData];
-//}
-
-//- (NSMutableArray *)selectSleepDataArray
-//{
-//    FMResultSet *rs = [self.db executeQuery:@"SELECT * FROM SleepListInfo"];
-//    [_sleepDataArray removeAllObjects];
-//    _sleepDataArray = nil;
-//    _sleepDataArray = [[NSMutableArray alloc] init];
-//    
-//    while ([rs next]) {
-//        SleepDataInfo *info = [[SleepDataInfo alloc] init];
-//        NSString *dates = [rs stringForColumn:@"curdate"];
-//        NSString *sleepData = [rs stringForColumn:@"sleepData"];
-//        info.curDate = dates;
-//        info.sleepQuarity = sleepData;
-//        [_sleepDataArray addObject:info];
-//        [info release];
-//    }
-//    [rs close];
-//    return _sleepDataArray;
-//}
-//
-//- (NSString *)curDateString
-//{
-//    NSDate*date = [NSDate date];
-//    NSCalendar*calendar = [NSCalendar currentCalendar];
-//    NSDateComponents*comps;
-//    // 年月日获得
-//    comps =[calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit |NSDayCalendarUnit)
-//                       fromDate:date];
-//    NSInteger year = [comps year];
-//    NSInteger month = [comps month];
-//    NSInteger day = [comps day];
-//    return [NSString stringWithFormat:@"%d年-%d月-%d日",year,month,day];
-//}
-//
-//- (BOOL)visibleSleepDataWithCur:(NSString *)curStr
-//{
-//    int rowCount = [self.db intForQuery:@"SELECT count(*) FROM SleepListInfo where curdate = ?",curStr];
-//    return rowCount > 0 ?FALSE:TRUE;
-//}
 @end

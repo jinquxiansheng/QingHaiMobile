@@ -158,6 +158,7 @@
 		20EC14261A812E6900E17D57 /* CheckWorkAttention.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EC14241A812E6900E17D57 /* CheckWorkAttention.xib */; };
 		20EC142B1A812FF800E17D57 /* FirstPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20EC14291A812FF800E17D57 /* FirstPageViewController.m */; };
 		20EC142C1A812FF800E17D57 /* FirstPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20EC142A1A812FF800E17D57 /* FirstPageViewController.xib */; };
+		20EC4F5F1AA9FB55007367FC /* LoginUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 20EC4F5E1AA9FB55007367FC /* LoginUserModel.m */; };
 		20ECC2101A88801E00F54F07 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20ECC20E1A88801E00F54F07 /* MoreViewController.m */; };
 		20ECC2111A88801E00F54F07 /* MoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20ECC20F1A88801E00F54F07 /* MoreViewController.xib */; };
 		432A62480640B930D85E97FF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C36577A092436D1BD5F6EC2 /* libPods.a */; };
@@ -510,6 +511,8 @@
 		20EC14281A812FF800E17D57 /* FirstPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstPageViewController.h; sourceTree = "<group>"; };
 		20EC14291A812FF800E17D57 /* FirstPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstPageViewController.m; sourceTree = "<group>"; };
 		20EC142A1A812FF800E17D57 /* FirstPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstPageViewController.xib; sourceTree = "<group>"; };
+		20EC4F5D1AA9FB55007367FC /* LoginUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginUserModel.h; sourceTree = "<group>"; };
+		20EC4F5E1AA9FB55007367FC /* LoginUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginUserModel.m; sourceTree = "<group>"; };
 		20ECC20D1A88801E00F54F07 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		20ECC20E1A88801E00F54F07 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		20ECC20F1A88801E00F54F07 /* MoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreViewController.xib; sourceTree = "<group>"; };
@@ -838,6 +841,8 @@
 				20B0D8361A7F4A6A00462D6F /* BaseModel.m */,
 				20B0D8371A7F4A6A00462D6F /* BrandModel.h */,
 				20B0D8381A7F4A6A00462D6F /* BrandModel.m */,
+				20EC4F5D1AA9FB55007367FC /* LoginUserModel.h */,
+				20EC4F5E1AA9FB55007367FC /* LoginUserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1179,9 +1184,9 @@
 				20D776BA1A8621140039ADA8 /* Cell */,
 				20EC14101A810FD700E17D57 /* QHMLoginViewController.h */,
 				20EC14111A810FD700E17D57 /* QHMLoginViewController.m */,
+				20EC14121A810FD700E17D57 /* QHMLoginViewController.xib */,
 				205926C11A9DAA5900514468 /* QHMLoginViewController+HandleReturnInfo.h */,
 				205926C21A9DAA5900514468 /* QHMLoginViewController+HandleReturnInfo.m */,
-				20EC14121A810FD700E17D57 /* QHMLoginViewController.xib */,
 				20DB099D1A83A68900A7999C /* QHRegisterViewController.h */,
 				20DB099E1A83A68900A7999C /* QHRegisterViewController.m */,
 				20DB099F1A83A68900A7999C /* QHRegisterViewController.xib */,
@@ -1549,6 +1554,7 @@
 				20ECC2101A88801E00F54F07 /* MoreViewController.m in Sources */,
 				20E958591A8B38DB00B4B011 /* IQToolbar.m in Sources */,
 				20B0D8791A7F4A6A00462D6F /* BrandModel.m in Sources */,
+				20EC4F5F1AA9FB55007367FC /* LoginUserModel.m in Sources */,
 				20E95D621A825F530048CBDC /* AccountViewController.m in Sources */,
 				20E958581A8B38DB00B4B011 /* IQTitleBarButtonItem.m in Sources */,
 				20B0D87B1A7F4A6A00462D6F /* QHMBaseRequest.m in Sources */,

@@ -11,6 +11,7 @@
 #import "NavBaseViewController.h"
 #import "CheckButton.h"
 #import "QHMLoginViewController+HandleReturnInfo.h"
+#import "InteralCache.h"
 #define kIDTextTag                  1 
 #define kPwdTextTag                 2
 @interface QHMLoginViewController ()
@@ -59,6 +60,9 @@
     UITapGestureRecognizer  *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyBoard)];
     [self.view addGestureRecognizer:tap];
     
+    LoginUserModel *loginModel = [[InteralCache shareInteralCache] selectLoginInfo];
+    NSLog(@"log %@",loginModel.remSign);
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,20 +110,24 @@
 
 
 - (IBAction)LoginAction:(id)sender {
-    HttpCallBack *selfCallBack = [[HttpCallBack alloc] init];
-    QHMLoginViewController    *bself = (QHMLoginViewController *)self;
-    selfCallBack.doneBlock = ^(BaseModel *info,NSUInteger tag)
-    {
-        [bself handleResultWithStastu:info.status];
-         NSLog(@"%@",info.info);
-    };
-    selfCallBack.failedBlock = ^(NSError *error)
-    {
-        if (error.NetState == ErrorNoNet)
-        {
-        }
-    };
-   [MANAGER loginWithPhone:@"13301398220" pwd:@"123456" callBack:selfCallBack target:self];
+     [self handleResultWithStastu:@"1"];
+    NSString *remSign = self.remberPwdBtn.checkOn ? @"1":@"0";
+    [[InteralCache shareInteralCache] saveEmployeeWithID:self.userID.text  pwd:self.userPwd.text rememberPwd:remSign];
+    //NSLog(@"%@",[[InteralCache shareInteralCache] selectPwdWithID:self.userID.text]);
+//    HttpCallBack *selfCallBack = [[HttpCallBack alloc] init];
+//    QHMLoginViewController    *bself = (QHMLoginViewController *)self;
+//    selfCallBack.doneBlock = ^(BaseModel *info,NSUInteger tag)
+//    {
+//        [bself handleResultWithStastu:info.status];
+//         NSLog(@"%@",info.info);
+//    };
+//    selfCallBack.failedBlock = ^(NSError *error)
+//    {
+//        if (error.NetState == ErrorNoNet)
+//        {
+//        }
+//    };
+//   [MANAGER loginWithPhone:@"13301398220" pwd:@"123456" callBack:selfCallBack target:self];
 //  // [MANAGER checkinWithLng:@"102.112239" lat:@"36.504831" gid:@"1" address:@"青海省海东地区平安县平安路122" callBack:selfCallBack];
 //   // [MANAGER selectDepartmentWithID:@"1" callBack:selfCallBack];
 //    [MANAGER checkListWithCallBack:selfCallBack];
